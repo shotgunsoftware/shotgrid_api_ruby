@@ -61,3 +61,4 @@ Metrics/BlockLength:
     - 'Guardfile'
     - 'config/environments/*.rb'
     - 'lib/tasks/*.rake'
+    - 'shotgun_api_ruby.gemspec'

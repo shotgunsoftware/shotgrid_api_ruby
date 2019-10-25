@@ -32,6 +32,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "zeitwerk", "~> 2.2"
 
   spec.add_development_dependency "bundler", "~> 2.0"
+  spec.add_development_dependency "bundler-audit"
+  spec.add_development_dependency "overcommit"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
