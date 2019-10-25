@@ -149,7 +149,20 @@ client.assets.all(fields: [:code, :description], sort: {code: :asc, description:
 
 ##### filter
 
-Not implemented yet
+**Complex filters are not implemented yet**
+
+For simple filters, the filter field is waiting for a hash.
+
+Each value is:
+
+- A string: then a `is` filter will be used
+- An array: then a `in` filter will be used
+
+Example:
+
+```ruby
+client.assets.all(fields: [:code, :description], filter: {code: ['Buck', :Darcy], description: 'I LOVE SG'})
+```
 
 ##### page
 
