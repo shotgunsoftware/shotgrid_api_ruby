@@ -3,6 +3,7 @@ PATH
   specs:
     shotgun_api_ruby (0.1.0)
       faraday (~> 0.17)
+      zeitwerk (~> 2.2)
 
 GEM
   remote: https://rubygems.org/
@@ -47,6 +48,7 @@ GEM
       rubocop (>= 0.71.0)
     ruby-progressbar (1.10.1)
     unicode-display_width (1.6.0)
+    zeitwerk (2.2.0)
 
 PLATFORMS
   ruby

@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require "shotgun_api_ruby/version"
+# zeitwerk will take care of auto loading files based on their name :)
+require "zeitwerk"
+loader = Zeitwerk::Loader.for_gem
+loader.setup # ready!
 
 module ShotgunApiRuby
-  class Error < StandardError; end
-  # Your code goes here...
 end
