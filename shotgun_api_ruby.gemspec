@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "activesupport"
   spec.add_dependency "faraday", "~> 0.17"
   spec.add_dependency "zeitwerk", "~> 2.2"
 

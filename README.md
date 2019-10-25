@@ -67,7 +67,105 @@ client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {session_token: 'session_
 client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {refresh_token: 'refresh_token'})
 ```
 
+### Entities
+
+Querying entities is done by accessing the named method
+
+```ruby
+client.assets # => ShotgunApiRuby::Entities …
+```
+
+As entities can be user defined the client will try to answer to any unknown type with an entity call so any of those calls will returns the same thing:
+
+```ruby
+client.assets
+client.asset
+client.entities("Asset")
+client.entities(:Assets)
+```
+
 ### Entity
+
+Returned entity will try to behave as nicely as possible.
+
+An entity will always answer to:
+
+- .type : the type of the entity
+- .id : the id of the entity
+- .relationships : a hash of relationships
+- .links : a hash of links to other entities
+- .attributes : An object answering to any available attributes
+
+It will also answer to any method that is present in the attributes:
+
+```ruby
+assets = client.assets.all(fields: 'code')
+assets.first.type # => "Asset"
+assets.first.id # => 726
+assets.first.attributes.code # => "Buck"
+assets.first.code # => "Buck"
+```
+
+#### Get
+
+##### all
+
+The all call will return all possible entities.
+
+```ruby
+client.assets.all
+```
+
+##### fields
+
+This attribute describe the wanted fields in the returned entity
+
+Can be a string describing wanted fields: `'code'` or `'code,description'`
+Or an array for better readability: `[:code, 'description']`
+
+Example:
+
+```ruby
+client.assets.all(fields: [:code, :description])
+```
+
+##### sort
+
+Describe how you want your entities to be sorted.
+
+Can be either:
+
+- A string: `'code'` or `'code,-description'` (the `-` asking for a descending order)
+- An array for better readability: `[:code, '-description']`
+- A hash for ease of use: `{code: 'asc', description: :desc}`
+
+Example:
+
+```ruby
+client.assets.all(fields: [:code, :description], sort: {code: :asc, description: :desc})
+```
+
+##### filter
+
+Not implemented yet
+
+##### page
+
+Not implemented yet
+
+##### options
+
+Not implemented yet
+
+#### Create
+
+Not implemented yet
+
+#### Update
+
+Not implemented yet
+
+#### Delete
 
 Not implemented yet
 

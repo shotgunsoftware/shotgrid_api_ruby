@@ -16,8 +16,40 @@ module ShotgunApiRuby
         end
     end
 
-    def entity
-      @entity_caller = Entity.new(connection)
+    def entities(type)
+      public_send(type)
+    end
+
+    def respond_to_missing?(_name, _include_private = false)
+      true
+    end
+
+    def method_missing(name, *args, &block)
+      if args.empty?
+        name = formated_name(name)
+        define_singleton_method(name) do
+          if entities_client = instance_variable_get("@#{name}")
+            entities_client
+          else
+            entities_client = entities_aux(name)
+            instance_variable_set("@#{name}", entities_client)
+          end
+        end
+        send(name)
+      else
+        super
+      end
+    end
+
+    private
+
+    def formated_name(name)
+      name.to_s.camelize.singularize
+    end
+
+    def entities_aux(type)
+      type = formated_name(type)
+      @entity_caller = Entities.new(connection, type)
     end
   end
 end

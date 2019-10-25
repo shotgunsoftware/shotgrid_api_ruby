@@ -2,6 +2,8 @@
 
 # zeitwerk will take care of auto loading files based on their name :)
 require "zeitwerk"
+require 'active_support/core_ext/string/inflections'
+require 'ostruct'
 require "faraday"
 require 'json'
 
