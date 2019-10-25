@@ -20,7 +20,65 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Client instantiation
+
+For creating a new client you need to provide two values.
+
+- One to identify the shotgun site:
+  - Can be `shotgun_site`: which is the `xxx` part in `https://xxx.shotgunstudio.com`
+  - Can be `site_url`: which is the full url to your site
+- One to `auth` you see _Authentication_ lower in this guide.
+
+Example:
+
+```ruby
+client = ShotgunApiRuby.new(shotgun_site: 'i-love-shotgun', auth: {client_id: 'my_nice_script', client_secret: 'CantTouchThis'})
+```
+
+### Authentication
+
+Any kind of authentication specified [here](https://developer.shotgunsoftware.com/rest-api/#authentication) is implemented
+
+#### Client Credentials
+
+```ruby
+client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {client_id: 'script_name', client_secret: 'script_secret'})
+```
+
+#### Password Credentials
+
+```ruby
+client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {username: 'login', password: 'password'})
+```
+
+#### Session Token
+
+**We highly advise not using this for a long term script as this won't be a stable value over time**
+
+```ruby
+client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {session_token: 'session_token'})
+```
+
+#### Refresh Token
+
+**We highly advise not using this for a long term script as this won't be a stable value over time**
+
+```ruby
+client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {refresh_token: 'refresh_token'})
+```
+
+### Entity
+
+Not implemented yet
+
+### Non implemented calls
+
+All calls which are not yet implemented can be done through the `connection` method. This method will still take care of the authentication for you.
+
+```ruby
+client = ShotgunApiRuby.new(…)
+client.connection.get('/entity/assets') # => #<Faraday::Response:xxx @on_complete_callbacks=[], @env=#<Faraday::Env @method=:get @body="{\"data\":[{\"type\":\"Asset\",\"attributes\":{},\"relationships\":{},\"id\":726 …
+```
 
 ## Development
 
