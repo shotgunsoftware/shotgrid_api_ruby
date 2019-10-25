@@ -84,7 +84,9 @@ client.entities("Asset")
 client.entities(:Assets)
 ```
 
-### Entity
+Any not yet implemented call can be accessed through the connection: `client.assets.connection`
+
+#### Entity
 
 Returned entity will try to behave as nicely as possible.
 
