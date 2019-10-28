@@ -10,7 +10,7 @@ module ShotgunApiRuby
 
     attr_reader :connection, :type
 
-    def all(fields: nil, sort: nil, filter: nil)
+    def all(fields: nil, sort: nil, filter: nil, page: nil, page_size: nil)
       raise "Complex filters aren't supported yet" if filter && !filters_are_simple?(filter)
 
       params = Params.new
@@ -18,6 +18,7 @@ module ShotgunApiRuby
       params.add_fields(fields)
       params.add_sort(sort)
       params.add_filter(filter)
+      params.add_page(page, page_size)
 
       p params.to_h
 
@@ -58,6 +59,16 @@ module ShotgunApiRuby
           else
             [sort].flatten.join(',')
           end
+      end
+
+      def add_page(page, page_size)
+        return unless page || page_size
+
+        page = page.to_i if page
+        page_size = page_size.to_i if page_size
+
+        page = 1 if page && page < 1
+        self[:page] = { size: page_size || 20, number: page || 1 }
       end
 
       def add_fields(fields)

@@ -166,7 +166,20 @@ client.assets.all(fields: [:code, :description], filter: {code: ['Buck', :Darcy]
 
 ##### page
 
-Not implemented yet
+You can ask for any page size or page number.
+
+- `page`: set the page number.
+- `page_size`: set the size of each page.
+
+Any of the two can be omited. Their type should be a number but it'll work with a string
+
+Example:
+
+```ruby
+client.assets.all(fields: [:code], page: 3, page_size: 10)
+client.assets.all(fields: [:code], page: '3')
+client.assets.all(fields: [:code], page_size: 10)
+```
 
 ##### options
 
