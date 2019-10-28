@@ -67,6 +67,23 @@ client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {session_token: 'session_
 client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {refresh_token: 'refresh_token'})
 ```
 
+### Server Infos
+
+Get general server infos:
+
+```ruby
+client.server_info.get
+
+#  #<OpenStruct
+      shotgun_version="v8.6.0.0-dev (build 12864de)",
+      api_version="v1",
+      shotgun_version_number="8.6.0.0-dev",
+      shotgun_build_number="12864de",
+      portfolio_version="UNKNOWN",
+      unified_login_flow_enabled=true,
+      user_authentication_method="default">
+```
+
 ### Entities
 
 Querying entities is done by accessing the named method

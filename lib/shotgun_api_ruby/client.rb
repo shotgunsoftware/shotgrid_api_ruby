@@ -16,6 +16,10 @@ module ShotgunApiRuby
         end
     end
 
+    def server_info
+      @server_info || ServerInfo.new(connection)
+    end
+
     def entities(type)
       public_send(type)
     end
