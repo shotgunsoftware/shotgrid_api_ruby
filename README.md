@@ -84,6 +84,31 @@ client.server_info.get
       user_authentication_method="default">
 ```
 
+### Preferences
+
+Get some preferences infos:
+
+```ruby
+prefs = client.preferences.get
+prefs.to_h.keys
+
+# [:format_date_fields,
+# :date_component_order,
+# :format_time_hour_fields,
+# :format_currency_fields_display_dollar_sign,
+# :format_currency_fields_decimal_options,
+# :format_currency_fields_negative_options,
+# :format_number_fields,
+# :format_float_fields,
+# :format_float_fields_rounding,
+# :format_footage_fields,
+# :support_local_storage,
+# :view_master_settings,
+# :duration_units,
+# :hours_per_day,
+# :last_day_work_week]
+```
+
 ### Entities
 
 Querying entities is done by accessing the named method

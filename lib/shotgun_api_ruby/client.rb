@@ -16,6 +16,10 @@ module ShotgunApiRuby
         end
     end
 
+    def preferences
+      @preferences = Preferences.new(connection)
+    end
+
     def server_info
       @server_info || ServerInfo.new(connection)
     end
