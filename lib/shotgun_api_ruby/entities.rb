@@ -10,6 +10,23 @@ module ShotgunApiRuby
 
     attr_reader :connection, :type
 
+    def first(
+      fields: nil,
+      sort: nil,
+      filter: nil,
+      retired: nil,
+      include_archived_projects: nil
+    )
+      all(
+        fields: fields,
+        sort: sort,
+        filter: filter,
+        retired: retired,
+        include_archived_projects: include_archived_projects,
+        page_size: 1
+      )
+    end
+
     def all(
       fields: nil,
       sort: nil,
@@ -19,7 +36,17 @@ module ShotgunApiRuby
       retired: nil,
       include_archived_projects: nil
     )
-      raise "Complex filters aren't supported yet" if filter && !filters_are_simple?(filter)
+      if filter && !filters_are_simple?(filter)
+        return search(
+          fields: fields,
+          sort: sort,
+          filter: filter,
+          page: page,
+          page_size: page_size,
+          retired: retired,
+          include_archived_projects: include_archived_projects
+        )
+      end
 
       params = Params.new
 
@@ -47,60 +74,67 @@ module ShotgunApiRuby
       end
     end
 
-    private
+    def search(
+      fields: nil,
+      sort: nil,
+      filter: nil,
+      page: nil,
+      page_size: nil,
+      retired: nil,
+      include_archived_projects: nil
+    )
+      if filter.nil? || filters_are_simple?(filter)
+        return all(
+          fields: fields,
+          sort: sort,
+          filter: filter,
+          page: page,
+          page_size: page_size,
+          retired: retired,
+          include_archived_projects: include_archived_projects
+        )
+      end
+      params = Params.new
 
-    def filters_are_simple?(filters)
-      filters.values.all? do |filter_val|
-        (filter_val.is_a?(String) || filter_val.is_a?(Symbol)) ||
-          (filter_val.is_a?(Array) && filter_val.all?{ |val| val.is_a?(String) || val.is_a?(Symbol) })
+      params.add_fields(fields)
+      params.add_sort(sort)
+      params.add_page(page, page_size)
+      params.add_options(retired, include_archived_projects)
+
+      resp =
+        @connection.post('_search', params) do |req|
+          if filter.is_a? Array
+            req.headers["Content-Type"] = 'application/vnd+shotgun.api3_array+json'
+          else
+            req.headers['Content-Type'] = 'application/vnd+shotgun.api3_hash+json'
+          end
+          req.body = params.to_h.merge(filters: filter).to_json
+        end
+      resp_body = JSON.parse(resp.body)
+
+      if resp.status >= 300
+        raise "Error while getting #{type}: #{resp_body['errors']}"
+      end
+
+      resp_body["data"].map do |entity|
+        Entity.new(
+          entity['type'],
+          OpenStruct.new(entity['attributes']),
+          entity['relationships'],
+          entity['id'],
+          entity['links']
+        )
       end
     end
 
-    class Params < Hash
-      def add_sort(sort)
-        return unless sort
+    private
 
-        self[:sort] =
-          if sort.is_a?(Hash)
-            sort.map{ |field, direction| "#{direction.to_s.start_with?('desc') ? '-' : ''}#{field}" }.join(',')
-          else
-            [sort].flatten.join(',')
-          end
-      end
+    def filters_are_simple?(filters)
+      return false if filters.is_a? Array
 
-      def add_page(page, page_size)
-        return unless page || page_size
-
-        page = page.to_i if page
-        page_size = page_size.to_i if page_size
-
-        page = 1 if page && page < 1
-        self[:page] = { size: page_size || 20, number: page || 1 }
-      end
-
-      def add_fields(fields)
-        self[:fields] = [fields].flatten.join(',') if fields
-      end
-
-      def add_options(return_only, include_archived_projects)
-        return if return_only.nil? && include_archived_projects.nil?
-
-        self[:options] = {
-          return_only: return_only ? 'retired' : 'active',
-          include_archived_projects: !!include_archived_projects,
-        }
-      end
-
-      def add_filter(filters)
-        return unless filters
-
-        # filter
-        self['filter'] = filters.map do |field, value|
-          [
-            field.to_s,
-            value.is_a?(Array) ? value.map(&:to_s).join(',') : value.to_s,
-          ]
-        end.to_h
+      filters.values.all? do |filter_val|
+        (filter_val.is_a?(String) || filter_val.is_a?(Symbol)) ||
+          (filter_val.is_a?(Array) && filter_val.all?{ |val| val.is_a?(String) || val.is_a?(Symbol) })
       end
     end
   end

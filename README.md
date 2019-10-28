@@ -160,6 +160,18 @@ The all call will return all possible entities.
 client.assets.all
 ```
 
+##### search
+
+Does the same thing as `all`
+
+##### first
+
+Will return only the first entity found (same thing as setting the page_size to 1)
+
+```
+client.assets.first
+```
+
 ##### fields
 
 This attribute describe the wanted fields in the returned entity
@@ -191,8 +203,6 @@ client.assets.all(fields: [:code, :description], sort: {code: :asc, description:
 
 ##### filter
 
-**Complex filters are not implemented yet**
-
 For simple filters, the filter field is waiting for a hash.
 
 Each value is:
@@ -205,6 +215,10 @@ Example:
 ```ruby
 client.assets.all(fields: [:code, :description], filter: {code: ['Buck', :Darcy], description: 'I LOVE SG'})
 ```
+
+For complex filters, see the documentation [here](https://developer.shotgunsoftware.com/rest-api/#searching)
+
+The complexity of calling a different route and passing different headers/body/params will be taken care of automatically.
 
 ##### page
 
