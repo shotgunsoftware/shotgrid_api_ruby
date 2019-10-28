@@ -10,7 +10,15 @@ module ShotgunApiRuby
 
     attr_reader :connection, :type
 
-    def all(fields: nil, sort: nil, filter: nil, page: nil, page_size: nil)
+    def all(
+      fields: nil,
+      sort: nil,
+      filter: nil,
+      page: nil,
+      page_size: nil,
+      retired: nil,
+      include_archived_projects: nil
+    )
       raise "Complex filters aren't supported yet" if filter && !filters_are_simple?(filter)
 
       params = Params.new
@@ -19,8 +27,7 @@ module ShotgunApiRuby
       params.add_sort(sort)
       params.add_filter(filter)
       params.add_page(page, page_size)
-
-      p params.to_h
+      params.add_options(retired, include_archived_projects)
 
       resp = @connection.get('', params)
       resp_body = JSON.parse(resp.body)
@@ -73,6 +80,15 @@ module ShotgunApiRuby
 
       def add_fields(fields)
         self[:fields] = [fields].flatten.join(',') if fields
+      end
+
+      def add_options(return_only, include_archived_projects)
+        return if return_only.nil? && include_archived_projects.nil?
+
+        self[:options] = {
+          return_only: return_only ? 'retired' : 'active',
+          include_archived_projects: !!include_archived_projects,
+        }
       end
 
       def add_filter(filters)

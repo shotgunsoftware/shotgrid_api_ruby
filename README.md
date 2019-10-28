@@ -183,7 +183,17 @@ client.assets.all(fields: [:code], page_size: 10)
 
 ##### options
 
-Not implemented yet
+Special options can be added:
+
+- retired: a flag telling if the returned entities should be retired or not
+- include_archived_projects: a flag telling if the archived projets should be included int the search
+
+Example:
+
+```ruby
+client.assets.all(fields: [:code], retired: true)
+client.assets.all(fields: [:code], include_archived_projects: true)
+```
 
 #### Create
 
