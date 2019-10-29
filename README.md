@@ -150,9 +150,9 @@ assets.first.attributes.code # => "Buck"
 assets.first.code # => "Buck"
 ```
 
-#### Get
+### Search
 
-##### all
+#### all
 
 The all call will return all possible entities.
 
@@ -160,17 +160,19 @@ The all call will return all possible entities.
 client.assets.all
 ```
 
-##### search
+#### search
 
 Does the same thing as `all`
 
-##### first
+#### first
 
 Will return only the first entity found (same thing as setting the page_size to 1)
 
 ```
 client.assets.first
 ```
+
+#### arguments
 
 ##### fields
 
@@ -249,6 +251,22 @@ Example:
 ```ruby
 client.assets.all(fields: [:code], retired: true)
 client.assets.all(fields: [:code], include_archived_projects: true)
+```
+
+### Finding one element
+
+`find` function on `entities` allow you to get one element in particular.
+
+It accepts (all arguments are optional):
+
+- fields: string, symbol or array of fields
+- retired: boolean specifying if the record is retired
+- include_archived_projects: boolean specifying if the entity is part of an archived project
+
+Example:
+
+```ruby
+client.assets.find(724, fields: [:code, 'description'], retired: false)
 ```
 
 #### Create

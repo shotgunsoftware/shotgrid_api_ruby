@@ -27,6 +27,29 @@ module ShotgunApiRuby
       )
     end
 
+    def find(id, fields: nil, retired: nil, include_archived_projects: nil)
+      params = Params.new
+
+      params.add_fields(fields)
+      params.add_options(retired, include_archived_projects)
+
+      resp = @connection.get(id.to_s, params)
+      resp_body = JSON.parse(resp.body)
+
+      if resp.status >= 300
+        raise "Error while getting #{type}: #{resp_body['errors']}"
+      end
+
+      entity = resp_body["data"]
+      Entity.new(
+        entity['type'],
+        OpenStruct.new(entity['attributes']),
+        entity['relationships'],
+        entity['id'],
+        entity['links']
+      )
+    end
+
     def all(
       fields: nil,
       sort: nil,
