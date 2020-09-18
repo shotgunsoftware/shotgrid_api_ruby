@@ -5,6 +5,7 @@ require:
   - rubocop-performance
 
 AllCops:
+  NewCops: enable
   DisplayStyleGuide: true
   DisplayCopNames: true
   Exclude:
@@ -46,7 +47,7 @@ Layout/FirstMethodArgumentLineBreak:
 Layout/MultilineAssignmentLayout:
   Enabled: true
 
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: true
   Max: 120
   AutoCorrect: true

@@ -28,7 +28,7 @@ module ShotgunApiRuby
       public_send(type)
     end
 
-    def respond_to_missing?(_name, _include_private = false)
+    def respond_to_missing?(_name, _include_private = false) # rubocop:disable Lint/MissingSuper,Style/OptionalBooleanParameter
       true
     end
 

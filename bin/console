@@ -4,6 +4,14 @@
 require "bundler/setup"
 require "shotgun_api_ruby"
 
+require 'dotenv/load'
+
+if ENV['SITE_NAME'] && ENV['SCRIPT_NAME'] && ENV['SCRIPT_KEY']
+  $cl = ShotgunApiRuby.new(
+    shotgun_site: ENV['SITE_NAME'],
+    auth: { client_id: ENV['SCRIPT_NAME'], client_secret: ENV['SCRIPT_KEY'] }
+  )
+end
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 
