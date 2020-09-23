@@ -166,7 +166,7 @@ Does the same thing as `all`
 
 #### first
 
-Will return only the first entity found (same thing as setting the page_size to 1)
+Will return only the first entity found (same thing as setting the page_size to 1 and then getting the first result)
 
 ```
 client.assets.first
@@ -203,6 +203,14 @@ Example:
 client.assets.all(fields: [:code, :description], sort: {code: :asc, description: :desc})
 ```
 
+##### logical_operator
+
+Default: "and"
+
+This will be only used on complex queries. This is how we treat multiple first level conditions.
+
+Accepted values: 'and', 'or'
+
 ##### filter
 
 For simple filters, the filter field is waiting for a hash.
@@ -218,7 +226,33 @@ Example:
 client.assets.all(fields: [:code, :description], filter: {code: ['Buck', :Darcy], description: 'I LOVE SG'})
 ```
 
-For complex filters, see the documentation [here](https://developer.shotgunsoftware.com/rest-api/#searching)
+For complex filters, see the documentation [here](https://developer.shotgunsoftware.com/rest-api/#searching).
+
+If the filters are complex there's many cases:
+
+* If they are a hash containing logical_operator and conditions => we will use them
+* If the filter is **not** a hash => we will use it without translation
+* If the filter is a hash not containing "conditions". We will try to translate this to SG compatible query.
+
+Example:
+```ruby
+client.assets.all(
+  filter: {
+    project: { id: 2 },
+    sg_status_list: ["act", "hld", "omt"]
+  }, 
+)
+# Will be translated to:
+{
+  "filters"=>{
+    "conditions"=> [
+      ["project.Project.id", "is", 2], 
+      ["sg_status_list", "in", ["act", "hld", "omt"]]
+     ], 
+     "logical_operator"=>"and"
+   }
+}
+```
 
 The complexity of calling a different route and passing different headers/body/params will be taken care of automatically.
 

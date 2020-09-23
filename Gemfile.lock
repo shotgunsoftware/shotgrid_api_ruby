@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shotgun_api_ruby (0.0.4.1)
+    shotgun_api_ruby (0.0.4.2)
       activesupport
       faraday (~> 1)
       zeitwerk (~> 2.2)

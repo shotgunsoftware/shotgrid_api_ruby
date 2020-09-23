@@ -25,7 +25,12 @@ module ShotgunApiRuby
       end
 
       def add_fields(fields)
-        self[:fields] = [fields].flatten.join(',') if fields
+        self[:fields] =
+          if fields
+            [fields].flatten.join(',')
+          else
+            "*"
+          end
       end
 
       def add_options(return_only, include_archived_projects)
@@ -41,7 +46,13 @@ module ShotgunApiRuby
         return unless filters
 
         # filter
-        self['filter'] = filters.map do |field, value|
+        self['filter'] = translate_simple_filter_to_sg(filters)
+      end
+
+      private
+
+      def translate_simple_filter_to_sg(filters)
+        filters.map do |field, value|
           [
             field.to_s,
             value.is_a?(Array) ? value.map(&:to_s).join(',') : value.to_s,
