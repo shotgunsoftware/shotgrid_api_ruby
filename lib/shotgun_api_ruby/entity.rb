@@ -14,7 +14,7 @@ module ShotgunApiRuby
         end
       end
 
-      def respond_to_missing?(name, _private_methods = false) # rubocop:disable Style/OptionalBooleanParameter
+      def respond_to_missing?(name, _private_methods = false)
         attributes.respond_to?(name) || super
       end
     end
