@@ -1,5 +1,8 @@
 # ShotgunApiRuby
 
+[![Gem Version](https://badge.fury.io/rb/shotgun_api_ruby.svg)](https://badge.fury.io/rb/shotgun_api_ruby)
+![Test and Release badge](https://github.com/shotgunsoftware/shotgun_api_ruby/workflows/Test%20and%20Release/badge.svg)
+
 A gem to integrate with shotgun REST API easily.
 
 ## Installation
