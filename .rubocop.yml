@@ -14,6 +14,9 @@ AllCops:
 Style/GlobalVars:
   Enabled: false
 
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
 Layout/DotPosition:
   Enabled: true
   EnforcedStyle: trailing

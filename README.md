@@ -308,28 +308,37 @@ client.assets.find(724, fields: [:code, 'description'], retired: false)
 
 #### Create
 
-Example:
+Will create the entity referenced by the id with the following fields. 
+If successful, it will return the newly created entity.
+
 ```ruby
 client.assets.create(code: 'New Asset', project: {type: 'Project', id: 63})
 ```
 
 #### Update
 
-Example:
+Will update the entity referenced by the id with the following fields. 
+If successful, it will return the modified entity.
+
 ```ruby
 client.assets.update(1226, code: 'Updated Asset', sg_status_list: 'fin')
 ```
 
 #### Delete
 
-Example:
+Will destroys the entity referenced by the id. Will return true if successful.
+
 ```ruby
-client.assets.update(1226, code: 'Updated Asset', sg_status_list: 'fin')
+client.assets.delete(1226)
 ```
 
 #### Revive
 
-Not implemented yet
+Will try to revive the entity referenced by the id. Will return true if successful.
+
+```ruby
+client.assets.revive(1226)
+```
 
 ### Non implemented calls
 

@@ -114,8 +114,7 @@ module ShotgunApiRuby
 
     def revive(id)
       resp =
-        @connection.post("id.to_s?revive=true") do |req|
-        end
+        @connection.post("#{id}?revive=true")
 
       if resp.status >= 300
         resp_body = JSON.parse(resp.body)
