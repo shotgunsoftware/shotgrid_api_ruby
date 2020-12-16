@@ -308,13 +308,26 @@ client.assets.find(724, fields: [:code, 'description'], retired: false)
 
 #### Create
 
-Not implemented yet
+Example:
+```ruby
+client.assets.create(code: 'New Asset', project: {type: 'Project', id: 63})
+```
 
 #### Update
 
-Not implemented yet
+Example:
+```ruby
+client.assets.update(1226, code: 'Updated Asset', sg_status_list: 'fin')
+```
 
 #### Delete
+
+Example:
+```ruby
+client.assets.update(1226, code: 'Updated Asset', sg_status_list: 'fin')
+```
+
+#### Revive
 
 Not implemented yet
 
