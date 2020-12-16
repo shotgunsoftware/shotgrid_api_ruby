@@ -52,6 +52,78 @@ module ShotgunApiRuby
       )
     end
 
+    def create(**attributes)
+      resp =
+        @connection.post('', attributes.to_json) do |req|
+          req.headers['Content-Type'] = 'application/json'
+        end
+
+      resp_body = JSON.parse(resp.body)
+
+      if resp.status >= 300
+        raise "Error while creating #{type}# with #{attributes}: #{resp_body['errors']}"
+      end
+
+      entity = resp_body["data"]
+      Entity.new(
+        entity['type'],
+        OpenStruct.new(entity['attributes']),
+        entity['relationships'],
+        entity['id'],
+        entity['links']
+      )
+    end
+
+    def update(id, **changes)
+      return find(id) if changes.empty?
+
+      resp =
+        @connection.put(id.to_s, changes.to_json) do |req|
+          req.headers['Content-Type'] = 'application/json'
+        end
+
+      resp_body = JSON.parse(resp.body)
+
+      if resp.status >= 300
+        raise "Error while updating #{type}##{id} with #{changes}: #{resp_body['errors']}"
+      end
+
+      entity = resp_body["data"]
+      Entity.new(
+        entity['type'],
+        OpenStruct.new(entity['attributes']),
+        entity['relationships'],
+        entity['id'],
+        entity['links']
+      )
+    end
+
+    def delete(id)
+      resp =
+        @connection.delete(id.to_s) do |req|
+          req.headers['Content-Type'] = 'application/json'
+        end
+
+      if resp.status >= 300
+        resp_body = JSON.parse(resp.body)
+        raise "Error while deleting #{type}##{id}: #{resp_body['errors']}"
+      end
+
+      true
+    end
+
+    def revive(id)
+      resp =
+        @connection.post("#{id}?revive=true")
+
+      if resp.status >= 300
+        resp_body = JSON.parse(resp.body)
+        raise "Error while reviving #{type}##{id}: #{resp_body['errors']}"
+      end
+
+      true
+    end
+
     def all(
       fields: nil,
       logical_operator: 'and',
