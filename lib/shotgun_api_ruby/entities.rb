@@ -53,7 +53,7 @@ module ShotgunApiRuby
       )
     end
 
-    def create(**attributes)
+    def create(attributes)
       resp =
         @connection.post('', attributes.to_json) do |req|
           req.headers['Content-Type'] = 'application/json'
@@ -75,7 +75,7 @@ module ShotgunApiRuby
       )
     end
 
-    def update(id, **changes)
+    def update(id, changes)
       return find(id) if changes.empty?
 
       resp =
