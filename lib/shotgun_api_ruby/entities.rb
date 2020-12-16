@@ -5,6 +5,7 @@ module ShotgunApiRuby
     def initialize(connection, type)
       @connection = connection.dup
       @type = type
+      @base_url_prefix = @connection.url_prefix
       @connection.url_prefix = "#{@connection.url_prefix}/entity/#{type}"
     end
 
@@ -220,7 +221,6 @@ module ShotgunApiRuby
             req.headers['Content-Type'] = 'application/vnd+shotgun.api3_hash+json'
           end
           req.body = params.to_h.merge(filters: filter).to_json
-          pp JSON.parse(req.body)
         end
       resp_body = JSON.parse(resp.body)
 
@@ -237,6 +237,18 @@ module ShotgunApiRuby
           entity['links']
         )
       end
+    end
+
+    def schema_client
+      @schema_client ||= Schema.new(connection, type, @base_url_prefix)
+    end
+
+    def schema
+      schema_client.read
+    end
+
+    def fields
+      schema_client.fields
     end
 
     private

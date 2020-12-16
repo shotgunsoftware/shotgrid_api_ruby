@@ -340,6 +340,26 @@ Will try to revive the entity referenced by the id. Will return true if successf
 client.assets.revive(1226)
 ```
 
+### Schema
+
+Those calls allow to inspect the schema for a shotgun site.
+
+#### Entity
+
+```ruby
+client.assets.schema
+```
+
+#### Entity fields
+
+Fetch the different fields available on an entity type and their definition.
+
+```ruby
+fields = client.assets.fields
+fields.code.name # => "Asset Name"
+fields.code.properties.summary_default # => "none"
+```
+
 ### Non implemented calls
 
 All calls which are not yet implemented can be done through the `connection` method. This method will still take care of the authentication for you.
