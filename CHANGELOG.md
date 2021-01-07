@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.8.3] - 2021-01-07
+### Added
+- eager_load files to fix weird bugs in rspec
+
 ## [0.0.8] - 2020-12-16
 ### Added
 - Schema: read

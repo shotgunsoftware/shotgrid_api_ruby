@@ -9,6 +9,7 @@ require 'json'
 
 loader = Zeitwerk::Loader.for_gem
 loader.setup # ready!
+loader.eager_load
 
 module ShotgunApiRuby
   def self.new(**args)
