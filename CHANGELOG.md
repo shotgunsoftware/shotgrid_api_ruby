@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.8.4] - 2021-01-07
+### Changed
+- Safer eager_load
+
 ## [0.0.8.3] - 2021-01-07
 ### Added
 - eager_load files to fix weird bugs in rspec
@@ -22,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Entities: delete
 - Entities: revive
 
-[Unreleased]: https://github.com/shotgunsoftware/shotgun_api_ruby/compare/v0.0.8...HEAD
+[Unreleased]: https://github.com/shotgunsoftware/shotgun_api_ruby/compare/v0.0.8.4...HEAD
+[0.0.8.4]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8.4
+[0.0.8.3]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8.3
 [0.0.8]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8
 [0.0.7]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.7
