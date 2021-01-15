@@ -6,7 +6,10 @@ on:
       - main
 
 jobs:
-  test-2_5:
+  tests:
+    strategy:
+      matrix:
+        ruby: [2.5, 2.6, 2.7, 3.0]
     runs-on: ubuntu-latest
 
     steps:
@@ -14,45 +17,26 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.5
-    - name: Install dependencies
-      run: bundle install
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
     - name: Run linter
       run: bundle exec rubocop
     - name: Run tests
       run: bundle exec rspec
-  test-2_6:
+  prettier:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+    - name: Set up Node
+      uses: actions/setup-node@v2
       with:
-        ruby-version: 2.6
-    - name: Install dependencies
-      run: bundle install
-    - name: Run linter
-      run: bundle exec rubocop
-    - name: Run tests
-      run: bundle exec rspec
-  test-2_7:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.7
-    - name: Install dependencies
-      run: bundle install
-    - name: Run linter
-      run: bundle exec rubocop
-    - name: Run tests
-      run: bundle exec rspec
+        node-version: '14'
+    - name: Install yarn dep
+      run: yarn install
+    - name: Check prettier
+      run: yarn prettier -c '**/*.rb' 
   release:
-    needs: [test-2_5, test-2_6, test-2_7]
+    needs: [tests, prettier]
     runs-on: ubuntu-latest
 
     steps:
@@ -60,14 +44,15 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
-    - name: Install dependencies
-      run: bundle install
+        ruby-version: 3.0
+        bundler-cache: true
     - name: Prepare credentials
       env:
         RUBYGEM_KEY: ${{ secrets.RUBYGEM_KEY }}
-      run: "echo -e \"---\\r\\n:rubygems_api_key: $RUBYGEM_KEY\" > ~/.gem/credentials && chmod 0600 ~/.gem/credentials"
+      run: "mkdir -p ~/.gem && echo -e \"---\\r\\n:rubygems_api_key: $RUBYGEM_KEY\" > ~/.gem/credentials && chmod 0600 ~/.gem/credentials"
     - name: Setup username/email
       run: "git config --global user.email zaratan@hey.com && git config --global user.name \"Denis <Zaratan> Pasin\""
-    - name: Publish
-      run: rake release
+    - name: Fetch tags from remote
+      run: "git fetch -t"
+    - name: Publish if version change
+      run: 'git diff `git tag | tail -1` -- lib/shotgun_api_ruby/version.rb | grep -E "^\+.*VERSION" && rake release || echo "No release for now"'
