@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'shotgun_api_ruby'
 require 'simplecov'
 require 'rspec_in_context'
 require 'faker'
@@ -19,21 +18,31 @@ VCR.configure do |config|
     ENV['VCR_SHOTGUN_SCRIPT_NAME'] || 'vcr_shotgun_script_name'
   end
   config.filter_sensitive_data('<SCRIPT_KEY>') do
-    ENV['VCR_SHOTGUN_SCRIPT_KEY'] || 'vcr_shotgun_script_key'
+    ENV['VCR_SHOTGUN_SCRIPT_KEY'] &&
+      URI
+        .encode_www_form_component(ENV['VCR_SHOTGUN_SCRIPT_KEY'])
+        &.gsub(/\*/, '%2A') || 'vcr_shotgun_script_key'
   end
-  # config.before_record do |i|
-  #   i.response.body.sub!(
-  #     /access_token":"[^"]+"/,
-  #     "access_token\":\"<ACCESS_TOKEN>\"",
-  #   )
-  #   i.request.headers['Authorization'] = '<ACCESS_TOKEN>' if i.request.headers[
-  #     'Authorization'
-  #   ]
-  #   i.request.uri.sub!(
-  #     ENV['VCR_FORGE_API_BASE_URL'],
-  #     'http://vcr.forge.api.url',
-  #   )
-  # end
+  config.filter_sensitive_data('<USERNAME>') do
+    ENV['VCR_SHOTGUN_USERNAME'] || 'vcr_shotgun_username'
+  end
+  config.filter_sensitive_data('<PASSWORD>') do
+    ENV['VCR_SHOTGUN_PASSWORD'] &&
+      ENV['VCR_SHOTGUN_PASSWORD']&.gsub(/!/, '%21') || 'vcr_shotgun_password'
+  end
+  config.before_record do |i|
+    i.response.body.sub!(
+      /access_token":"[^"]+"/,
+      "access_token\":\"<ACCESS_TOKEN>\"",
+    )
+    i.response.body.sub!(
+      /refresh_token":"[^"]+"/,
+      "refresh_token\":\"<REFRESH_TOKEN>\"",
+    )
+    i.request.headers['Authorization'] = '<ACCESS_TOKEN>' if i.request.headers[
+      'Authorization'
+    ]
+  end
 end
 
 SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter]
@@ -44,10 +53,9 @@ SimpleCov.at_exit do
   SimpleCov.minimum_coverage_by_file 80
 end
 
-SimpleCov.start do
-  load_profile 'test_frameworks'
-  add_filter { |source_file| source_file.lines.count < 5 }
-end
+SimpleCov.start { load_profile 'test_frameworks' }
+
+require 'shotgun_api_ruby'
 
 Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
 RSpec::Matchers.define_negated_matcher :not_change, :change

@@ -1,19 +1,33 @@
 # frozen_string_literal: true
 
 module ShotgunApiRuby
+  # Faraday middleware responsible for authentication with
+  # the shotgun site
   class Auth < Faraday::Middleware
+    # Validate auth parameters format
     module Validator
-      def self.valid?(auth)
-        (auth[:client_id] && auth[:client_secret]) ||
-          (auth[:password] && auth[:username]) || auth[:session_token] ||
-          auth[:refresh_token]
+      # Validate auth parameters format
+      #
+      # @param []
+      def self.valid?(
+        client_id: nil,
+        client_secret: nil,
+        username: nil,
+        password: nil,
+        session_token: nil,
+        refresh_token: nil
+      )
+        (client_id && client_secret) || (password && username) ||
+          session_token || refresh_token
       end
     end
 
     def initialize(app = nil, options = {})
       raise 'missing auth' unless options[:auth]
       raise 'missing site_url' unless options[:site_url]
-      raise 'Auth not valid' unless Validator.valid?(options[:auth])
+      unless Validator.valid?(**options[:auth]&.transform_keys(&:to_sym))
+        raise 'Auth not valid'
+      end
 
       super(app)
 
@@ -37,14 +51,14 @@ module ShotgunApiRuby
     def auth_type
       @auth_type ||=
         begin
-          if client_id
+          if refresh_token
+            'refresh_token'
+          elsif client_id
             'client_credentials'
           elsif username
             'password'
           elsif session_token
             'session_token'
-          elsif refresh_token
-            'refresh_token'
           end
         end
     end
@@ -61,6 +75,8 @@ module ShotgunApiRuby
       @auth_params ||=
         begin
           case auth_type
+          when 'refresh_token'
+            "refresh_token=#{refresh_token}&grant_type=refresh_token"
           when 'client_credentials'
             "client_id=#{client_id}&client_secret=#{
               client_secret
@@ -69,8 +85,6 @@ module ShotgunApiRuby
             "username=#{username}&password=#{password}&grant_type=password"
           when 'session_token'
             "session_token=#{session_token}&grant_type=session_token"
-          when 'refresh_token'
-            "refresh_token=#{refresh_token}&grant_type=refresh_token"
           else
             raise 'Not a valid/implemented auth type'
           end

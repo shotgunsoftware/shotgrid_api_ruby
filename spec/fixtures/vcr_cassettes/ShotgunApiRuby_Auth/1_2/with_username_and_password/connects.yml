@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>3-prod.shotgunstudio.com/api/v1/auth/access_token?grant_type=password&password=<PASSWORD>&username=<USERNAME>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 15 Jan 2021 05:20:17 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '516'
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"556e701dc08e76ccb2ae2b710d779995"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - f662c3dd7cff642ea7e2d9e5acc1c299
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Fri, 15 Jan 2021 05:20:17 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>3-prod.shotgunstudio.com/api/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 15 Jan 2021 05:20:18 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '179'
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"5aa560dfffdf9e815e410e09d55cf3b4"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 9a026179a578d25420e55fc87cd178c4
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"shotgun_version":"v8.20.0.6749 (build 9f25edd)","api_version":"v1","shotgun_version_number":"8.20.0.6749","shotgun_build_number":"9f25edd","portfolio_version":"8.20.0.6749","unified_login_flow_enabled":true,"user_authentication_method":"default"}}'
+  recorded_at: Fri, 15 Jan 2021 05:20:18 GMT
+recorded_with: VCR 6.0.0
