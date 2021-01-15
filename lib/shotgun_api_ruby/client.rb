@@ -5,8 +5,8 @@ module ShotgunApiRuby
     attr_reader :connection
 
     def initialize(auth:, site_url: nil, shotgun_site: nil)
-      raise "No site given" unless site_url || shotgun_site
-      raise "auth param not valid" unless auth && Auth::Validator.valid?(auth)
+      raise 'No site given' unless site_url || shotgun_site
+      raise 'auth param not valid' unless auth && Auth::Validator.valid?(auth)
 
       site_url ||= "https://#{shotgun_site}.shotgunstudio.com/api/v1"
       @connection =

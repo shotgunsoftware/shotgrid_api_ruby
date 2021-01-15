@@ -17,7 +17,7 @@ module ShotgunApiRuby
         raise "Error while getting server preferences: #{resp_body['errors']}"
       end
 
-      data = resp_body["data"]
+      data = resp_body['data']
       OpenStruct.new(data)
     end
   end

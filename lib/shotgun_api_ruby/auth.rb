@@ -5,16 +5,15 @@ module ShotgunApiRuby
     module Validator
       def self.valid?(auth)
         (auth[:client_id] && auth[:client_secret]) ||
-          (auth[:password] && auth[:username]) ||
-          auth[:session_token] ||
+          (auth[:password] && auth[:username]) || auth[:session_token] ||
           auth[:refresh_token]
       end
     end
 
     def initialize(app = nil, options = {})
-      raise "missing auth" unless options[:auth]
-      raise "missing site_url" unless options[:site_url]
-      raise "Auth not valid" unless Validator.valid?(options[:auth])
+      raise 'missing auth' unless options[:auth]
+      raise 'missing site_url' unless options[:site_url]
+      raise 'Auth not valid' unless Validator.valid?(options[:auth])
 
       super(app)
 
@@ -27,7 +26,13 @@ module ShotgunApiRuby
       @refresh_token = options[:auth][:refresh_token]
     end
 
-    attr_reader :client_id, :client_secret, :site_url, :username, :password, :session_token, :refresh_token
+    attr_reader :client_id,
+                :client_secret,
+                :site_url,
+                :username,
+                :password,
+                :session_token,
+                :refresh_token
 
     def auth_type
       @auth_type ||=
@@ -57,7 +62,9 @@ module ShotgunApiRuby
         begin
           case auth_type
           when 'client_credentials'
-            "client_id=#{client_id}&client_secret=#{client_secret}&grant_type=client_credentials"
+            "client_id=#{client_id}&client_secret=#{
+              client_secret
+            }&grant_type=client_credentials"
           when 'password'
             "username=#{username}&password=#{password}&grant_type=password"
           when 'session_token'
@@ -65,7 +72,7 @@ module ShotgunApiRuby
           when 'refresh_token'
             "refresh_token=#{refresh_token}&grant_type=refresh_token"
           else
-            raise "Not a valid/implemented auth type"
+            raise 'Not a valid/implemented auth type'
           end
         end
     end
@@ -81,8 +88,8 @@ module ShotgunApiRuby
     def sign_in
       resp =
         Faraday.post(auth_url) do |req|
-          req.headers["Content-Type"] = 'application/x-www-form-urlencoded'
-          req.headers["Accept"] = "application/json"
+          req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+          req.headers['Accept'] = 'application/json'
         end
       resp_body = JSON.parse(resp.body)
 
@@ -95,8 +102,8 @@ module ShotgunApiRuby
 
     def std_headers
       {
-        "Accept" => "application/json",
-        "Authorization" => "Bearer #{access_token}",
+        'Accept' => 'application/json',
+        'Authorization' => "Bearer #{access_token}",
       }
     end
   end
