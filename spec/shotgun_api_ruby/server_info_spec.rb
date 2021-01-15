@@ -1,4 +1,4 @@
-describe ShotgunApiRuby::ServerInfo do
+describe ShotgunApiRuby::ServerInfo, :vcr do
   in_context 'with vcr values' do
     subject(:server_info) { shotgun_client.server_info }
 
