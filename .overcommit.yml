@@ -8,14 +8,14 @@ PreCommit:
     enabled: true
   Prettier:
     enabled: true
-    command: ["yarn", "prettier", "-c", "./**/*.rb"]
+    required_executable: './bin/prettirun'
 PrePush:
   RSpec:
     enabled: true
     command: ['bundle', 'exec', 'rspec', '-f', 'p'] # Invoke within Bundler context
   Prettier:
     enabled: true
-    command: ["yarn", "prettier", "-c", "./**/*.rb"]
+    required_executable: './bin/prettirun'
   Rubocop:
     enabled: true
-    command: ["bundle", "exec", "rubocop", "-P"]
+    required_executable: './bin/ruborun'
