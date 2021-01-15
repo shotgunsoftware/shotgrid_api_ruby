@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.8.5] - 2021-01-15
+### Added
+- Added prettier for ruby style
+
 ## [0.0.8.4] - 2021-01-07
 ### Changed
 - Safer eager_load
@@ -26,7 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Entities: delete
 - Entities: revive
 
-[Unreleased]: https://github.com/shotgunsoftware/shotgun_api_ruby/compare/v0.0.8.4...HEAD
+[Unreleased]: https://github.com/shotgunsoftware/shotgun_api_ruby/compare/v0.0.8.5...HEAD
+[0.0.8.5]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8.5
 [0.0.8.4]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8.4
 [0.0.8.3]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8.3
 [0.0.8]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8

@@ -19,9 +19,7 @@ module ShotgunApiRuby
 
         resp_body = JSON.parse(resp.body)
 
-        OpenStruct.new(
-          resp_body["data"].transform_values{ |v| v["value"] }
-        )
+        OpenStruct.new(resp_body['data'].transform_values { |v| v['value'] })
       end
 
       def fields
@@ -33,15 +31,18 @@ module ShotgunApiRuby
         end
 
         OpenStruct.new(
-          resp_body["data"].transform_values do |value|
+          resp_body['data'].transform_values do |value|
             OpenStruct.new(
-              value.transform_values do |attribute|
-                attribute["value"]
-              end.merge(
-                properties: OpenStruct.new(value["properties"].transform_values{ |prop| prop["value"] })
-              )
+              value.transform_values { |attribute| attribute['value'] }.merge(
+                properties:
+                  OpenStruct.new(
+                    value['properties'].transform_values do |prop|
+                      prop['value']
+                    end,
+                  ),
+              ),
             )
-          end
+          end,
         )
       end
     end

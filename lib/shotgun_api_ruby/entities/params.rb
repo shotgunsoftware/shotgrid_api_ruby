@@ -8,7 +8,9 @@ module ShotgunApiRuby
 
         self[:sort] =
           if sort.is_a?(Hash)
-            sort.map{ |field, direction| "#{direction.to_s.start_with?('desc') ? '-' : ''}#{field}" }.join(',')
+            sort.map do |field, direction|
+              "#{direction.to_s.start_with?('desc') ? '-' : ''}#{field}"
+            end.join(',')
           else
             [sort].flatten.join(',')
           end
@@ -25,12 +27,7 @@ module ShotgunApiRuby
       end
 
       def add_fields(fields)
-        self[:fields] =
-          if fields
-            [fields].flatten.join(',')
-          else
-            "*"
-          end
+        self[:fields] = fields ? [fields].flatten.join(',') : '*'
       end
 
       def add_options(return_only, include_archived_projects)

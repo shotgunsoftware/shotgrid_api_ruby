@@ -26,7 +26,7 @@ module ShotgunApiRuby
         retired: retired,
         logical_operator: logical_operator,
         include_archived_projects: include_archived_projects,
-        page_size: 1
+        page_size: 1,
       ).first
     end
 
@@ -43,13 +43,13 @@ module ShotgunApiRuby
         raise "Error while getting #{type}: #{resp_body['errors']}"
       end
 
-      entity = resp_body["data"]
+      entity = resp_body['data']
       Entity.new(
         entity['type'],
         OpenStruct.new(entity['attributes']),
         entity['relationships'],
         entity['id'],
-        entity['links']
+        entity['links'],
       )
     end
 
@@ -62,16 +62,18 @@ module ShotgunApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while creating #{type}# with #{attributes}: #{resp_body['errors']}"
+        raise "Error while creating #{type}# with #{attributes}: #{
+                resp_body['errors']
+              }"
       end
 
-      entity = resp_body["data"]
+      entity = resp_body['data']
       Entity.new(
         entity['type'],
         OpenStruct.new(entity['attributes']),
         entity['relationships'],
         entity['id'],
-        entity['links']
+        entity['links'],
       )
     end
 
@@ -86,16 +88,18 @@ module ShotgunApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while updating #{type}##{id} with #{changes}: #{resp_body['errors']}"
+        raise "Error while updating #{type}##{id} with #{changes}: #{
+                resp_body['errors']
+              }"
       end
 
-      entity = resp_body["data"]
+      entity = resp_body['data']
       Entity.new(
         entity['type'],
         OpenStruct.new(entity['attributes']),
         entity['relationships'],
         entity['id'],
-        entity['links']
+        entity['links'],
       )
     end
 
@@ -114,8 +118,7 @@ module ShotgunApiRuby
     end
 
     def revive(id)
-      resp =
-        @connection.post("#{id}?revive=true")
+      resp = @connection.post("#{id}?revive=true")
 
       if resp.status >= 300
         resp_body = JSON.parse(resp.body)
@@ -136,15 +139,17 @@ module ShotgunApiRuby
       include_archived_projects: nil
     )
       if filter && !filters_are_simple?(filter)
-        return search(
-          fields: fields,
-          logical_operator: logical_operator,
-          sort: sort,
-          filter: filter,
-          page: page,
-          page_size: page_size,
-          retired: retired,
-          include_archived_projects: include_archived_projects
+        return(
+          search(
+            fields: fields,
+            logical_operator: logical_operator,
+            sort: sort,
+            filter: filter,
+            page: page,
+            page_size: page_size,
+            retired: retired,
+            include_archived_projects: include_archived_projects,
+          )
         )
       end
 
@@ -163,13 +168,13 @@ module ShotgunApiRuby
         raise "Error while getting #{type}: #{resp_body['errors']}"
       end
 
-      resp_body["data"].map do |entity|
+      resp_body['data'].map do |entity|
         Entity.new(
           entity['type'],
           OpenStruct.new(entity['attributes']),
           entity['relationships'],
           entity['id'],
-          entity['links']
+          entity['links'],
         )
       end
     end
@@ -185,15 +190,17 @@ module ShotgunApiRuby
       include_archived_projects: nil
     )
       if filter.nil? || filters_are_simple?(filter)
-        return all(
-          fields: fields,
-          logical_operator: logical_operator,
-          sort: sort,
-          filter: filter,
-          page: page,
-          page_size: page_size,
-          retired: retired,
-          include_archived_projects: include_archived_projects
+        return(
+          all(
+            fields: fields,
+            logical_operator: logical_operator,
+            sort: sort,
+            filter: filter,
+            page: page,
+            page_size: page_size,
+            retired: retired,
+            include_archived_projects: include_archived_projects,
+          )
         )
       end
       params = Params.new
@@ -206,7 +213,9 @@ module ShotgunApiRuby
       if filter.is_a?(Hash)
         new_filter[:conditions] =
           (filter[:conditions] || translate_complex_to_sg_filters(filter))
-        new_filter[:logical_operator] = filter[:logical_operator] || filter['logical_operator'] || logical_operator
+        new_filter[:logical_operator] =
+          filter[:logical_operator] || filter['logical_operator'] ||
+            logical_operator
       else
         new_filter[:conditions] = filter
         new_filter[:logical_operator] = logical_operator
@@ -215,11 +224,12 @@ module ShotgunApiRuby
 
       resp =
         @connection.post('_search', params) do |req|
-          if filter.is_a? Array
-            req.headers["Content-Type"] = 'application/vnd+shotgun.api3_array+json'
-          else
-            req.headers['Content-Type'] = 'application/vnd+shotgun.api3_hash+json'
-          end
+          req.headers['Content-Type'] =
+            if filter.is_a? Array
+              'application/vnd+shotgun.api3_array+json'
+            else
+              'application/vnd+shotgun.api3_hash+json'
+            end
           req.body = params.to_h.merge(filters: filter).to_json
         end
       resp_body = JSON.parse(resp.body)
@@ -228,13 +238,13 @@ module ShotgunApiRuby
         raise "Error while getting #{type}: #{resp_body['errors']}"
       end
 
-      resp_body["data"].map do |entity|
+      resp_body['data'].map do |entity|
         Entity.new(
           entity['type'],
           OpenStruct.new(entity['attributes']),
           entity['relationships'],
           entity['id'],
-          entity['links']
+          entity['links'],
         )
       end
     end
@@ -257,10 +267,15 @@ module ShotgunApiRuby
       return false if filters.is_a? Array
 
       filters.values.all? do |filter_val|
-        (filter_val.is_a?(Integer) || filter_val.is_a?(String) || filter_val.is_a?(Symbol)) ||
-          (filter_val.is_a?(Array) && filter_val.all?{ |val|
-             val.is_a?(String) || val.is_a?(Symbol) || val.is_a?(Integer)
-           } )
+        (
+          filter_val.is_a?(Integer) || filter_val.is_a?(String) ||
+            filter_val.is_a?(Symbol)
+        ) ||
+          (
+            filter_val.is_a?(Array) && filter_val.all? do |val|
+              val.is_a?(String) || val.is_a?(Symbol) || val.is_a?(Integer)
+            end
+          )
       end
     end
 
@@ -268,29 +283,34 @@ module ShotgunApiRuby
       # We don't know how to translate anything but hashes
       return filters if !filters.is_a?(Hash)
 
-      filters.each.with_object([]) do |item, result|
-        field, value = item
-        case value
-        when String, Symbol, Integer, Float
-          result << [field, "is", value]
-        when Hash
-          value.each do |subfield, subvalue|
-            sanitized_subfield = "#{field.capitalize}.#{subfield}" unless subfield.to_s.include?(".")
-            case subvalue
-            when String, Symbol, Integer, Float
-              result << ["#{field}.#{sanitized_subfield}", "is", subvalue]
-            when Array
-              result << ["#{field}.#{sanitized_subfield}", "in", subvalue]
-            else
-              raise "This case is too complex to auto-translate. Please use shotgun query syntax."
+      filters
+        .each
+        .with_object([]) do |item, result|
+          field, value = item
+          case value
+          when String, Symbol, Integer, Float
+            result << [field, 'is', value]
+          when Hash
+            value.each do |subfield, subvalue|
+              sanitized_subfield =
+                "#{field.capitalize}.#{subfield}" unless subfield.to_s.include?(
+                '.',
+              )
+              case subvalue
+              when String, Symbol, Integer, Float
+                result << ["#{field}.#{sanitized_subfield}", 'is', subvalue]
+              when Array
+                result << ["#{field}.#{sanitized_subfield}", 'in', subvalue]
+              else
+                raise 'This case is too complex to auto-translate. Please use shotgun query syntax.'
+              end
             end
+          when Array
+            result << [field, 'in', value]
+          else
+            raise 'This case is too complex to auto-translate. Please use shotgun query syntax.'
           end
-        when Array
-          result << [field, "in", value]
-        else
-          raise "This case is too complex to auto-translate. Please use shotgun query syntax."
         end
-      end
     end
   end
 end

@@ -1,6 +1,9 @@
 inherit_from:
   - http://relaxed.ruby.style/rubocop.yml
 
+inherit_gem:
+  prettier: rubocop.yml
+
 require: 
   - rubocop-performance
 
@@ -8,56 +11,11 @@ AllCops:
   NewCops: enable
   DisplayStyleGuide: true
   DisplayCopNames: true
+  SuggestExtensions: false
   Exclude:
-    - 'db/schema.rb'
-
-Style/GlobalVars:
-  Enabled: false
-
-Gemspec/RequiredRubyVersion:
-  Enabled: false
-
-Layout/DotPosition:
-  Enabled: true
-  EnforcedStyle: trailing
-
-Style/TrailingCommaInArrayLiteral:
-  Enabled: true
-  EnforcedStyleForMultiline: comma
-
-Style/TrailingCommaInHashLiteral:
-  Enabled: true
-  EnforcedStyleForMultiline: comma
-
-Layout/MultilineArrayLineBreaks:
-  Enabled: true
-
-Layout/MultilineHashKeyLineBreaks:
-  Enabled: true
-
-Layout/MultilineMethodArgumentLineBreaks:
-  Enabled: true
-
-Layout/FirstArrayElementLineBreak:
-  Enabled: true
-
-Layout/FirstHashElementLineBreak:
-  Enabled: true
-
-Layout/FirstMethodArgumentLineBreak:
-  Enabled: true
-
-Layout/MultilineAssignmentLayout:
-  Enabled: true
-
-Layout/LineLength:
-  Enabled: true
-  Max: 120
-  AutoCorrect: true
-  Exclude:
-    - Gemfile
-    - Guardfile
-    - spec/interactors/send_gdpr_response_spec.rb
+    - 'bin/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
 
 Metrics/BlockLength:
   Exclude:
@@ -66,3 +24,10 @@ Metrics/BlockLength:
     - 'config/environments/*.rb'
     - 'lib/tasks/*.rake'
     - 'shotgun_api_ruby.gemspec'
+      
+### Prettier
+Style:
+  Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
