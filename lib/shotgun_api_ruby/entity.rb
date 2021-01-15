@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ShotgunApiRuby
+  # Represent each entity returned by Shotgun
   Entity =
     Struct.new(:type, :attributes, :relationships, :id, :links) do
       def method_missing(name, *args, &block)
