@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://<USERNAME>3-prod.shotgunstudio.com/api/v1/auth/access_token?grant_type=password&password=<PASSWORD>&username=<USERNAME>
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/auth/access_token?grant_type=password&password=<PASSWORD>&username=<USERNAME>
     body:
       encoding: US-ASCII
       string: ''
@@ -19,17 +19,17 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 15 Jan 2021 05:20:17 GMT
+      - Fri, 15 Jan 2021 08:07:13 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
-      - '516'
+      - '518'
       connection:
       - keep-alive
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"556e701dc08e76ccb2ae2b710d779995"
+      - W/"00c34c57095b5c20e47f629b84365d21"
       server:
       - nginx + Phusion Passenger
       status:
@@ -39,14 +39,14 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - f662c3dd7cff642ea7e2d9e5acc1c299
+      - ffb503200bd00418d6fe0473b072d6ab
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Fri, 15 Jan 2021 05:20:17 GMT
+  recorded_at: Fri, 15 Jan 2021 08:07:14 GMT
 - request:
     method: get
-    uri: https://<USERNAME>3-prod.shotgunstudio.com/api/v1
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1
     body:
       encoding: US-ASCII
       string: ''
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 15 Jan 2021 05:20:18 GMT
+      - Fri, 15 Jan 2021 08:07:14 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -82,9 +82,9 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 9a026179a578d25420e55fc87cd178c4
+      - 0caa0495a402799195b87603efe46562
     body:
       encoding: ASCII-8BIT
       string: '{"data":{"shotgun_version":"v8.20.0.6749 (build 9f25edd)","api_version":"v1","shotgun_version_number":"8.20.0.6749","shotgun_build_number":"9f25edd","portfolio_version":"8.20.0.6749","unified_login_flow_enabled":true,"user_authentication_method":"default"}}'
-  recorded_at: Fri, 15 Jan 2021 05:20:18 GMT
+  recorded_at: Fri, 15 Jan 2021 08:07:14 GMT
 recorded_with: VCR 6.0.0

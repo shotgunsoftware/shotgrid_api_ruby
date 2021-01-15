@@ -23,8 +23,9 @@ VCR.configure do |config|
         .encode_www_form_component(ENV['VCR_SHOTGUN_SCRIPT_KEY'])
         &.gsub(/\*/, '%2A') || 'vcr_shotgun_script_key'
   end
-  config.filter_sensitive_data('<USERNAME>') do
-    ENV['VCR_SHOTGUN_USERNAME'] || 'vcr_shotgun_username'
+  config.filter_sensitive_data('=<USERNAME>') do
+    (ENV['VCR_SHOTGUN_USERNAME'] && "=#{ENV['VCR_SHOTGUN_USERNAME']}") ||
+      '=vcr_shotgun_username'
   end
   config.filter_sensitive_data('<PASSWORD>') do
     ENV['VCR_SHOTGUN_PASSWORD'] &&
