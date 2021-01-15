@@ -6,7 +6,16 @@ PreCommit:
     enabled: true
   BundleAudit:
     enabled: true
+  Prettier:
+    enabled: true
+    command: ["yarn", "prettier", "-c", "./**/*.rb"]
 PrePush:
   RSpec:
     enabled: true
     command: ['bundle', 'exec', 'rspec', '-f', 'p'] # Invoke within Bundler context
+  Prettier:
+    enabled: true
+    command: ["yarn", "prettier", "-c", "./**/*.rb"]
+  Rubocop:
+    enabled: true
+    command: ["bundle", "exec", "rubocop", "-P"]
