@@ -42,15 +42,17 @@ module ShotgunApiRuby
     def method_missing(name, *args, &block)
       if args.empty?
         fname = formated_name(name)
-        define_singleton_method(fname) do
-          if entities_client = instance_variable_get("@#{fname}")
-            entities_client
-          else
-            entities_client = entities_aux(fname)
-            instance_variable_set("@#{fname}", entities_client)
+        self
+          .class
+          .define_method(fname) do
+            if entities_client = instance_variable_get("@#{fname}")
+              entities_client
+            else
+              entities_client = entities_aux(fname)
+              instance_variable_set("@#{fname}", entities_client)
+            end
           end
-        end
-        class_eval { alias_method name, fname }
+        self.class.instance_eval { alias_method name, fname }
         send(fname)
       else
         super
