@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe ShotgunApiRuby::Entities::Params do
   subject(:params) { described_class.new }
 
