@@ -289,7 +289,7 @@ module ShotgunApiRuby
           field, value = item
           case value
           when String, Symbol, Integer, Float
-            result << [field, 'is', value]
+            result << [field.to_s, 'is', value]
           when Hash
             value.each do |subfield, subvalue|
               sanitized_subfield =
