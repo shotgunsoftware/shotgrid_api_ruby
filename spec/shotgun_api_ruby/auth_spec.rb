@@ -45,7 +45,10 @@ describe ShotgunApiRuby::Auth, :vcr do
         client =
           ShotgunApiRuby.new(
             shotgun_site: shotgun_site_name,
-            auth: { username: shotgun_username, password: shotgun_password },
+            auth: {
+              username: shotgun_username,
+              password: shotgun_password,
+            },
           )
         expect(client.server_info.get.shotgun_version).not_to be_nil
       end

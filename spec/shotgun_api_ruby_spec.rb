@@ -9,7 +9,10 @@ RSpec.describe ShotgunApiRuby do
     expect(
       ShotgunApiRuby.new(
         shotgun_site: 'aa',
-        auth: { client_id: '', client_secret: '' },
+        auth: {
+          client_id: '',
+          client_secret: '',
+        },
       ),
     ).to be_a ShotgunApiRuby::Client
   end
