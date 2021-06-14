@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2021-06-14
+### Added
+- Complete test coverage (Unit + Integration tests)
+- Adding minimum coverage for tests
+- Adding Guard
+
+### Changed
+- Fixed many edge-case bugs
+
+### Removed
+- Removed the `Gemfile.lock` since it shouldn't be commited in gems
+
 ## [0.0.8.5] - 2021-01-15
 ### Added
 - Added prettier for ruby style
@@ -30,7 +42,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Entities: delete
 - Entities: revive
 
-[Unreleased]: https://github.com/shotgunsoftware/shotgun_api_ruby/compare/v0.0.8.5...HEAD
+[Unreleased]: https://github.com/shotgunsoftware/shotgun_api_ruby/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.1.0
 [0.0.8.5]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8.5
 [0.0.8.4]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8.4
 [0.0.8.3]: https://github.com/shotgunsoftware/shotgun_api_ruby/releases/tag/v0.0.8.3
