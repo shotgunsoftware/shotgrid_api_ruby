@@ -62,7 +62,7 @@ module ShotgunApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while creating #{type}# with #{attributes}: #{
+        raise "Error while creating #{type} with #{attributes}: #{
                 resp_body['errors']
               }"
       end
@@ -138,7 +138,7 @@ module ShotgunApiRuby
       retired: nil,
       include_archived_projects: nil
     )
-      if filter && !filters_are_simple?(filter)
+      if filter && !Params.filters_are_simple?(filter)
         return(
           search(
             fields: fields,
@@ -189,7 +189,7 @@ module ShotgunApiRuby
       retired: nil,
       include_archived_projects: nil
     )
-      if filter.nil? || filters_are_simple?(filter)
+      if filter.nil? || Params.filters_are_simple?(filter)
         return(
           all(
             fields: fields,
@@ -209,28 +209,21 @@ module ShotgunApiRuby
       params.add_sort(sort)
       params.add_page(page, page_size)
       params.add_options(retired, include_archived_projects)
-      new_filter = {}
-      if filter.is_a?(Hash)
-        new_filter[:conditions] =
-          (filter[:conditions] || translate_complex_to_sg_filters(filter))
-        new_filter[:logical_operator] =
-          filter[:logical_operator] || filter['logical_operator'] ||
-            logical_operator
-      else
-        new_filter[:conditions] = filter
-        new_filter[:logical_operator] = logical_operator
-      end
-      filter = new_filter
+      params.add_filter(filter, logical_operator)
+
+      # In search: The name is filters and not filter
+      params[:filters] = params[:filter]
+      params.delete(:filter)
 
       resp =
         @connection.post('_search', params) do |req|
           req.headers['Content-Type'] =
-            if filter.is_a? Array
+            if params[:filters].is_a? Array
               'application/vnd+shotgun.api3_array+json'
             else
               'application/vnd+shotgun.api3_hash+json'
             end
-          req.body = params.to_h.merge(filters: filter).to_json
+          req.body = params.to_h.to_json
         end
       resp_body = JSON.parse(resp.body)
 
@@ -259,58 +252,6 @@ module ShotgunApiRuby
 
     def fields
       schema_client.fields
-    end
-
-    private
-
-    def filters_are_simple?(filters)
-      return false if filters.is_a? Array
-
-      filters.values.all? do |filter_val|
-        (
-          filter_val.is_a?(Integer) || filter_val.is_a?(String) ||
-            filter_val.is_a?(Symbol)
-        ) ||
-          (
-            filter_val.is_a?(Array) && filter_val.all? do |val|
-              val.is_a?(String) || val.is_a?(Symbol) || val.is_a?(Integer)
-            end
-          )
-      end
-    end
-
-    def translate_complex_to_sg_filters(filters)
-      # We don't know how to translate anything but hashes
-      return filters if !filters.is_a?(Hash)
-
-      filters
-        .each
-        .with_object([]) do |item, result|
-          field, value = item
-          case value
-          when String, Symbol, Integer, Float
-            result << [field.to_s, 'is', value]
-          when Hash
-            value.each do |subfield, subvalue|
-              sanitized_subfield =
-                "#{field.capitalize}.#{subfield}" unless subfield.to_s.include?(
-                '.',
-              )
-              case subvalue
-              when String, Symbol, Integer, Float
-                result << ["#{field}.#{sanitized_subfield}", 'is', subvalue]
-              when Array
-                result << ["#{field}.#{sanitized_subfield}", 'in', subvalue]
-              else
-                raise 'This case is too complex to auto-translate. Please use shotgun query syntax.'
-              end
-            end
-          when Array
-            result << [field, 'in', value]
-          else
-            raise 'This case is too complex to auto-translate. Please use shotgun query syntax.'
-          end
-        end
     end
   end
 end

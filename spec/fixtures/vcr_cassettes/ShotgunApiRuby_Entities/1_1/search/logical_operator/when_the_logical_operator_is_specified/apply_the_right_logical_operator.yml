@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:29:05 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"633224eed9fa1730db279f841d66b091"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 783a9ddae7aab7af2766376a983540c0
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Mon, 14 Jun 2021 09:29:05 GMT
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/entity/Asset/_search
+    body:
+      encoding: UTF-8
+      string: '{"fields":"*","filters":{"conditions":[["id","is","1226"],["id","is","1227"]],"logical_operator":"or"}}'
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/vnd+shotgun.api3_hash+json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:29:06 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"e058914df34643200c6aa8310b303676"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - de885489988d6842f32923fca66d9d8a
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/8aa29cf41f9261dfefada72beb433f6d53f4b69f/af5bcc25e9dd8c33817cc1e77911320979429640/Alice_t.jpg?response-content-disposition=filename%3D%22Alice_t.jpg%22&x-amz-meta-user-id=60&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JI32LNLZUA%2F20210614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210614T092906Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEFoaDMTXg2dQS8ByreobliKvAQMb9dpXf4JnUAb2bcW4nv%2BFP5sFAb%2FBjUUReGezVN4KoTI6tnCdqYd%2FjsKgyk6qWncmIjbrfJcjAucujzDGZH1uXwK2LkJLyPc0MZV2rMZAyvU%2F84uu2RzgTIruq2F1ZoGVsEP2u8fsq6VujgnuhUjcLRicFZ71kEsbvVuIAK04Ioiskw6%2F5rwBBVT%2Bbe2QHm5YhDhpBXU0KlkHDmoxNr4phimm4TlOTikU8Q8hoE0ojK6chgYyLY6tGQmMIuA7Gt8%2FomC9tcuea2DbMDmFJgaFNBIKoau0L%2FBM4mGb3mw8O6VVqA%3D%3D&X-Amz-Signature=a0eb73badf3895c9b79dfe3f90b49a53272b983e4abe84f0e99ad1d5a4f1ee11","description":"LOLOLOLOL","image_blur_hash":null,"step_0":null,"cached_display_name":"Frjaques","updated_at":"2020-12-18T18:56:11Z","filmstrip_image":null,"created_at":"2015-12-01T14:07:51Z","sg_keep":false,"sg_asset_type":"Character","sg_color":null,"code":"Frjaques","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"sg_status_list":"fin","step_32":null,"step_130":null,"step_131":null,"step_132":null,"open_notes_count":1},"relationships":{"shots":{"data":[{"id":862,"name":"bunny_010_0010","type":"Shot"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/assets"}},"tasks":{"data":[{"id":3468,"name":"Art","type":"Task"},{"id":3469,"name":"Model","type":"Task"},{"id":3470,"name":"Rig","type":"Task"},{"id":3471,"name":"Texture","type":"Task"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/addressings_cc"}},"sequences":{"data":[{"id":23,"name":"bunny_010","type":"Sequence"},{"id":24,"name":"bunny_020","type":"Sequence"},{"id":25,"name":"bunny_030","type":"Sequence"},{"id":26,"name":"bunny_040","type":"Sequence"},{"id":27,"name":"bunny_050","type":"Sequence"},{"id":28,"name":"bunny_060","type":"Sequence"},{"id":29,"name":"bunny_070","type":"Sequence"},{"id":30,"name":"bunny_080","type":"Sequence"},{"id":31,"name":"bunny_090","type":"Sequence"},{"id":32,"name":"bunny_100","type":"Sequence"},{"id":33,"name":"bunny_110","type":"Sequence"},{"id":34,"name":"bunny_120","type":"Sequence"},{"id":35,"name":"bunny_130","type":"Sequence"},{"id":36,"name":"bunny_140","type":"Sequence"},{"id":37,"name":"bunny_150","type":"Sequence"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/sequences"}},"created_by":{"data":{"id":24,"name":"Shotgun
+        Support","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/created_by","related":"/api/v1/entity/human_users/24"}},"updated_by":{"data":{"id":60,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/updated_by","related":"/api/v1/entity/api_users/60"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/levels"}},"project":{"data":{"id":70,"name":"Demo:
+        Animation","type":"Project"},"links":{"self":"/api/v1/entity/assets/1226/relationships/project","related":"/api/v1/entity/projects/70"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/tags"}},"image_source_entity":{"data":{"type":"Asset","id":1226,"name":"Frjaques"},"links":{"self":"/api/v1/entity/assets/1226/relationships/image_source_entity","related":"/api/v1/entity/assets/1226"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_vendor_groups"}},"sg_toto":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_toto"}},"notes":{"data":[{"id":6376,"name":"Denis''s
+        Note on Alice - TEST","type":"Note"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/notes"}},"open_notes":{"data":[{"id":6376,"name":"Denis''s
+        Note on Alice - TEST","type":"Note"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/linked_projects"}}},"id":1226,"links":{"self":"/api/v1/entity/assets/1226"}},{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/8aa29cf41f9261dfefada72beb433f6d53f4b69f/aed5c4f9c4186cf89eb3ee2c864ea93428e6d116/Anders_t.jpg?response-content-disposition=filename%3D%22Anders_t.jpg%22&x-amz-meta-user-id=60&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JI32LNLZUA%2F20210614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210614T092906Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEFoaDMTXg2dQS8ByreobliKvAQMb9dpXf4JnUAb2bcW4nv%2BFP5sFAb%2FBjUUReGezVN4KoTI6tnCdqYd%2FjsKgyk6qWncmIjbrfJcjAucujzDGZH1uXwK2LkJLyPc0MZV2rMZAyvU%2F84uu2RzgTIruq2F1ZoGVsEP2u8fsq6VujgnuhUjcLRicFZ71kEsbvVuIAK04Ioiskw6%2F5rwBBVT%2Bbe2QHm5YhDhpBXU0KlkHDmoxNr4phimm4TlOTikU8Q8hoE0ojK6chgYyLY6tGQmMIuA7Gt8%2FomC9tcuea2DbMDmFJgaFNBIKoau0L%2FBM4mGb3mw8O6VVqA%3D%3D&X-Amz-Signature=616ce2b676150b0489aabbba07462d0a89dc0f8f6614eadea435e1a216608ff8","description":"She
+        thought and how funny it''ll seem to come out among the people that walk with
+        their fur clinging close to them, thought Alice, to to","image_blur_hash":null,"step_0":null,"cached_display_name":"Anders","updated_at":"2020-12-28T12:37:50Z","filmstrip_image":null,"created_at":"2015-12-01T14:07:51Z","sg_keep":false,"sg_asset_type":"Character","sg_color":null,"code":"Anders","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"sg_status_list":"fin","step_32":null,"step_130":null,"step_131":null,"step_132":null,"open_notes_count":0},"relationships":{"shots":{"data":[{"id":866,"name":"bunny_010_0050","type":"Shot"},{"id":871,"name":"bunny_010_0100","type":"Shot"},{"id":875,"name":"bunny_010_0140","type":"Shot"},{"id":881,"name":"bunny_010_0200","type":"Shot"},{"id":888,"name":"bunny_020_0070","type":"Shot"},{"id":899,"name":"bunny_020_0180","type":"Shot"},{"id":908,"name":"bunny_030_0070","type":"Shot"},{"id":909,"name":"bunny_030_0080","type":"Shot"},{"id":913,"name":"bunny_030_0120","type":"Shot"},{"id":922,"name":"bunny_040_0010","type":"Shot"},{"id":931,"name":"bunny_040_0100","type":"Shot"},{"id":938,"name":"bunny_040_0170","type":"Shot"},{"id":945,"name":"bunny_050_0040","type":"Shot"},{"id":953,"name":"bunny_050_0120","type":"Shot"},{"id":954,"name":"bunny_050_0130","type":"Shot"},{"id":957,"name":"bunny_050_0160","type":"Shot"},{"id":962,"name":"bunny_060_0010","type":"Shot"},{"id":966,"name":"bunny_060_0050","type":"Shot"},{"id":968,"name":"bunny_060_0070","type":"Shot"},{"id":975,"name":"bunny_060_0140","type":"Shot"},{"id":979,"name":"bunny_060_0180","type":"Shot"},{"id":988,"name":"bunny_070_0070","type":"Shot"},{"id":991,"name":"bunny_070_0100","type":"Shot"},{"id":995,"name":"bunny_070_0140","type":"Shot"},{"id":1001,"name":"bunny_070_0200","type":"Shot"},{"id":1005,"name":"bunny_080_0040","type":"Shot"},{"id":1008,"name":"bunny_080_0070","type":"Shot"},{"id":1010,"name":"bunny_080_0090","type":"Shot"},{"id":1023,"name":"bunny_090_0020","type":"Shot"},{"id":1039,"name":"bunny_090_0180","type":"Shot"},{"id":1048,"name":"bunny_100_0070","type":"Shot"},{"id":1065,"name":"bunny_110_0040","type":"Shot"},{"id":1070,"name":"bunny_110_0090","type":"Shot"},{"id":1079,"name":"bunny_110_0180","type":"Shot"},{"id":1081,"name":"bunny_110_0200","type":"Shot"},{"id":1094,"name":"bunny_120_0130","type":"Shot"},{"id":1099,"name":"bunny_120_0180","type":"Shot"},{"id":1105,"name":"bunny_130_0040","type":"Shot"},{"id":1121,"name":"bunny_130_0200","type":"Shot"},{"id":1131,"name":"bunny_140_0100","type":"Shot"},{"id":1142,"name":"bunny_150_0010","type":"Shot"},{"id":1156,"name":"bunny_150_0150","type":"Shot"},{"id":1157,"name":"bunny_150_0160","type":"Shot"},{"id":1160,"name":"bunny_150_0190","type":"Shot"}],"links":{"self":"/api/v1/entity/assets/1227/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/assets"}},"tasks":{"data":[{"id":3416,"name":"Art","type":"Task"},{"id":3417,"name":"Model","type":"Task"},{"id":3418,"name":"Rig","type":"Task"},{"id":3419,"name":"Texture","type":"Task"}],"links":{"self":"/api/v1/entity/assets/1227/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1227/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/addressings_cc"}},"sequences":{"data":[{"id":23,"name":"bunny_010","type":"Sequence"},{"id":24,"name":"bunny_020","type":"Sequence"},{"id":25,"name":"bunny_030","type":"Sequence"},{"id":26,"name":"bunny_040","type":"Sequence"},{"id":27,"name":"bunny_050","type":"Sequence"},{"id":28,"name":"bunny_060","type":"Sequence"},{"id":29,"name":"bunny_070","type":"Sequence"},{"id":30,"name":"bunny_080","type":"Sequence"},{"id":31,"name":"bunny_090","type":"Sequence"},{"id":32,"name":"bunny_100","type":"Sequence"},{"id":33,"name":"bunny_110","type":"Sequence"},{"id":34,"name":"bunny_120","type":"Sequence"},{"id":35,"name":"bunny_130","type":"Sequence"},{"id":36,"name":"bunny_140","type":"Sequence"},{"id":37,"name":"bunny_150","type":"Sequence"}],"links":{"self":"/api/v1/entity/assets/1227/relationships/sequences"}},"created_by":{"data":{"id":24,"name":"Shotgun
+        Support","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1227/relationships/created_by","related":"/api/v1/entity/human_users/24"}},"updated_by":{"data":{"id":88,"name":"Denis
+        Pasin","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1227/relationships/updated_by","related":"/api/v1/entity/human_users/88"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/levels"}},"project":{"data":{"id":70,"name":"Demo:
+        Animation","type":"Project"},"links":{"self":"/api/v1/entity/assets/1227/relationships/project","related":"/api/v1/entity/projects/70"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/tags"}},"image_source_entity":{"data":{"type":"Asset","id":1227,"name":"Anders"},"links":{"self":"/api/v1/entity/assets/1227/relationships/image_source_entity","related":"/api/v1/entity/assets/1227"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/sg_vendor_groups"}},"sg_toto":{"data":{"id":4,"name":"test","type":"Cut"},"links":{"self":"/api/v1/entity/assets/1227/relationships/sg_toto","related":"/api/v1/entity/cuts/4"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1227/relationships/linked_projects"}}},"id":1227,"links":{"self":"/api/v1/entity/assets/1227"}}],"links":{"self":"/api/v1/entity/Asset/_search","next":"/api/v1/entity/Asset/_search?page%5Bnumber%5D=2&page%5Bsize%5D=500"}}'
+  recorded_at: Mon, 14 Jun 2021 09:29:06 GMT
+recorded_with: VCR 6.0.0
