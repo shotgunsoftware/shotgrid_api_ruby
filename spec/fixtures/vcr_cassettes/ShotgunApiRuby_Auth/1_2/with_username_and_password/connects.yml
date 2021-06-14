@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.3.0
+      - Faraday v1.4.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept:
@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 15 Jan 2021 09:11:17 GMT
+      - Mon, 14 Jun 2021 02:16:38 GMT
       content-type:
       - application/json; charset=utf-8
-      content-length:
-      - '516'
+      transfer-encoding:
+      - chunked
       connection:
       - keep-alive
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"1d155c26a98cb376feb1da45d57c0fca"
+      - W/"72eb70426fd090f66db4e1e4685842d9"
       server:
-      - nginx + Phusion Passenger
+      - nginx + Phusion Passenger(R)
       status:
       - 200 OK
       strict-transport-security:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 0c5717d8cd594fec924dcfa5cf503914
+      - 8a684849b9b8b27e6c0ad5b1c995ab8c
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Fri, 15 Jan 2021 09:11:18 GMT
+  recorded_at: Mon, 14 Jun 2021 02:16:39 GMT
 - request:
     method: get
     uri: https://pasind3-prod.shotgunstudio.com/api/v1
@@ -52,7 +52,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.3.0
+      - Faraday v1.4.2
       Accept:
       - application/json
       Authorization: "<ACCESS_TOKEN>"
@@ -62,19 +62,19 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 15 Jan 2021 09:11:18 GMT
+      - Mon, 14 Jun 2021 02:16:39 GMT
       content-type:
       - application/json; charset=utf-8
-      content-length:
-      - '179'
+      transfer-encoding:
+      - chunked
       connection:
       - keep-alive
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"5aa560dfffdf9e815e410e09d55cf3b4"
+      - W/"dd8114772d543d077de47fc5978f518c"
       server:
-      - nginx + Phusion Passenger
+      - nginx + Phusion Passenger(R)
       status:
       - 200 OK
       strict-transport-security:
@@ -82,9 +82,9 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 107104cf3bcc5565ea507fc3cabba38d
+      - 0b2060ef035309a7a86e43e6bdd79ce7
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"shotgun_version":"v8.20.0.6749 (build 9f25edd)","api_version":"v1","shotgun_version_number":"8.20.0.6749","shotgun_build_number":"9f25edd","portfolio_version":"8.20.0.6749","unified_login_flow_enabled":true,"user_authentication_method":"default"}}'
-  recorded_at: Fri, 15 Jan 2021 09:11:18 GMT
+      string: '{"data":{"shotgun_version":"v8.26.0.8018 (build f011c11)","api_version":"v1","shotgun_version_number":"8.26.0.8018","shotgun_build_number":"f011c11","portfolio_version":"8.26.0.8018","unified_login_flow_enabled":true,"user_authentication_method":"default","site_id":"48138","site_name":"com_shotgunstudio_pasind3_prod"}}'
+  recorded_at: Mon, 14 Jun 2021 02:16:39 GMT
 recorded_with: VCR 6.0.0

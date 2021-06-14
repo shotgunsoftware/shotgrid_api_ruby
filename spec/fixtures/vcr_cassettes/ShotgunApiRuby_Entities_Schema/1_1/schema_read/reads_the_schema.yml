@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.3.0
+      - Faraday v1.4.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept:
@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 15 Jan 2021 09:33:52 GMT
+      - Mon, 14 Jun 2021 02:16:40 GMT
       content-type:
       - application/json; charset=utf-8
-      content-length:
-      - '514'
+      transfer-encoding:
+      - chunked
       connection:
       - keep-alive
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"1a29c3ad8c1630848ab481e1d938ef51"
+      - W/"248cbacc918f06618b546a1f666ca413"
       server:
-      - nginx + Phusion Passenger
+      - nginx + Phusion Passenger(R)
       status:
       - 200 OK
       strict-transport-security:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 953bc64405c4ec295e220d0ad80579ef
+      - 2c5a6e65f8d27bf8fbbc1a16ad3e7701
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Fri, 15 Jan 2021 09:33:52 GMT
+  recorded_at: Mon, 14 Jun 2021 02:16:40 GMT
 - request:
     method: get
     uri: https://pasind3-prod.shotgunstudio.com/api/v1/schema/Asset
@@ -52,7 +52,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.3.0
+      - Faraday v1.4.2
       Accept:
       - application/json
       Authorization: "<ACCESS_TOKEN>"
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 15 Jan 2021 09:33:53 GMT
+      - Mon, 14 Jun 2021 02:16:41 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -74,7 +74,7 @@ http_interactions:
       etag:
       - '"9f79b3e12d52b0d5f05d7001bd0595f2"'
       server:
-      - nginx + Phusion Passenger
+      - nginx + Phusion Passenger(R)
       status:
       - 200 OK
       strict-transport-security:
@@ -82,9 +82,9 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - f87ac6326b18a4366793cfef273d1ffa
+      - 9ec7b2c9f0c4f72d8e2c44bf04936dd6
     body:
       encoding: UTF-8
       string: '{"data":{"name":{"value":"Asset","editable":false},"visible":{"value":true,"editable":false}},"links":{"self":"/api/v1/schema/Asset"}}'
-  recorded_at: Fri, 15 Jan 2021 09:33:53 GMT
+  recorded_at: Mon, 14 Jun 2021 02:16:41 GMT
 recorded_with: VCR 6.0.0

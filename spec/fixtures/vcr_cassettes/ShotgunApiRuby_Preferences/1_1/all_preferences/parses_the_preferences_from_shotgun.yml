@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.3.0
+      - Faraday v1.4.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept:
@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 15 Jan 2021 09:18:25 GMT
+      - Mon, 14 Jun 2021 02:16:53 GMT
       content-type:
       - application/json; charset=utf-8
-      content-length:
-      - '519'
+      transfer-encoding:
+      - chunked
       connection:
       - keep-alive
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"5e80addfcf16c600abd6c38bec692597"
+      - W/"39d6664f90f937643ffa1402b3b2091f"
       server:
-      - nginx + Phusion Passenger
+      - nginx + Phusion Passenger(R)
       status:
       - 200 OK
       strict-transport-security:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - b5dbae5e06dd712cd72835f621f47b8e
+      - 9c5524f3bb45dc483afe1a0df1fc2f35
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Fri, 15 Jan 2021 09:18:25 GMT
+  recorded_at: Mon, 14 Jun 2021 02:16:54 GMT
 - request:
     method: get
     uri: https://pasind3-prod.shotgunstudio.com/api/v1/preferences
@@ -52,7 +52,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.3.0
+      - Faraday v1.4.2
       Accept:
       - application/json
       Authorization: "<ACCESS_TOKEN>"
@@ -62,11 +62,11 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 15 Jan 2021 09:18:26 GMT
+      - Mon, 14 Jun 2021 02:16:54 GMT
       content-type:
       - application/json; charset=utf-8
-      content-length:
-      - '1142'
+      transfer-encoding:
+      - chunked
       connection:
       - keep-alive
       cache-control:
@@ -74,7 +74,7 @@ http_interactions:
       etag:
       - W/"be92533808a77008f7e1b8732be8ccbf"
       server:
-      - nginx + Phusion Passenger
+      - nginx + Phusion Passenger(R)
       status:
       - 200 OK
       strict-transport-security:
@@ -82,12 +82,12 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 450db9f6b7fa2fa904e20f549ee57c39
+      - a8c2578c57ad8349a2d223e6889b8a75
     body:
       encoding: ASCII-8BIT
       string: '{"data":{"format_date_fields":"08/04/22 OR 04/08/22 (depending on the
         Month order preference)","date_component_order":"month_day","format_time_hour_fields":"12
         hour","format_currency_fields_display_dollar_sign":false,"format_currency_fields_decimal_options":"$1,000.99","format_currency_fields_negative_options":"-
         $1,000","format_number_fields":"1,000","format_float_fields":"9,999.99","format_float_fields_rounding":"9.999999","format_footage_fields":"10-05","support_local_storage":true,"view_master_settings":"{\"status_groups\":[{\"name\":\"Upcoming\",\"code\":\"upc_stgr\",\"status_list\":[\"wtg\",\"rdy\"]},{\"name\":\"Active\",\"code\":\"act_stgr\",\"status_list\":[\"ip\",\"kickbk\",\"rev\",\"act\",\"rsk\",\"blk\",\"late\",\"opn\",\"pndng\",\"tkt\",\"push\",\"rrq\",\"vwd\",\"out\"]},{\"name\":\"Done\",\"code\":\"done_stgr\",\"status_list\":[\"fin\",\"cmpt\",\"apr\",\"cbb\",\"clsd\",\"cfrm\",\"dlvr\",\"recd\",\"res\"]}],\"entity_fields\":{\"Task\":[\"content\",\"sg_description\",\"sg_status_list\",\"due_date\",\"task_assignees\",\"task_reviewers\",\"time_logs_sum\"],\"Shot\":[\"code\",\"description\",\"sg_status_list\",\"created_at\",\"sg_cut_in\",\"sg_cut_out\",\"sg_cut_duration\",\"sg_cut_order\"],\"Asset\":[\"code\",\"description\",\"sg_status_list\",\"created_at\"],\"Scene\":[\"code\",\"sg_status_list\",\"created_at\"],\"Element\":[\"code\",\"sg_status_list\",\"created_at\"],\"Release\":[\"code\",\"sg_status_list\",\"created_at\"],\"ShootDay\":[\"code\",\"sg_status_list\",\"created_at\"],\"MocapTake\":[\"code\",\"sg_status_list\",\"created_at\"],\"MocapSetup\":[\"code\",\"sg_status_list\",\"created_at\"],\"Camera\":[\"code\",\"sg_status_list\",\"created_at\"],\"MocapTakeRange\":[\"code\",\"sg_status_list\",\"created_at\"],\"Sequence\":[\"code\",\"sg_status_list\",\"created_at\"],\"Level\":[\"code\",\"sg_status_list\",\"created_at\"],\"Episode\":[\"code\",\"sg_status_list\",\"created_at\"],\"Version\":[\"code\",\"description\",\"sg_status_list\"],\"CustomEntity01\":[\"code\",\"description\",\"sg_status_list\"]},\"entity_fields_fixed\":{\"Asset\":[\"code\",\"description\",\"sg_status_list\"],\"Shot\":[\"code\",\"description\",\"sg_status_list\"],\"Task\":[\"content\",\"sg_status_list\",\"due_date\",\"task_assignees\",\"task_reviewers\",\"time_logs_sum\"],\"Scene\":[\"code\",\"description\",\"sg_status_list\"],\"Element\":[\"code\",\"description\",\"sg_status_list\"],\"Release\":[\"code\",\"description\",\"sg_status_list\"],\"ShootDay\":[\"code\",\"description\",\"sg_status_list\"],\"MocapTake\":[\"code\",\"description\",\"sg_status_list\"],\"MocapSetup\":[\"code\",\"description\",\"sg_status_list\"],\"Camera\":[\"code\",\"description\",\"sg_status_list\"],\"MocapTakeRange\":[\"code\",\"description\",\"sg_status_list\"],\"Sequence\":[\"code\",\"description\",\"sg_status_list\"],\"Level\":[\"code\",\"description\",\"sg_status_list\"],\"Episode\":[\"code\",\"description\",\"sg_status_list\"],\"Version\":[\"code\",\"description\",\"sg_status_list\"],\"CustomEntity01\":[\"code\",\"description\",\"sg_status_list\"]},\"board_sorting\":{\"Upcoming\":{\"Task\":[{\"direction\":\"asc\",\"field_name\":\"due_date\"},{\"direction\":\"asc\",\"field_name\":\"content\"}]},\"Done\":{\"Task\":[{\"direction\":\"desc\",\"field_name\":\"due_date\"},{\"direction\":\"asc\",\"field_name\":\"content\"}]},\"Active\":{\"Task\":[{\"direction\":\"asc\",\"field_name\":\"due_date\"},{\"direction\":\"asc\",\"field_name\":\"content\"}]}},\"status_default\":{\"Version\":{\"pending_review_status\":[\"rev\"],\"viewed_review_status\":[\"vwd\"]},\"Task\":{\"final_review_status\":[\"fin\"]}},\"entity_forms\":{\"TimeLog\":[\"date\",\"description\",\"duration\"],\"Note\":[\"content\",\"attachments\"]},\"entity_forms_fixed\":{\"TimeLog\":[\"date\",\"description\",\"duration\"],\"Note\":[\"content\",\"attachments\"]},\"enable_timelog_at_version_creation\":false,\"websockets_port\":9006,\"auto_update\":true}","duration_units":"days","hours_per_day":8.0,"enable_rv_integration":true,"enable_shotgun_review_for_rv":false},"links":{"self":"/api/v1/preferences"}}'
-  recorded_at: Fri, 15 Jan 2021 09:18:26 GMT
+  recorded_at: Mon, 14 Jun 2021 02:16:54 GMT
 recorded_with: VCR 6.0.0
