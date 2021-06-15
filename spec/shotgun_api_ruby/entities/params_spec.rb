@@ -3,6 +3,135 @@
 describe ShotgunApiRuby::Entities::Params do
   subject(:params) { described_class.new }
 
+  describe '#add_grouping' do
+    subject(:add_grouping) { params.add_grouping(grouping) }
+
+    context "when there's not grouping" do
+      let(:grouping) { nil }
+      it "doesn't fail" do
+        expect { add_grouping }.not_to raise_error
+      end
+    end
+
+    context 'when adding an array' do
+      let(:grouping) { Array.new(Random.rand(2..4)) { Faker::Tea.variety } }
+      it 'uses it raw' do
+        add_grouping
+
+        expect(params[:grouping]).to eq(grouping)
+      end
+    end
+
+    context 'with string option' do
+      let(:grouping) { { :field1 => :asc, 'field2' => 'desc' } }
+      it 'uses the value as a direction' do
+        add_grouping
+
+        expect(params[:grouping].map { |e| [e[:field], e[:direction]] }).to eq(
+          [%w[field1 asc], %w[field2 desc]],
+        )
+      end
+
+      it 'sets the type to exact' do
+        add_grouping
+
+        expect(params[:grouping].map { |e| e[:type] }.uniq).to eq(['exact'])
+      end
+    end
+
+    context 'with hash options' do
+      it 'reads type' do
+        params.add_grouping(
+          { :field1 => { type: 'aa' }, 'field2' => { 'type' => :lol } },
+        )
+        expect(params[:grouping].map { |e| [e[:field], e[:type]] }).to eq(
+          [%w[field1 aa], %w[field2 lol]],
+        )
+      end
+
+      it 'defaults type as exact' do
+        params.add_grouping(field: {})
+
+        expect(params[:grouping].first[:type]).to eq('exact')
+      end
+
+      it 'reads direction' do
+        params.add_grouping(
+          {
+            :field1 => {
+              direction: 'aa',
+            },
+            'field2' => {
+              'direction' => :lol,
+            },
+          },
+        )
+        expect(params[:grouping].map { |e| [e[:field], e[:direction]] }).to eq(
+          [%w[field1 aa], %w[field2 lol]],
+        )
+      end
+
+      it 'defaults direction as asc' do
+        params.add_grouping(field: {})
+
+        expect(params[:grouping].first[:direction]).to eq('asc')
+      end
+    end
+
+    context 'when setting grouping twice' do
+      it 'takes the last one' do
+        params.add_grouping(['aa'])
+        params.add_grouping(['bb'])
+
+        expect(params[:grouping]).to eq(['bb'])
+      end
+    end
+  end
+
+  describe '#add_summary_fields' do
+    subject(:add_summary_fields) { params.add_summary_fields(summary_fields) }
+
+    context 'with no summary_fields' do
+      let(:summary_fields) { nil }
+      it 'does not fail' do
+        expect { add_summary_fields }.not_to raise_error
+      end
+    end
+
+    context 'when the summary_fields is an array' do
+      let(:summary_fields) { ['aa'] }
+
+      it 'uses it raw' do
+        add_summary_fields
+        expect(params[:summary_fields]).to eq(['aa'])
+      end
+    end
+
+    context 'when the summary fields is a hash' do
+      let(:summary_fields) { { :field1 => :count, 'field2' => 'sum' } }
+
+      it 'translate it to shotgun summary_fields' do
+        add_summary_fields
+
+        expect(params[:summary_fields]).to eq(
+          [
+            { field: 'field1', type: 'count' },
+            { field: 'field2', type: 'sum' },
+          ],
+        )
+      end
+    end
+
+    context 'when setting the summary_fields multiple times' do
+      it 'uses the last' do
+        params.add_summary_fields(['aa'])
+        params.add_summary_fields(['bb'])
+
+        expect(params[:summary_fields]).to eq(['bb'])
+      end
+    end
+  end
+
   describe '#add_sort' do
     let(:sort_string) { Faker::Tea.variety }
 

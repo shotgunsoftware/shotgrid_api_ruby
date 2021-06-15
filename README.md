@@ -306,7 +306,7 @@ Example:
 client.assets.find(724, fields: [:code, 'description'], retired: false)
 ```
 
-#### Create
+### Create
 
 Will create the entity referenced by the id with the following fields. 
 If successful, it will return the newly created entity.
@@ -315,7 +315,7 @@ If successful, it will return the newly created entity.
 client.assets.create(code: 'New Asset', project: {type: 'Project', id: 63})
 ```
 
-#### Update
+### Update
 
 Will update the entity referenced by the id with the following fields. 
 If successful, it will return the modified entity.
@@ -324,7 +324,7 @@ If successful, it will return the modified entity.
 client.assets.update(1226, code: 'Updated Asset', sg_status_list: 'fin')
 ```
 
-#### Delete
+### Delete
 
 Will destroys the entity referenced by the id. Will return true if successful.
 
@@ -332,12 +332,95 @@ Will destroys the entity referenced by the id. Will return true if successful.
 client.assets.delete(1226)
 ```
 
-#### Revive
+### Revive
 
 Will try to revive the entity referenced by the id. Will return true if successful.
 
 ```ruby
 client.assets.revive(1226)
+```
+
+### Summarize
+
+Will summarize data for an entity type.
+
+Example:
+```ruby
+# Simplest example
+client.assets.summarize(summary_fields: {id: :count})
+
+# Full complex example
+client.assets.summarize(
+  filter: { project: { id: 155 }, sg_status_list: :act },
+  logical_operator: 'or',
+  include_archived_projects: true,
+  grouping: {
+    code: {direction: :desc, type: 'exact'}
+  },
+  summary_fields: { id: :count }
+)
+
+# Raw shotgun queries
+client.assets.summarize(
+  grouping: [
+    {
+      "field": "sg_asset_type",
+      "type": "exact",
+      "direction": "asc"
+    }
+  ],
+  summary_fields: [
+    {
+      "field": "id",
+      "type": "count"
+    }
+  ],
+)
+```
+
+It accepts the same `filter` and `logical_operator` as a `search` will.
+
+#### Summary fields
+
+Those can have two forms:
+
+##### The normal API form
+
+You need to supply the summary_fields as an array and it will be passed directly to the SG REST API
+
+#### The convenient form
+
+Using an array isn't very convenient most of the time. You can use a hash instead and it will be translated into a "SG summary_fields array".
+
+Each key of the hash is the field name and the corresponding value is the type a summary you want (can be a string or a symbol)
+
+#### Grouping
+
+Those can have two forms:
+
+##### The normal API form
+
+You need to supply the grouping as an array and it will be passed directly to the SG REST API
+
+#### The convenient form
+
+Using an array isn't very convenient most of the time. You can use a hash instead and it will be translated into a "SG grouping array".
+
+Each key of the hash is the field name and the corresponding value can either be :
+* A String/Symbol and then will be used a a direction. The type will be 'exact'
+* A Hash with optional 'type' and 'direction' keys. If a key is not specified it will be 'exact' and 'asc' respectively.
+
+### Count
+
+This is a helper for more a readable count summary. This can be passed `filter` and `logical_operator`.
+
+Example:
+
+```ruby
+client.assets.count
+
+# This will be equivalent as doing:
+client.assets.summarize(summary_fields: [{type: :record_count, field: :id}])
 ```
 
 ### Schema

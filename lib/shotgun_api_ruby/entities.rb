@@ -212,7 +212,7 @@ module ShotgunApiRuby
       params.add_filter(filter, logical_operator)
 
       # In search: The name is filters and not filter
-      params[:filters] = params[:filter]
+      params[:filters] = params[:filter] if params[:filter]
       params.delete(:filter)
 
       resp =
@@ -252,6 +252,30 @@ module ShotgunApiRuby
 
     def fields
       schema_client.fields
+    end
+
+    def summary_client
+      @summary_client ||= Summarize.new(connection, type, @base_url_prefix)
+    end
+
+    def count(filter: nil, logical_operator: 'and')
+      summary_client.count(filter: filter, logical_operator: logical_operator)
+    end
+
+    def summarize(
+      filter: nil,
+      grouping: nil,
+      summary_fields: nil,
+      logical_operator: 'and',
+      include_archived_projects: nil
+    )
+      summary_client.summarize(
+        filter: filter,
+        grouping: grouping,
+        summary_fields: summary_fields,
+        logical_operator: logical_operator,
+        include_archived_projects: include_archived_projects,
+      )
     end
   end
 end
