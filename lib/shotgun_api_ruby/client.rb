@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
 module ShotgunApiRuby
+  # Main class for connection.
+  #
+  # This should be only instanciated once to re-use tokens
   class Client
+    # Faraday connection
     attr_reader :connection
 
     def initialize(auth:, site_url: nil, shotgun_site: nil)
       raise 'No site given' unless site_url || shotgun_site
-      raise 'auth param not valid' unless auth && Auth::Validator.valid?(auth)
+      raise 'auth param not valid' unless auth && Auth::Validator.valid?(**auth)
 
       site_url ||= "https://#{shotgun_site}.shotgunstudio.com/api/v1"
       @connection =
@@ -16,14 +20,17 @@ module ShotgunApiRuby
         end
     end
 
+    # Access preferences APIs
     def preferences
       @preferences = Preferences.new(connection)
     end
 
+    # Access server_info APIs
     def server_info
       @server_info || ServerInfo.new(connection)
     end
 
+    # Access entities related APIs
     def entities(type)
       public_send(type)
     end
@@ -34,16 +41,19 @@ module ShotgunApiRuby
 
     def method_missing(name, *args, &block)
       if args.empty?
-        name = formated_name(name)
-        define_singleton_method(name) do
-          if entities_client = instance_variable_get("@#{name}")
-            entities_client
-          else
-            entities_client = entities_aux(name)
-            instance_variable_set("@#{name}", entities_client)
+        fname = formated_name(name)
+        self
+          .class
+          .define_method(fname) do
+            if entities_client = instance_variable_get("@#{fname}")
+              entities_client
+            else
+              entities_client = entities_aux(fname)
+              instance_variable_set("@#{fname}", entities_client)
+            end
           end
-        end
-        send(name)
+        self.class.instance_eval { alias_method name, fname }
+        send(fname)
       else
         super
       end

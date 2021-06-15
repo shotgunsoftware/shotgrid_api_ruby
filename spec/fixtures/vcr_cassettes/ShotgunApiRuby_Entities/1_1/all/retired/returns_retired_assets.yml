@@ -1,0 +1,220 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:30:37 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"b1620fa0ef2f5d9db1e1ea874e1b3379"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - daaae2a65f8f4eeb53aa1249d73e303e
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Mon, 14 Jun 2021 09:30:37 GMT
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/entity/Asset
+    body:
+      encoding: UTF-8
+      string: '{"project":{"type":"Project","id":155},"description":"old"}'
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:30:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '2384'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, max-age=0
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 201 Created
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 321f105b63585fc79ef8003ebd5e468a
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"Asset","attributes":{"description":"old","cached_display_name":"New
+        Asset 1606","updated_at":"2021-06-14 09:30:38 UTC","created_at":"2021-06-14
+        09:30:38 UTC","code":"New Asset 1606","sg_status_list":"wtg","open_notes_count":0},"relationships":{"shots":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/assets"}},"tasks":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/mocap_takes"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/addressings_cc"}},"sequences":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/sequences"}},"created_by":{"data":{"id":60,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1606/relationships/created_by","related":"/api/v1/entity/api_users/60"}},"updated_by":{"data":{"id":60,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1606/relationships/updated_by","related":"/api/v1/entity/api_users/60"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/levels"}},"project":{"data":{"id":155,"name":"Photo
+        Site","type":"Project"},"links":{"self":"/api/v1/entity/assets/1606/relationships/project","related":"/api/v1/entity/projects/155"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/tags"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1606/relationships/linked_projects"}}},"id":1606,"links":{"self":"/api/v1/entity/assets/1606"}}}'
+  recorded_at: Mon, 14 Jun 2021 09:30:38 GMT
+- request:
+    method: delete
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/entity/Asset/1606
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:30:40 GMT
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, max-age=0
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 204 No Content
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 45a599acfe4cc223752c0628150fa3a6
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 14 Jun 2021 09:30:39 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/entity/Asset?fields=code&options%5Binclude_archived_projects%5D=false&options%5Breturn_only%5D=retired&page%5Bnumber%5D=1&page%5Bsize%5D=1000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:30:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"d488828dac3ca22fe8ad635c1da5e306"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 432bedf054dec68fc43de1b900759218
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"type":"Asset","attributes":{"code":"Example Asset"},"relationships":{},"id":1399,"links":{"self":"/api/v1/entity/assets/1399"}},{"type":"Asset","attributes":{"code":"Example
+        Asset"},"relationships":{},"id":1400,"links":{"self":"/api/v1/entity/assets/1400"}},{"type":"Asset","attributes":{"code":"Example
+        Asset"},"relationships":{},"id":1401,"links":{"self":"/api/v1/entity/assets/1401"}},{"type":"Asset","attributes":{"code":"test"},"relationships":{},"id":1402,"links":{"self":"/api/v1/entity/assets/1402"}},{"type":"Asset","attributes":{"code":"test"},"relationships":{},"id":1403,"links":{"self":"/api/v1/entity/assets/1403"}},{"type":"Asset","attributes":{"code":"wewew"},"relationships":{},"id":1405,"links":{"self":"/api/v1/entity/assets/1405"}},{"type":"Asset","attributes":{"code":"Sined
+        Nisap"},"relationships":{},"id":1439,"links":{"self":"/api/v1/entity/assets/1439"}},{"type":"Asset","attributes":{"code":"Sined
+        Nisap"},"relationships":{},"id":1442,"links":{"self":"/api/v1/entity/assets/1442"}},{"type":"Asset","attributes":{"code":"Japon
+        2020"},"relationships":{},"id":1478,"links":{"self":"/api/v1/entity/assets/1478"}},{"type":"Asset","attributes":{"code":"Japan
+        2020 - Kumano Kodo"},"relationships":{},"id":1505,"links":{"self":"/api/v1/entity/assets/1505"}},{"type":"Asset","attributes":{"code":"Test
+        - Elodie"},"relationships":{},"id":1507,"links":{"self":"/api/v1/entity/assets/1507"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1571"},"relationships":{},"id":1571,"links":{"self":"/api/v1/entity/assets/1571"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1572"},"relationships":{},"id":1572,"links":{"self":"/api/v1/entity/assets/1572"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1573"},"relationships":{},"id":1573,"links":{"self":"/api/v1/entity/assets/1573"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1574"},"relationships":{},"id":1574,"links":{"self":"/api/v1/entity/assets/1574"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1575"},"relationships":{},"id":1575,"links":{"self":"/api/v1/entity/assets/1575"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1576"},"relationships":{},"id":1576,"links":{"self":"/api/v1/entity/assets/1576"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1577"},"relationships":{},"id":1577,"links":{"self":"/api/v1/entity/assets/1577"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1578"},"relationships":{},"id":1578,"links":{"self":"/api/v1/entity/assets/1578"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1579"},"relationships":{},"id":1579,"links":{"self":"/api/v1/entity/assets/1579"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1580"},"relationships":{},"id":1580,"links":{"self":"/api/v1/entity/assets/1580"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1581"},"relationships":{},"id":1581,"links":{"self":"/api/v1/entity/assets/1581"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1582"},"relationships":{},"id":1582,"links":{"self":"/api/v1/entity/assets/1582"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1583"},"relationships":{},"id":1583,"links":{"self":"/api/v1/entity/assets/1583"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1584"},"relationships":{},"id":1584,"links":{"self":"/api/v1/entity/assets/1584"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1585"},"relationships":{},"id":1585,"links":{"self":"/api/v1/entity/assets/1585"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1586"},"relationships":{},"id":1586,"links":{"self":"/api/v1/entity/assets/1586"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1587"},"relationships":{},"id":1587,"links":{"self":"/api/v1/entity/assets/1587"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1588"},"relationships":{},"id":1588,"links":{"self":"/api/v1/entity/assets/1588"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1589"},"relationships":{},"id":1589,"links":{"self":"/api/v1/entity/assets/1589"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1590"},"relationships":{},"id":1590,"links":{"self":"/api/v1/entity/assets/1590"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1591"},"relationships":{},"id":1591,"links":{"self":"/api/v1/entity/assets/1591"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1592"},"relationships":{},"id":1592,"links":{"self":"/api/v1/entity/assets/1592"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1593"},"relationships":{},"id":1593,"links":{"self":"/api/v1/entity/assets/1593"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1594"},"relationships":{},"id":1594,"links":{"self":"/api/v1/entity/assets/1594"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1595"},"relationships":{},"id":1595,"links":{"self":"/api/v1/entity/assets/1595"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1596"},"relationships":{},"id":1596,"links":{"self":"/api/v1/entity/assets/1596"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1597"},"relationships":{},"id":1597,"links":{"self":"/api/v1/entity/assets/1597"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1598"},"relationships":{},"id":1598,"links":{"self":"/api/v1/entity/assets/1598"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1599"},"relationships":{},"id":1599,"links":{"self":"/api/v1/entity/assets/1599"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1600"},"relationships":{},"id":1600,"links":{"self":"/api/v1/entity/assets/1600"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1601"},"relationships":{},"id":1601,"links":{"self":"/api/v1/entity/assets/1601"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1602"},"relationships":{},"id":1602,"links":{"self":"/api/v1/entity/assets/1602"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1603"},"relationships":{},"id":1603,"links":{"self":"/api/v1/entity/assets/1603"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1604"},"relationships":{},"id":1604,"links":{"self":"/api/v1/entity/assets/1604"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1605"},"relationships":{},"id":1605,"links":{"self":"/api/v1/entity/assets/1605"}},{"type":"Asset","attributes":{"code":"New
+        Asset 1606"},"relationships":{},"id":1606,"links":{"self":"/api/v1/entity/assets/1606"}}],"links":{"self":"/api/v1/entity/Asset?fields=code&options%5Binclude_archived_projects%5D=false&options%5Breturn_only%5D=retired&page%5Bnumber%5D=1&page%5Bsize%5D=1000","next":"/api/v1/entity/Asset?fields=code&options%5Binclude_archived_projects%5D=false&options%5Breturn_only%5D=retired&page%5Bnumber%5D=2&page%5Bsize%5D=1000"}}'
+  recorded_at: Mon, 14 Jun 2021 09:30:40 GMT
+recorded_with: VCR 6.0.0

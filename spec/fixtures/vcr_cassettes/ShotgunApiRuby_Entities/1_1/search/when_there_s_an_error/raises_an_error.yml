@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:28:57 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"babde9c13e8336e3324026e84a0b595e"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 05f0eb5dff94d683980dab64fad5e3ce
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Mon, 14 Jun 2021 09:28:57 GMT
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/entity/Asset/_search
+    body:
+      encoding: UTF-8
+      string: '{"fields":"*","filters":{"conditions":[["project.Project.id","is",155],["not_existing_field","is","NOPE"]],"logical_operator":"and"}}'
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/vnd+shotgun.api3_hash+json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:28:58 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '325'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, max-age=0
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 400 Bad Request
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"id":"a576afb600d788519af9eff1a23d0edf","status":400,"code":103,"title":"API
+        read() Asset.not_existing_field doesn''t exist.","source":{"Asset.not_existing_field":"
+        does not exist. Value: {\"path\"=\u003E\"not_existing_field\", \"relation\"=\u003E\"is\",
+        \"values\"=\u003E[\"NOPE\"]}"},"detail":null,"meta":null}]}'
+  recorded_at: Mon, 14 Jun 2021 09:28:57 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,143 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:29:11 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"9b9f2067ec744717c831bace4ea36775"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 4a2a5b5ed19ef3791042bb508d8bc4c7
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Mon, 14 Jun 2021 09:29:11 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=1&page%5Bsize%5D=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:29:12 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"0d2872d8ba39875c24024d1e29021cb3"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - bf96fcfc016f5c9a80c6ae64635ce556
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/8aa29cf41f9261dfefada72beb433f6d53f4b69f/af5bcc25e9dd8c33817cc1e77911320979429640/Alice_t.jpg?response-content-disposition=filename%3D%22Alice_t.jpg%22&x-amz-meta-user-id=60&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JI32LNLZUA%2F20210614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210614T092912Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEFoaDMTXg2dQS8ByreobliKvAQMb9dpXf4JnUAb2bcW4nv%2BFP5sFAb%2FBjUUReGezVN4KoTI6tnCdqYd%2FjsKgyk6qWncmIjbrfJcjAucujzDGZH1uXwK2LkJLyPc0MZV2rMZAyvU%2F84uu2RzgTIruq2F1ZoGVsEP2u8fsq6VujgnuhUjcLRicFZ71kEsbvVuIAK04Ioiskw6%2F5rwBBVT%2Bbe2QHm5YhDhpBXU0KlkHDmoxNr4phimm4TlOTikU8Q8hoE0ojK6chgYyLY6tGQmMIuA7Gt8%2FomC9tcuea2DbMDmFJgaFNBIKoau0L%2FBM4mGb3mw8O6VVqA%3D%3D&X-Amz-Signature=c5777db9170cefdd0c7f5de32b2b64ee118154983c53f8ea0b55f77e67fec648","description":"LOLOLOLOL","image_blur_hash":null,"step_0":null,"cached_display_name":"Frjaques","updated_at":"2020-12-18T18:56:11Z","filmstrip_image":null,"created_at":"2015-12-01T14:07:51Z","sg_keep":false,"sg_asset_type":"Character","sg_color":null,"code":"Frjaques","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"sg_status_list":"fin","step_32":null,"step_130":null,"step_131":null,"step_132":null,"open_notes_count":1},"relationships":{"shots":{"data":[{"id":862,"name":"bunny_010_0010","type":"Shot"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/assets"}},"tasks":{"data":[{"id":3468,"name":"Art","type":"Task"},{"id":3469,"name":"Model","type":"Task"},{"id":3470,"name":"Rig","type":"Task"},{"id":3471,"name":"Texture","type":"Task"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/addressings_cc"}},"sequences":{"data":[{"id":23,"name":"bunny_010","type":"Sequence"},{"id":24,"name":"bunny_020","type":"Sequence"},{"id":25,"name":"bunny_030","type":"Sequence"},{"id":26,"name":"bunny_040","type":"Sequence"},{"id":27,"name":"bunny_050","type":"Sequence"},{"id":28,"name":"bunny_060","type":"Sequence"},{"id":29,"name":"bunny_070","type":"Sequence"},{"id":30,"name":"bunny_080","type":"Sequence"},{"id":31,"name":"bunny_090","type":"Sequence"},{"id":32,"name":"bunny_100","type":"Sequence"},{"id":33,"name":"bunny_110","type":"Sequence"},{"id":34,"name":"bunny_120","type":"Sequence"},{"id":35,"name":"bunny_130","type":"Sequence"},{"id":36,"name":"bunny_140","type":"Sequence"},{"id":37,"name":"bunny_150","type":"Sequence"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/sequences"}},"created_by":{"data":{"id":24,"name":"Shotgun
+        Support","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/created_by","related":"/api/v1/entity/human_users/24"}},"updated_by":{"data":{"id":60,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/updated_by","related":"/api/v1/entity/api_users/60"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/levels"}},"project":{"data":{"id":70,"name":"Demo:
+        Animation","type":"Project"},"links":{"self":"/api/v1/entity/assets/1226/relationships/project","related":"/api/v1/entity/projects/70"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/tags"}},"image_source_entity":{"data":{"type":"Asset","id":1226,"name":"Frjaques"},"links":{"self":"/api/v1/entity/assets/1226/relationships/image_source_entity","related":"/api/v1/entity/assets/1226"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_vendor_groups"}},"sg_toto":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_toto"}},"notes":{"data":[{"id":6376,"name":"Denis''s
+        Note on Alice - TEST","type":"Note"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/notes"}},"open_notes":{"data":[{"id":6376,"name":"Denis''s
+        Note on Alice - TEST","type":"Note"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/linked_projects"}}},"id":1226,"links":{"self":"/api/v1/entity/assets/1226"}}],"links":{"self":"/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=1&page%5Bsize%5D=1","next":"/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=2&page%5Bsize%5D=1"}}'
+  recorded_at: Mon, 14 Jun 2021 09:29:12 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/entity/Asset?fields=%2A&filter%5Bcode%5D=Frjaques
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 14 Jun 2021 09:29:13 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"2d6a1d70b04a48f5a237355c0cbc34a1"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 4a0d3834dc89792de397833669fc5ba0
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/8aa29cf41f9261dfefada72beb433f6d53f4b69f/af5bcc25e9dd8c33817cc1e77911320979429640/Alice_t.jpg?response-content-disposition=filename%3D%22Alice_t.jpg%22&x-amz-meta-user-id=60&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JI7GNON2M2%2F20210614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210614T092913Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEFsaDDM2EuSFQ2sbc1%2BlFiKvAd3LztgNoPqgKHryUMSn5sxShvMXj%2F92l%2FrqyN7BKdhP%2F5J0%2FeDqK4T%2FqAnoXrk88MEP%2FXZ0yhI2qax%2FuVZbJKYy7LDX0Tsdgf9zcQ5ma3%2BMGvQEE9mLwC1EcviliwWIoKHdr9zPGz2MpSL8G21Xixygzj6j32ghv7xdAaLO46xw2rQ96qBaiP7b365fjZ2uIwdEZd6IpLiMDHdsusfbWX2TIAB5nHr%2F5IWVh1q%2F%2F3UohsCchgYyLW%2FiLoMY5mCnwmPSCrL5380W8CZ0rORdojBCTgrXJn8gq1gxiWTeLdz7vpTBjg%3D%3D&X-Amz-Signature=a3c75d37130a7a294b9c6cbfb321df4eefe3e1defea16a0a466dcfa5714967de","description":"LOLOLOLOL","image_blur_hash":null,"step_0":null,"cached_display_name":"Frjaques","updated_at":"2020-12-18T18:56:11Z","filmstrip_image":null,"created_at":"2015-12-01T14:07:51Z","sg_keep":false,"sg_asset_type":"Character","sg_color":null,"code":"Frjaques","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"sg_status_list":"fin","step_32":null,"step_130":null,"step_131":null,"step_132":null,"open_notes_count":1},"relationships":{"shots":{"data":[{"id":862,"name":"bunny_010_0010","type":"Shot"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/assets"}},"tasks":{"data":[{"id":3468,"name":"Art","type":"Task"},{"id":3469,"name":"Model","type":"Task"},{"id":3470,"name":"Rig","type":"Task"},{"id":3471,"name":"Texture","type":"Task"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/addressings_cc"}},"sequences":{"data":[{"id":23,"name":"bunny_010","type":"Sequence"},{"id":24,"name":"bunny_020","type":"Sequence"},{"id":25,"name":"bunny_030","type":"Sequence"},{"id":26,"name":"bunny_040","type":"Sequence"},{"id":27,"name":"bunny_050","type":"Sequence"},{"id":28,"name":"bunny_060","type":"Sequence"},{"id":29,"name":"bunny_070","type":"Sequence"},{"id":30,"name":"bunny_080","type":"Sequence"},{"id":31,"name":"bunny_090","type":"Sequence"},{"id":32,"name":"bunny_100","type":"Sequence"},{"id":33,"name":"bunny_110","type":"Sequence"},{"id":34,"name":"bunny_120","type":"Sequence"},{"id":35,"name":"bunny_130","type":"Sequence"},{"id":36,"name":"bunny_140","type":"Sequence"},{"id":37,"name":"bunny_150","type":"Sequence"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/sequences"}},"created_by":{"data":{"id":24,"name":"Shotgun
+        Support","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/created_by","related":"/api/v1/entity/human_users/24"}},"updated_by":{"data":{"id":60,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/updated_by","related":"/api/v1/entity/api_users/60"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/levels"}},"project":{"data":{"id":70,"name":"Demo:
+        Animation","type":"Project"},"links":{"self":"/api/v1/entity/assets/1226/relationships/project","related":"/api/v1/entity/projects/70"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/tags"}},"image_source_entity":{"data":{"type":"Asset","id":1226,"name":"Frjaques"},"links":{"self":"/api/v1/entity/assets/1226/relationships/image_source_entity","related":"/api/v1/entity/assets/1226"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_vendor_groups"}},"sg_toto":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_toto"}},"notes":{"data":[{"id":6376,"name":"Denis''s
+        Note on Alice - TEST","type":"Note"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/notes"}},"open_notes":{"data":[{"id":6376,"name":"Denis''s
+        Note on Alice - TEST","type":"Note"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/linked_projects"}}},"id":1226,"links":{"self":"/api/v1/entity/assets/1226"}}],"links":{"self":"/api/v1/entity/Asset?fields=%2A&filter%5Bcode%5D=Frjaques","next":"/api/v1/entity/Asset?fields=%2A&filter%5Bcode%5D=Frjaques&page%5Bnumber%5D=2&page%5Bsize%5D=500"}}'
+  recorded_at: Mon, 14 Jun 2021 09:29:13 GMT
+recorded_with: VCR 6.0.0
