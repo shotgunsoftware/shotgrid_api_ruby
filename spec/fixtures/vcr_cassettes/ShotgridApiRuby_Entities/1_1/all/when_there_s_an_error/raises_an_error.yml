@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:07:56 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"41124c7990e525969e1d297686eb0331"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 5ce989ec982d95c49e30f004e4928682
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Tue, 15 Jun 2021 09:07:56 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset?fields=%2A&filter%5Bnot_existing_field%5D=NOPE
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:07:57 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '325'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, max-age=0
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 400 Bad Request
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"id":"ba76f1c979e433300e977096d4363213","status":400,"code":103,"title":"API
+        read() Asset.not_existing_field doesn''t exist.","source":{"Asset.not_existing_field":"
+        does not exist. Value: {\"path\"=\u003E\"not_existing_field\", \"relation\"=\u003E\"is\",
+        \"values\"=\u003E[\"NOPE\"]}"},"detail":null,"meta":null}]}'
+  recorded_at: Tue, 15 Jun 2021 09:07:57 GMT
+recorded_with: VCR 6.0.0

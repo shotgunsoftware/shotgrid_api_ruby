@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SHOTGUN_SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:06:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"ba52f9278aadd733a90bb5b02c7042c0"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - ef0d53b3c6b54ca3019f0d0f3172547e
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Tue, 15 Jun 2021 09:06:43 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:06:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"bb61f98e557f08c50e382acddc24b330"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - cb314c03681184a6f1a23de1a453e6ab
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"shotgun_version":"v8.26.0.8056 (build c40f3b9)","api_version":"v1","shotgun_version_number":"8.26.0.8056","shotgun_build_number":"c40f3b9","portfolio_version":"8.26.0.8056","unified_login_flow_enabled":true,"user_authentication_method":"default","site_id":"48138","site_name":"com_shotgunstudio_pasind3_prod"}}'
+  recorded_at: Tue, 15 Jun 2021 09:06:44 GMT
+- request:
+    method: post
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:06:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"9ad5cb66dbc98c4f3a53fdc46a7ec73a"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 701e3b6444bb814e180c6aec325a6c9a
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Tue, 15 Jun 2021 09:06:45 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:06:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"31bf34cb355ae6f073acc5d9b6124b9c"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 682f7d261fdbf556cbaddd9ea7dc45df
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"shotgun_version":"v8.26.0.8056 (build c40f3b9)","api_version":"v1","shotgun_version_number":"8.26.0.8056","shotgun_build_number":"c40f3b9","portfolio_version":"8.26.0.8056","unified_login_flow_enabled":true,"user_authentication_method":"oxygen","site_id":"56086","site_name":"com_shotgunstudio_pasind3_prod_id"}}'
+  recorded_at: Tue, 15 Jun 2021 09:06:45 GMT
+recorded_with: VCR 6.0.0

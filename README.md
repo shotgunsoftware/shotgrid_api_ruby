@@ -1,16 +1,16 @@
-# ShotgunApiRuby
+# ShotgridApiRuby
 
-[![Gem Version](https://badge.fury.io/rb/shotgun_api_ruby.svg)](https://badge.fury.io/rb/shotgun_api_ruby)
-![Test and Release badge](https://github.com/shotgunsoftware/shotgun_api_ruby/workflows/Test%20and%20Release/badge.svg)
+[![Gem Version](https://badge.fury.io/rb/shotgrid_api_ruby.svg)](https://badge.fury.io/rb/shotgrid_api_ruby)
+![Test and Release badge](https://github.com/shotgunsoftware/shotgrid_api_ruby/workflows/Test%20and%20Release/badge.svg)
 
-A gem to integrate with shotgun REST API easily.
+A gem to integrate with shotgrid REST API easily.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'shotgun_api_ruby'
+gem 'shotgrid_api_ruby'
 ```
 
 And then execute:
@@ -19,7 +19,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install shotgun_api_ruby
+    $ gem install shotgrid_api_ruby
 
 ## Usage
 
@@ -27,15 +27,16 @@ Or install it yourself as:
 
 For creating a new client you need to provide two values.
 
-- One to identify the shotgun site:
+- One to identify the shotgrid site:
   - Can be `shotgun_site`: which is the `xxx` part in `https://xxx.shotgunstudio.com`
+  - Can be `shotgrid_site`: which is the `xxx` part in `https://xxx.shotgrid.autodesk.com`
   - Can be `site_url`: which is the full url to your site
 - One to `auth` you see _Authentication_ lower in this guide.
 
 Example:
 
 ```ruby
-client = ShotgunApiRuby.new(shotgun_site: 'i-love-shotgun', auth: {client_id: 'my_nice_script', client_secret: 'CantTouchThis'})
+client = ShotgridApiRuby.new(shotgrid_site: 'i-love-shotgrid', auth: {client_id: 'my_nice_script', client_secret: 'CantTouchThis'})
 ```
 
 ### Authentication
@@ -45,13 +46,13 @@ Any kind of authentication specified [here](https://developer.shotgunsoftware.co
 #### Client Credentials
 
 ```ruby
-client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {client_id: 'script_name', client_secret: 'script_secret'})
+client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {client_id: 'script_name', client_secret: 'script_secret'})
 ```
 
 #### Password Credentials
 
 ```ruby
-client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {username: 'login', password: 'password'})
+client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {username: 'login', password: 'password'})
 ```
 
 #### Session Token
@@ -59,7 +60,7 @@ client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {username: 'login', passw
 **We highly advise not using this for a long term script as this won't be a stable value over time**
 
 ```ruby
-client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {session_token: 'session_token'})
+client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {session_token: 'session_token'})
 ```
 
 #### Refresh Token
@@ -67,7 +68,7 @@ client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {session_token: 'session_
 **We highly advise not using this for a long term script as this won't be a stable value over time**
 
 ```ruby
-client = ShotgunApiRuby.new(shotgun_site: 'xxx', auth: {refresh_token: 'refresh_token'})
+client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {refresh_token: 'refresh_token'})
 ```
 
 ### Server Infos
@@ -117,7 +118,7 @@ prefs.to_h.keys
 Querying entities is done by accessing the named method
 
 ```ruby
-client.assets # => ShotgunApiRuby::Entities …
+client.assets # => ShotgridApiRuby::Entities …
 ```
 
 As entities can be user defined the client will try to answer to any unknown type with an entity call so any of those calls will returns the same thing:
@@ -351,7 +352,7 @@ client.assets.summarize(summary_fields: {id: :count})
 
 # Full complex example
 client.assets.summarize(
-  filter: { project: { id: 155 }, sg_status_list: :act },
+  filter: { project: { id: 122 }, sg_status_list: :act },
   logical_operator: 'or',
   include_archived_projects: true,
   grouping: {
@@ -360,7 +361,7 @@ client.assets.summarize(
   summary_fields: { id: :count }
 )
 
-# Raw shotgun queries
+# Raw shotgrid queries
 client.assets.summarize(
   grouping: [
     {
@@ -425,7 +426,7 @@ client.assets.summarize(summary_fields: [{type: :record_count, field: :id}])
 
 ### Schema
 
-Those calls allow to inspect the schema for a shotgun site.
+Those calls allow to inspect the schema for a shotgrid site.
 
 #### Entity
 
@@ -448,7 +449,7 @@ fields.code.properties.summary_default # => "none"
 All calls which are not yet implemented can be done through the `connection` method. This method will still take care of the authentication for you.
 
 ```ruby
-client = ShotgunApiRuby.new(…)
+client = ShotgridApiRuby.new(…)
 client.connection.get('/entity/assets') # => #<Faraday::Response:xxx @on_complete_callbacks=[], @env=#<Faraday::Env @method=:get @body="{\"data\":[{\"type\":\"Asset\",\"attributes\":{},\"relationships\":{},\"id\":726 …
 ```
 
@@ -462,7 +463,7 @@ Every commit/push is checked by overcommit.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/shotgunsoftware/shotgun_api_ruby.
+Bug reports and pull requests are welcome on GitHub at https://github.com/shotgunsoftware/shotgrid_api_ruby.
 
 ## License
 

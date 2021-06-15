@@ -1,8 +1,8 @@
 {
-  "name": "shotgun_api_ruby",
+  "name": "shotgrid_api_ruby",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:shotgunsoftware/shotgun_api_ruby.git",
+  "repository": "git@github.com:shotgunsoftware/shotgrid_api_ruby.git",
   "author": "Denis <Zaratan> Pasin <zaratan@hey.com>",
   "license": "MIT",
   "devDependencies": {

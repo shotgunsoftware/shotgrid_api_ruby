@@ -15,9 +15,18 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.allow_http_connections_when_no_cassette = true
   config.filter_sensitive_data('<SCRIPT_NAME>') do
-    ENV['VCR_SHOTGUN_SCRIPT_NAME'] || 'vcr_shotgun_script_name'
+    ENV['VCR_SHOTGRID_SCRIPT_NAME'] || 'vcr_shotgrid_script_name'
   end
   config.filter_sensitive_data('<SCRIPT_KEY>') do
+    ENV['VCR_SHOTGRID_SCRIPT_KEY'] &&
+      URI
+        .encode_www_form_component(ENV['VCR_SHOTGRID_SCRIPT_KEY'])
+        &.gsub(/\*/, '%2A') || 'vcr_shotgrid_script_key'
+  end
+  config.filter_sensitive_data('<SHOTGUN_SCRIPT_NAME>') do
+    ENV['VCR_SHOTGUN_SCRIPT_NAME'] || 'vcr_shotgun_script_name'
+  end
+  config.filter_sensitive_data('<SHOTGUN_SCRIPT_KEY>') do
     ENV['VCR_SHOTGUN_SCRIPT_KEY'] &&
       URI
         .encode_www_form_component(ENV['VCR_SHOTGUN_SCRIPT_KEY'])
@@ -25,11 +34,11 @@ VCR.configure do |config|
   end
   config.filter_sensitive_data('=<USERNAME>') do
     (ENV['VCR_SHOTGUN_USERNAME'] && "=#{ENV['VCR_SHOTGUN_USERNAME']}") ||
-      '=vcr_shotgun_username'
+      '=vcr_shotgrid_username'
   end
   config.filter_sensitive_data('<PASSWORD>') do
     ENV['VCR_SHOTGUN_PASSWORD'] &&
-      ENV['VCR_SHOTGUN_PASSWORD']&.gsub(/!/, '%21') || 'vcr_shotgun_password'
+      ENV['VCR_SHOTGUN_PASSWORD']&.gsub(/!/, '%21') || 'vcr_shotgrid_password'
   end
   config.before_record do |i|
     i.response.body.sub!(
@@ -56,7 +65,7 @@ end
 
 SimpleCov.start { load_profile 'test_frameworks' }
 
-require 'shotgun_api_ruby'
+require 'shotgrid_api_ruby'
 
 Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
 RSpec::Matchers.define_negated_matcher :not_change, :change

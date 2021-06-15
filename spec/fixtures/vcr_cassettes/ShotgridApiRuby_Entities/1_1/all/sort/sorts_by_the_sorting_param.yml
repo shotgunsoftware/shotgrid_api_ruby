@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:08:07 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"906b7710ef37ab5a72364af43a905315"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - a60a5d6b7f426ea39e054fa7ac14e4ab
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Tue, 15 Jun 2021 09:08:07 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset?fields=code&sort=-code
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:08:08 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"67d64a83ad9ee1dec7b32f51b76a8352"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - d8e881e363b3b3e69d5cec7f0295319d
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"type":"Asset","attributes":{"code":"Young Bunny"},"relationships":{},"id":1243,"links":{"self":"/api/v1/entity/assets/1243"}},{"type":"Asset","attributes":{"code":"Whiskers"},"relationships":{},"id":1307,"links":{"self":"/api/v1/entity/assets/1307"}},{"type":"Asset","attributes":{"code":"Wheels"},"relationships":{},"id":1411,"links":{"self":"/api/v1/entity/assets/1411"}},{"type":"Asset","attributes":{"code":"Waterfall"},"relationships":{},"id":1265,"links":{"self":"/api/v1/entity/assets/1265"}},{"type":"Asset","attributes":{"code":"Vine"},"relationships":{},"id":1306,"links":{"self":"/api/v1/entity/assets/1306"}},{"type":"Asset","attributes":{"code":"Van"},"relationships":{},"id":1325,"links":{"self":"/api/v1/entity/assets/1325"}},{"type":"Asset","attributes":{"code":"Valley
+        Matte"},"relationships":{},"id":1287,"links":{"self":"/api/v1/entity/assets/1287"}},{"type":"Asset","attributes":{"code":"Valley"},"relationships":{},"id":1264,"links":{"self":"/api/v1/entity/assets/1264"}},{"type":"Asset","attributes":{"code":"Twig"},"relationships":{},"id":1305,"links":{"self":"/api/v1/entity/assets/1305"}},{"type":"Asset","attributes":{"code":"Tunnel"},"relationships":{},"id":1286,"links":{"self":"/api/v1/entity/assets/1286"}},{"type":"Asset","attributes":{"code":"Truck"},"relationships":{},"id":1324,"links":{"self":"/api/v1/entity/assets/1324"}},{"type":"Asset","attributes":{"code":"Trolley"},"relationships":{},"id":1323,"links":{"self":"/api/v1/entity/assets/1323"}},{"type":"Asset","attributes":{"code":"Tree"},"relationships":{},"id":1304,"links":{"self":"/api/v1/entity/assets/1304"}},{"type":"Asset","attributes":{"code":"Tractor"},"relationships":{},"id":1322,"links":{"self":"/api/v1/entity/assets/1322"}},{"type":"Asset","attributes":{"code":"Top"},"relationships":{},"id":1303,"links":{"self":"/api/v1/entity/assets/1303"}},{"type":"Asset","attributes":{"code":"Titles
+        Panning"},"relationships":{},"id":1285,"links":{"self":"/api/v1/entity/assets/1285"}},{"type":"Asset","attributes":{"code":"Theme
+        Exterior 01"},"relationships":{},"id":1407,"links":{"self":"/api/v1/entity/assets/1407"}},{"type":"Asset","attributes":{"code":"Test
+        3"},"relationships":{},"id":1414,"links":{"self":"/api/v1/entity/assets/1414"}},{"type":"Asset","attributes":{"code":"Test
+        2"},"relationships":{},"id":1413,"links":{"self":"/api/v1/entity/assets/1413"}},{"type":"Asset","attributes":{"code":"Test
+        1"},"relationships":{},"id":1412,"links":{"self":"/api/v1/entity/assets/1412"}},{"type":"Asset","attributes":{"code":"Tanker"},"relationships":{},"id":1321,"links":{"self":"/api/v1/entity/assets/1321"}},{"type":"Asset","attributes":{"code":"Tank"},"relationships":{},"id":1320,"links":{"self":"/api/v1/entity/assets/1320"}},{"type":"Asset","attributes":{"code":"Submarine"},"relationships":{},"id":1319,"links":{"self":"/api/v1/entity/assets/1319"}},{"type":"Asset","attributes":{"code":"Stone"},"relationships":{},"id":1302,"links":{"self":"/api/v1/entity/assets/1302"}},{"type":"Asset","attributes":{"code":"Squirrel"},"relationships":{},"id":1242,"links":{"self":"/api/v1/entity/assets/1242"}},{"type":"Asset","attributes":{"code":"Spoon"},"relationships":{},"id":1301,"links":{"self":"/api/v1/entity/assets/1301"}},{"type":"Asset","attributes":{"code":"Soldier_Nav_IdleBase_MocapPass"},"relationships":{},"id":1354,"links":{"self":"/api/v1/entity/assets/1354"}},{"type":"Asset","attributes":{"code":"Soldier_Crouch_Nav_FWD_839938_MocapPass"},"relationships":{},"id":1353,"links":{"self":"/api/v1/entity/assets/1353"}},{"type":"Asset","attributes":{"code":"Slingshot"},"relationships":{},"id":1300,"links":{"self":"/api/v1/entity/assets/1300"}},{"type":"Asset","attributes":{"code":"Sky
+        Sunny"},"relationships":{},"id":1284,"links":{"self":"/api/v1/entity/assets/1284"}},{"type":"Asset","attributes":{"code":"Sky
+        Stormy"},"relationships":{},"id":1283,"links":{"self":"/api/v1/entity/assets/1283"}},{"type":"Asset","attributes":{"code":"Sky
+        Morning"},"relationships":{},"id":1282,"links":{"self":"/api/v1/entity/assets/1282"}},{"type":"Asset","attributes":{"code":"Sky
+        Cloudy"},"relationships":{},"id":1281,"links":{"self":"/api/v1/entity/assets/1281"}},{"type":"Asset","attributes":{"code":"Sky
+        Blue"},"relationships":{},"id":1280,"links":{"self":"/api/v1/entity/assets/1280"}},{"type":"Asset","attributes":{"code":"Shack
+        Int"},"relationships":{},"id":1263,"links":{"self":"/api/v1/entity/assets/1263"}},{"type":"Asset","attributes":{"code":"Shack
+        Ext"},"relationships":{},"id":1262,"links":{"self":"/api/v1/entity/assets/1262"}},{"type":"Asset","attributes":{"code":"Seats"},"relationships":{},"id":1409,"links":{"self":"/api/v1/entity/assets/1409"}},{"type":"Asset","attributes":{"code":"School
+        Bus"},"relationships":{},"id":1318,"links":{"self":"/api/v1/entity/assets/1318"}},{"type":"Asset","attributes":{"code":"School"},"relationships":{},"id":1261,"links":{"self":"/api/v1/entity/assets/1261"}},{"type":"Asset","attributes":{"code":"Scary
+        Forest"},"relationships":{},"id":1260,"links":{"self":"/api/v1/entity/assets/1260"}},{"type":"Asset","attributes":{"code":"Scare
+        Crow"},"relationships":{},"id":1241,"links":{"self":"/api/v1/entity/assets/1241"}},{"type":"Asset","attributes":{"code":"Ruins"},"relationships":{},"id":1259,"links":{"self":"/api/v1/entity/assets/1259"}},{"type":"Asset","attributes":{"code":"Red
+        Car"},"relationships":{},"id":1317,"links":{"self":"/api/v1/entity/assets/1317"}},{"type":"Asset","attributes":{"code":"Rabbit
+        trotting back"},"relationships":{},"id":1279,"links":{"self":"/api/v1/entity/assets/1279"}},{"type":"Asset","attributes":{"code":"Queen"},"relationships":{},"id":1240,"links":{"self":"/api/v1/entity/assets/1240"}},{"type":"Asset","attributes":{"code":"Pool
+        all her"},"relationships":{},"id":1278,"links":{"self":"/api/v1/entity/assets/1278"}},{"type":"Asset","attributes":{"code":"Pond"},"relationships":{},"id":1258,"links":{"self":"/api/v1/entity/assets/1258"}},{"type":"Asset","attributes":{"code":"Police
+        Car"},"relationships":{},"id":1316,"links":{"self":"/api/v1/entity/assets/1316"}},{"type":"Asset","attributes":{"code":"Plate"},"relationships":{},"id":1299,"links":{"self":"/api/v1/entity/assets/1299"}},{"type":"Asset","attributes":{"code":"Plane"},"relationships":{},"id":1315,"links":{"self":"/api/v1/entity/assets/1315"}},{"type":"Asset","attributes":{"code":"Pickup"},"relationships":{},"id":1314,"links":{"self":"/api/v1/entity/assets/1314"}},{"type":"Asset","attributes":{"code":"Mushroom"},"relationships":{},"id":1298,"links":{"self":"/api/v1/entity/assets/1298"}},{"type":"Asset","attributes":{"code":"Mrs
+        Banning"},"relationships":{},"id":1239,"links":{"self":"/api/v1/entity/assets/1239"}},{"type":"Asset","attributes":{"code":"Mr
+        Banning"},"relationships":{},"id":1238,"links":{"self":"/api/v1/entity/assets/1238"}},{"type":"Asset","attributes":{"code":"mp_415"},"relationships":{},"id":1351,"links":{"self":"/api/v1/entity/assets/1351"}},{"type":"Asset","attributes":{"code":"Mouse"},"relationships":{},"id":1277,"links":{"self":"/api/v1/entity/assets/1277"}},{"type":"Asset","attributes":{"code":"Mountains"},"relationships":{},"id":1276,"links":{"self":"/api/v1/entity/assets/1276"}},{"type":"Asset","attributes":{"code":"Motor
+        Boat"},"relationships":{},"id":1313,"links":{"self":"/api/v1/entity/assets/1313"}},{"type":"Asset","attributes":{"code":"metal_shipping_container"},"relationships":{},"id":1348,"links":{"self":"/api/v1/entity/assets/1348"}},{"type":"Asset","attributes":{"code":"Mansion"},"relationships":{},"id":1257,"links":{"self":"/api/v1/entity/assets/1257"}},{"type":"Asset","attributes":{"code":"male_infantry01_base_model"},"relationships":{},"id":1345,"links":{"self":"/api/v1/entity/assets/1345"}},{"type":"Asset","attributes":{"code":"main_menu_screen"},"relationships":{},"id":1350,"links":{"self":"/api/v1/entity/assets/1350"}},{"type":"Asset","attributes":{"code":"Leaf"},"relationships":{},"id":1297,"links":{"self":"/api/v1/entity/assets/1297"}},{"type":"Asset","attributes":{"code":"Launcher"},"relationships":{},"id":1296,"links":{"self":"/api/v1/entity/assets/1296"}},{"type":"Asset","attributes":{"code":"Kayak"},"relationships":{},"id":1312,"links":{"self":"/api/v1/entity/assets/1312"}},{"type":"Asset","attributes":{"code":"JoJo"},"relationships":{},"id":1237,"links":{"self":"/api/v1/entity/assets/1237"}},{"type":"Asset","attributes":{"code":"Jimmy"},"relationships":{},"id":1236,"links":{"self":"/api/v1/entity/assets/1236"}},{"type":"Asset","attributes":{"code":"Jet"},"relationships":{},"id":1311,"links":{"self":"/api/v1/entity/assets/1311"}},{"type":"Asset","attributes":{"code":"jeep_01"},"relationships":{},"id":1352,"links":{"self":"/api/v1/entity/assets/1352"}},{"type":"Asset","attributes":{"code":"Island"},"relationships":{},"id":1256,"links":{"self":"/api/v1/entity/assets/1256"}},{"type":"Asset","attributes":{"code":"Highway
+        Backdrop"},"relationships":{},"id":1275,"links":{"self":"/api/v1/entity/assets/1275"}},{"type":"Asset","attributes":{"code":"Highway"},"relationships":{},"id":1255,"links":{"self":"/api/v1/entity/assets/1255"}},{"type":"Asset","attributes":{"code":"Headlights"},"relationships":{},"id":1410,"links":{"self":"/api/v1/entity/assets/1410"}},{"type":"Asset","attributes":{"code":"Haunted
+        House"},"relationships":{},"id":1254,"links":{"self":"/api/v1/entity/assets/1254"}},{"type":"Asset","attributes":{"code":"Hamster"},"relationships":{},"id":1235,"links":{"self":"/api/v1/entity/assets/1235"}},{"type":"Asset","attributes":{"code":"Grass
+        Matte"},"relationships":{},"id":1274,"links":{"self":"/api/v1/entity/assets/1274"}},{"type":"Asset","attributes":{"code":"Grass"},"relationships":{},"id":1295,"links":{"self":"/api/v1/entity/assets/1295"}},{"type":"Asset","attributes":{"code":"gear_jiggle_SFX"},"relationships":{},"id":1344,"links":{"self":"/api/v1/entity/assets/1344"}},{"type":"Asset","attributes":{"code":"Forest
+        Sunny"},"relationships":{},"id":1273,"links":{"self":"/api/v1/entity/assets/1273"}},{"type":"Asset","attributes":{"code":"Forest
+        Stormy"},"relationships":{},"id":1272,"links":{"self":"/api/v1/entity/assets/1272"}},{"type":"Asset","attributes":{"code":"Forest
+        Night"},"relationships":{},"id":1271,"links":{"self":"/api/v1/entity/assets/1271"}},{"type":"Asset","attributes":{"code":"Forest
+        2"},"relationships":{},"id":1253,"links":{"self":"/api/v1/entity/assets/1253"}},{"type":"Asset","attributes":{"code":"Forest
+        1"},"relationships":{},"id":1252,"links":{"self":"/api/v1/entity/assets/1252"}},{"type":"Asset","attributes":{"code":"Flower"},"relationships":{},"id":1294,"links":{"self":"/api/v1/entity/assets/1294"}},{"type":"Asset","attributes":{"code":"Flash"},"relationships":{},"id":1234,"links":{"self":"/api/v1/entity/assets/1234"}},{"type":"Asset","attributes":{"code":"Fire
+        Truck"},"relationships":{},"id":1310,"links":{"self":"/api/v1/entity/assets/1310"}},{"type":"Asset","attributes":{"code":"Fields"},"relationships":{},"id":1270,"links":{"self":"/api/v1/entity/assets/1270"}},{"type":"Asset","attributes":{"code":"Field"},"relationships":{},"id":1251,"links":{"self":"/api/v1/entity/assets/1251"}},{"type":"Asset","attributes":{"code":"Fern"},"relationships":{},"id":1233,"links":{"self":"/api/v1/entity/assets/1233"}},{"type":"Asset","attributes":{"code":"fast_run_male_01"},"relationships":{},"id":1343,"links":{"self":"/api/v1/entity/assets/1343"}},{"type":"Asset","attributes":{"code":"Farmers
+        House"},"relationships":{},"id":1250,"links":{"self":"/api/v1/entity/assets/1250"}},{"type":"Asset","attributes":{"code":"End
+        Credits"},"relationships":{},"id":1269,"links":{"self":"/api/v1/entity/assets/1269"}},{"type":"Asset","attributes":{"code":"Dump
+        Truck"},"relationships":{},"id":1309,"links":{"self":"/api/v1/entity/assets/1309"}},{"type":"Asset","attributes":{"code":"Distant
+        Trees"},"relationships":{},"id":1268,"links":{"self":"/api/v1/entity/assets/1268"}},{"type":"Asset","attributes":{"code":"Distant
+        Mountains"},"relationships":{},"id":1267,"links":{"self":"/api/v1/entity/assets/1267"}},{"type":"Asset","attributes":{"code":"Deserted
+        Street"},"relationships":{},"id":1249,"links":{"self":"/api/v1/entity/assets/1249"}},{"type":"Asset","attributes":{"code":"Darcy"},"relationships":{},"id":1232,"links":{"self":"/api/v1/entity/assets/1232"}},{"type":"Asset","attributes":{"code":"Cup"},"relationships":{},"id":1293,"links":{"self":"/api/v1/entity/assets/1293"}},{"type":"Asset","attributes":{"code":"crashed_icebreaker"},"relationships":{},"id":1346,"links":{"self":"/api/v1/entity/assets/1346"}},{"type":"Asset","attributes":{"code":"container_ship_front"},"relationships":{},"id":1349,"links":{"self":"/api/v1/entity/assets/1349"}},{"type":"Asset","attributes":{"code":"container_ship_back"},"relationships":{},"id":1361,"links":{"self":"/api/v1/entity/assets/1361"}},{"type":"Asset","attributes":{"code":"Concept
+        Exterior 01"},"relationships":{},"id":1406,"links":{"self":"/api/v1/entity/assets/1406"}},{"type":"Asset","attributes":{"code":"Cliff"},"relationships":{},"id":1248,"links":{"self":"/api/v1/entity/assets/1248"}},{"type":"Asset","attributes":{"code":"Caterpillar"},"relationships":{},"id":1231,"links":{"self":"/api/v1/entity/assets/1231"}},{"type":"Asset","attributes":{"code":"Candle"},"relationships":{},"id":1292,"links":{"self":"/api/v1/entity/assets/1292"}},{"type":"Asset","attributes":{"code":"Cafe"},"relationships":{},"id":1247,"links":{"self":"/api/v1/entity/assets/1247"}},{"type":"Asset","attributes":{"code":"Butterfly"},"relationships":{},"id":1291,"links":{"self":"/api/v1/entity/assets/1291"}},{"type":"Asset","attributes":{"code":"Bush"},"relationships":{},"id":1290,"links":{"self":"/api/v1/entity/assets/1290"}},{"type":"Asset","attributes":{"code":"Bunny
+        Hallow"},"relationships":{},"id":1246,"links":{"self":"/api/v1/entity/assets/1246"}},{"type":"Asset","attributes":{"code":"Bunny"},"relationships":{},"id":1230,"links":{"self":"/api/v1/entity/assets/1230"}},{"type":"Asset","attributes":{"code":"Buck"},"relationships":{},"id":1229,"links":{"self":"/api/v1/entity/assets/1229"}},{"type":"Asset","attributes":{"code":"Branch"},"relationships":{},"id":1289,"links":{"self":"/api/v1/entity/assets/1289"}},{"type":"Asset","attributes":{"code":"Body"},"relationships":{},"id":1408,"links":{"self":"/api/v1/entity/assets/1408"}},{"type":"Asset","attributes":{"code":"Blue
+        Jay"},"relationships":{},"id":1228,"links":{"self":"/api/v1/entity/assets/1228"}},{"type":"Asset","attributes":{"code":"Blue
+        Car"},"relationships":{},"id":1308,"links":{"self":"/api/v1/entity/assets/1308"}},{"type":"Asset","attributes":{"code":"blowing_snow_VFX"},"relationships":{},"id":1347,"links":{"self":"/api/v1/entity/assets/1347"}},{"type":"Asset","attributes":{"code":"Billowy
+        Clouds"},"relationships":{},"id":1266,"links":{"self":"/api/v1/entity/assets/1266"}},{"type":"Asset","attributes":{"code":"Beach"},"relationships":{},"id":1245,"links":{"self":"/api/v1/entity/assets/1245"}},{"type":"Asset","attributes":{"code":"Barn"},"relationships":{},"id":1244,"links":{"self":"/api/v1/entity/assets/1244"}},{"type":"Asset","attributes":{"code":"Assembly"},"relationships":{},"id":1404,"links":{"self":"/api/v1/entity/assets/1404"}},{"type":"Asset","attributes":{"code":"Anders"},"relationships":{},"id":1227,"links":{"self":"/api/v1/entity/assets/1227"}},{"type":"Asset","attributes":{"code":"Alice"},"relationships":{},"id":1226,"links":{"self":"/api/v1/entity/assets/1226"}},{"type":"Asset","attributes":{"code":"Acorn"},"relationships":{},"id":1288,"links":{"self":"/api/v1/entity/assets/1288"}}],"links":{"self":"/api/v1/entity/Asset?fields=code&sort=-code","next":"/api/v1/entity/Asset?fields=code&page%5Bnumber%5D=2&page%5Bsize%5D=500&sort=-code"}}'
+  recorded_at: Tue, 15 Jun 2021 09:08:07 GMT
+recorded_with: VCR 6.0.0

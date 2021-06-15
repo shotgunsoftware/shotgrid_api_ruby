@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:06:59 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"5f5c4e297a31edd1283f6c5b509c232f"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 0240c18010fb7dfe9684606ad3306c16
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Tue, 15 Jun 2021 09:06:59 GMT
+- request:
+    method: post
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset
+    body:
+      encoding: UTF-8
+      string: '{"not_existing_field":1234}'
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:07:00 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '179'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, max-age=0
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 400 Bad Request
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"id":"235c31f90d7ffcf56f5e2ebde55932a3","status":400,"code":103,"title":"API
+        create() Asset.not_existing_field doesn''t exist.","source":{},"detail":null,"meta":null}]}'
+  recorded_at: Tue, 15 Jun 2021 09:06:59 GMT
+recorded_with: VCR 6.0.0

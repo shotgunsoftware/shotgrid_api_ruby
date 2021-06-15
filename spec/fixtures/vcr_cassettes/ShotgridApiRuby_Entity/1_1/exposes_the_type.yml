@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:08:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"1dcc2eda5faa5d03c7a2eaafb81f59cf"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 51da61227a57f8fd695d3211e37ba8b7
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Tue, 15 Jun 2021 09:08:42 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=1&page%5Bsize%5D=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 09:08:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"4b07780ab85745a9648936728e5dcc69"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - c36484e1f42cdbbcc5576541012494f5
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/dbbe32a76cc467b8460fc327e6f230075b293b1a/af5bcc25e9dd8c33817cc1e77911320979429640/Alice_t.jpg?response-content-disposition=filename%3D%22Alice_t.jpg%22&x-amz-meta-user-id=93&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JI7YMEI5EK%2F20210615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210615T090843Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEHIaDHFRwH3Bll%2Bh6%2BqqPyKvASZTSfpLE%2B790kZZmhcfEbvXQXPG1eUJDkO%2F5qYji8DDJDvg0dPupb4bNjP22i3bgg%2B6%2Fw20T3VhhPqhJPKpsqGm9u4Xjc1hXE2%2BnQ9qrdAVw3UPdid42gEfb1LJiP%2Bua6vtJ7MnibL69xlFFgvacMXGBSSX03A2%2B6%2B7ygSCQLO%2FUm1EqDLOfPSXU9cy1xB%2FGvhc0BvC%2B2%2FdVFXXfWMiHwuetg0H%2BF%2BMbg6rBfh2cO4omtWhhgYyLWXqIae%2F4YCu%2Fui2raBc2z6JLMQIvYqSQtKX6613%2B4eBx%2B%2BEAv1gfE1DVBGyrA%3D%3D&X-Amz-Signature=63b0a3a2e2d42a274d9ebe6e4eda7fec06853c604da6afcb3d529350ef7836fd","description":"Now,
+        thought Alice, Well, I hardly know No more, thank ye Im better now but Im
+        grown up now, she added in a hurry. No, look","step_0":null,"cached_display_name":"Alice","updated_at":"2015-12-01T19:20:16Z","filmstrip_image":null,"image_blur_hash":null,"created_at":"2015-12-01T14:07:51Z","sg_keep":false,"sg_asset_type":"Character","code":"Alice","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"fin","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[{"id":863,"name":"bunny_010_0020","type":"Shot"},{"id":883,"name":"bunny_020_0020","type":"Shot"},{"id":889,"name":"bunny_020_0080","type":"Shot"},{"id":896,"name":"bunny_020_0150","type":"Shot"},{"id":904,"name":"bunny_030_0030","type":"Shot"},{"id":916,"name":"bunny_030_0150","type":"Shot"},{"id":917,"name":"bunny_030_0160","type":"Shot"},{"id":926,"name":"bunny_040_0050","type":"Shot"},{"id":927,"name":"bunny_040_0060","type":"Shot"},{"id":930,"name":"bunny_040_0090","type":"Shot"},{"id":951,"name":"bunny_050_0100","type":"Shot"},{"id":953,"name":"bunny_050_0120","type":"Shot"},{"id":954,"name":"bunny_050_0130","type":"Shot"},{"id":960,"name":"bunny_050_0190","type":"Shot"},{"id":972,"name":"bunny_060_0110","type":"Shot"},{"id":979,"name":"bunny_060_0180","type":"Shot"},{"id":989,"name":"bunny_070_0080","type":"Shot"},{"id":995,"name":"bunny_070_0140","type":"Shot"},{"id":1000,"name":"bunny_070_0190","type":"Shot"},{"id":1002,"name":"bunny_080_0010","type":"Shot"},{"id":1007,"name":"bunny_080_0060","type":"Shot"},{"id":1011,"name":"bunny_080_0100","type":"Shot"},{"id":1022,"name":"bunny_090_0010","type":"Shot"},{"id":1023,"name":"bunny_090_0020","type":"Shot"},{"id":1035,"name":"bunny_090_0140","type":"Shot"},{"id":1036,"name":"bunny_090_0150","type":"Shot"},{"id":1040,"name":"bunny_090_0190","type":"Shot"},{"id":1047,"name":"bunny_100_0060","type":"Shot"},{"id":1071,"name":"bunny_110_0100","type":"Shot"},{"id":1078,"name":"bunny_110_0170","type":"Shot"},{"id":1082,"name":"bunny_120_0010","type":"Shot"},{"id":1091,"name":"bunny_120_0100","type":"Shot"},{"id":1092,"name":"bunny_120_0110","type":"Shot"},{"id":1099,"name":"bunny_120_0180","type":"Shot"},{"id":1106,"name":"bunny_130_0050","type":"Shot"},{"id":1109,"name":"bunny_130_0080","type":"Shot"},{"id":1113,"name":"bunny_130_0120","type":"Shot"},{"id":1120,"name":"bunny_130_0190","type":"Shot"},{"id":1121,"name":"bunny_130_0200","type":"Shot"},{"id":1125,"name":"bunny_140_0040","type":"Shot"},{"id":1133,"name":"bunny_140_0120","type":"Shot"},{"id":1145,"name":"bunny_150_0040","type":"Shot"},{"id":1150,"name":"bunny_150_0090","type":"Shot"},{"id":1151,"name":"bunny_150_0100","type":"Shot"},{"id":1157,"name":"bunny_150_0160","type":"Shot"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/assets"}},"tasks":{"data":[{"id":3468,"name":"Art","type":"Task"},{"id":3469,"name":"Model","type":"Task"},{"id":3470,"name":"Rig","type":"Task"},{"id":3471,"name":"Texture","type":"Task"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/addressings_cc"}},"sequences":{"data":[{"id":23,"name":"bunny_010","type":"Sequence"},{"id":24,"name":"bunny_020","type":"Sequence"},{"id":25,"name":"bunny_030","type":"Sequence"},{"id":26,"name":"bunny_040","type":"Sequence"},{"id":27,"name":"bunny_050","type":"Sequence"},{"id":28,"name":"bunny_060","type":"Sequence"},{"id":29,"name":"bunny_070","type":"Sequence"},{"id":30,"name":"bunny_080","type":"Sequence"},{"id":31,"name":"bunny_090","type":"Sequence"},{"id":32,"name":"bunny_100","type":"Sequence"},{"id":33,"name":"bunny_110","type":"Sequence"},{"id":34,"name":"bunny_120","type":"Sequence"},{"id":35,"name":"bunny_130","type":"Sequence"},{"id":36,"name":"bunny_140","type":"Sequence"},{"id":37,"name":"bunny_150","type":"Sequence"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/sequences"}},"created_by":{"data":{"id":24,"name":"Shotgun
+        Support","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/created_by","related":"/api/v1/entity/human_users/24"}},"updated_by":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/updated_by"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/levels"}},"project":{"data":{"id":70,"name":"Demo:
+        Animation","type":"Project"},"links":{"self":"/api/v1/entity/assets/1226/relationships/project","related":"/api/v1/entity/projects/70"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/tags"}},"image_source_entity":{"data":{"type":"Asset","id":1226,"name":"Alice"},"links":{"self":"/api/v1/entity/assets/1226/relationships/image_source_entity","related":"/api/v1/entity/assets/1226"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/linked_projects"}}},"id":1226,"links":{"self":"/api/v1/entity/assets/1226"}}],"links":{"self":"/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=1&page%5Bsize%5D=1","next":"/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=2&page%5Bsize%5D=1"}}'
+  recorded_at: Tue, 15 Jun 2021 09:08:43 GMT
+recorded_with: VCR 6.0.0
