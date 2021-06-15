@@ -63,6 +63,51 @@ module ShotgunApiRuby
           end
       end
 
+      def add_grouping(grouping)
+        return unless grouping
+
+        if grouping.is_a? Array
+          self[:grouping] = grouping
+          return
+        end
+
+        self[:grouping] =
+          grouping
+            .each
+            .with_object([]) do |(key, options), result|
+              if options.is_a? Hash
+                result << {
+                  field: key.to_s,
+                  type:
+                    options[:type]&.to_s || options['type']&.to_s || 'exact',
+                  direction:
+                    options[:direction]&.to_s || options['direction']&.to_s ||
+                      'asc',
+                }
+              else
+                result << {
+                  field: key.to_s,
+                  type: 'exact',
+                  direction: options.to_s,
+                }
+              end
+            end
+      end
+
+      def add_summary_fields(summary_fields)
+        return unless summary_fields
+
+        if summary_fields.is_a? Array
+          self[:summary_fields] = summary_fields
+          return
+        end
+
+        if summary_fields.is_a? Hash
+          self[:summary_fields] =
+            summary_fields.map { |k, v| { field: k.to_s, type: v.to_s } }
+        end
+      end
+
       def self.filters_are_simple?(filters)
         return false if filters.is_a? Array
 

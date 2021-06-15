@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 07:57:35 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"fd9bc028de14b7306ca8765bcc94f017"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 99c3106f066dc57146b0fa13fa867693
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Tue, 15 Jun 2021 07:57:35 GMT
+- request:
+    method: post
+    uri: https://pasind3-prod.shotgunstudio.com/api/v1/entity/Asset/_summarize
+    body:
+      encoding: UTF-8
+      string: '{"filters":{"conditions":[["project.Project.id","is",155]],"logical_operator":"and"},"summary_fields":[{"type":"record_count","field":"id"}]}'
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/vnd+shotgun.api3_hash+json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 15 Jun 2021 07:57:36 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '43'
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - '"9eeaf7739da5e34b026fb8a3724c1f8f"'
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 50e348eabefe9b7dff356638d96d07a6
+    body:
+      encoding: UTF-8
+      string: '{"data":{"summaries":{"id":6},"groups":[]}}'
+  recorded_at: Tue, 15 Jun 2021 07:57:36 GMT
+recorded_with: VCR 6.0.0
