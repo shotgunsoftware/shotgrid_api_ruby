@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:55 GMT
+      - Wed, 16 Jun 2021 08:56:55 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"fb5316f6c1c1266195727d70982d6663"
+      - W/"80c91dfb9550b9334c41a8f18a80c346"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 7c63276805d5f63403d625b06097e844
+      - 107fcd427a3dfef20c584aae3b7f7cca
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:08:55 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:55 GMT
 - request:
     method: get
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:56 GMT
+      - Wed, 16 Jun 2021 08:56:56 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -72,7 +72,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"31bf34cb355ae6f073acc5d9b6124b9c"
+      - W/"d85fd02d1c09b78969d5ae35e46b4531"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -82,9 +82,9 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 39d39d0564a6465a333551e081492de3
+      - 9bac9b09a8454ba0648f7e4176847660
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"shotgun_version":"v8.26.0.8056 (build c40f3b9)","api_version":"v1","shotgun_version_number":"8.26.0.8056","shotgun_build_number":"c40f3b9","portfolio_version":"8.26.0.8056","unified_login_flow_enabled":true,"user_authentication_method":"oxygen","site_id":"56086","site_name":"com_shotgunstudio_pasind3_prod_id"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:56 GMT
+      string: '{"data":{"shotgun_version":"v8.26.0.8069 (build b48e91a)","api_version":"v1","shotgun_version_number":"8.26.0.8069","shotgun_build_number":"b48e91a","portfolio_version":"8.26.0.8069","unified_login_flow_enabled":true,"user_authentication_method":"oxygen","site_id":"56086","site_name":"com_shotgunstudio_pasind3_prod_id"}}'
+  recorded_at: Wed, 16 Jun 2021 08:56:56 GMT
 recorded_with: VCR 6.0.0

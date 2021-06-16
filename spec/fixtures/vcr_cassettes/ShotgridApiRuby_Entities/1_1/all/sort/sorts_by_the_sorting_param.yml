@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:07 GMT
+      - Wed, 16 Jun 2021 08:56:07 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"906b7710ef37ab5a72364af43a905315"
+      - W/"9078ca58fae7e16f59f6896c704ccc53"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - a60a5d6b7f426ea39e054fa7ac14e4ab
+      - 7a9c0e66a4502c6aabc8f4b62bfa80ba
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:08:07 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:06 GMT
 - request:
     method: get
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset?fields=code&sort=-code
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:08 GMT
+      - Wed, 16 Jun 2021 08:56:07 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -82,7 +82,7 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - d8e881e363b3b3e69d5cec7f0295319d
+      - d0e064d961c1464a3f756a85b3560167
     body:
       encoding: ASCII-8BIT
       string: '{"data":[{"type":"Asset","attributes":{"code":"Young Bunny"},"relationships":{},"id":1243,"links":{"self":"/api/v1/entity/assets/1243"}},{"type":"Asset","attributes":{"code":"Whiskers"},"relationships":{},"id":1307,"links":{"self":"/api/v1/entity/assets/1307"}},{"type":"Asset","attributes":{"code":"Wheels"},"relationships":{},"id":1411,"links":{"self":"/api/v1/entity/assets/1411"}},{"type":"Asset","attributes":{"code":"Waterfall"},"relationships":{},"id":1265,"links":{"self":"/api/v1/entity/assets/1265"}},{"type":"Asset","attributes":{"code":"Vine"},"relationships":{},"id":1306,"links":{"self":"/api/v1/entity/assets/1306"}},{"type":"Asset","attributes":{"code":"Van"},"relationships":{},"id":1325,"links":{"self":"/api/v1/entity/assets/1325"}},{"type":"Asset","attributes":{"code":"Valley
@@ -129,5 +129,5 @@ http_interactions:
         Jay"},"relationships":{},"id":1228,"links":{"self":"/api/v1/entity/assets/1228"}},{"type":"Asset","attributes":{"code":"Blue
         Car"},"relationships":{},"id":1308,"links":{"self":"/api/v1/entity/assets/1308"}},{"type":"Asset","attributes":{"code":"blowing_snow_VFX"},"relationships":{},"id":1347,"links":{"self":"/api/v1/entity/assets/1347"}},{"type":"Asset","attributes":{"code":"Billowy
         Clouds"},"relationships":{},"id":1266,"links":{"self":"/api/v1/entity/assets/1266"}},{"type":"Asset","attributes":{"code":"Beach"},"relationships":{},"id":1245,"links":{"self":"/api/v1/entity/assets/1245"}},{"type":"Asset","attributes":{"code":"Barn"},"relationships":{},"id":1244,"links":{"self":"/api/v1/entity/assets/1244"}},{"type":"Asset","attributes":{"code":"Assembly"},"relationships":{},"id":1404,"links":{"self":"/api/v1/entity/assets/1404"}},{"type":"Asset","attributes":{"code":"Anders"},"relationships":{},"id":1227,"links":{"self":"/api/v1/entity/assets/1227"}},{"type":"Asset","attributes":{"code":"Alice"},"relationships":{},"id":1226,"links":{"self":"/api/v1/entity/assets/1226"}},{"type":"Asset","attributes":{"code":"Acorn"},"relationships":{},"id":1288,"links":{"self":"/api/v1/entity/assets/1288"}}],"links":{"self":"/api/v1/entity/Asset?fields=code&sort=-code","next":"/api/v1/entity/Asset?fields=code&page%5Bnumber%5D=2&page%5Bsize%5D=500&sort=-code"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:07 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:07 GMT
 recorded_with: VCR 6.0.0

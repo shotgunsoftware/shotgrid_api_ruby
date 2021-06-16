@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:19 GMT
+      - Wed, 16 Jun 2021 08:56:19 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"4b48bed7d5baae25dd1bd3326e102f1a"
+      - W/"004a0b2ab3f76fa807e89153b7d8f9f7"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - ea4581d61a4a6a7b4c8b6c5121f02af7
+      - 6b1ff776c503866ea4f85a275400bc2e
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:08:19 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:19 GMT
 - request:
     method: post
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/_search
@@ -64,7 +64,7 @@ http_interactions:
       message: Bad Request
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:20 GMT
+      - Wed, 16 Jun 2021 08:56:20 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -81,9 +81,9 @@ http_interactions:
       - max-age=63072000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: '{"errors":[{"id":"dbe873de7747c05d19391e0f11ad1390","status":400,"code":103,"title":"API
+      string: '{"errors":[{"id":"e62e631dbf8e4b67495094c8a8eeba24","status":400,"code":103,"title":"API
         read() Asset.not_existing_field doesn''t exist.","source":{"Asset.not_existing_field":"
         does not exist. Value: {\"path\"=\u003E\"not_existing_field\", \"relation\"=\u003E\"is\",
         \"values\"=\u003E[\"NOPE\"]}"},"detail":null,"meta":null}]}'
-  recorded_at: Tue, 15 Jun 2021 09:08:20 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:20 GMT
 recorded_with: VCR 6.0.0

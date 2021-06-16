@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:06:49 GMT
+      - Wed, 16 Jun 2021 08:54:47 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"114ceb500f280736a0aa1c1168cf4e03"
+      - W/"75f46c77887bef13df4cf31b8cd82984"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - af77c602c9c3c8e0a23d26e23a53c454
+      - a2b2e5d377c1acf07171b8cd2ba4710e
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:06:49 GMT
+  recorded_at: Wed, 16 Jun 2021 08:54:47 GMT
 - request:
     method: get
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/schema/Asset
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:06:50 GMT
+      - Wed, 16 Jun 2021 08:54:48 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -82,9 +82,9 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - f37697e7d6ac321e10f18156cfaadda0
+      - f7de082e6d777fc23e2715ddfa8d73b9
     body:
       encoding: UTF-8
       string: '{"data":{"name":{"value":"Asset","editable":false},"visible":{"value":true,"editable":false}},"links":{"self":"/api/v1/schema/Asset"}}'
-  recorded_at: Tue, 15 Jun 2021 09:06:50 GMT
+  recorded_at: Wed, 16 Jun 2021 08:54:48 GMT
 recorded_with: VCR 6.0.0

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:07:18 GMT
+      - Wed, 16 Jun 2021 08:55:17 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"35ac48aeda12185caf8336fa5452bfcc"
+      - W/"30068f80402a92eedaa4e03b97858158"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 0df0a1163f0975c1966a0f8fa95e5c58
+      - 56ae55b7f6c7f312be0c70863d1db6ec
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:07:18 GMT
+  recorded_at: Wed, 16 Jun 2021 08:55:17 GMT
 - request:
     method: put
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/400000
@@ -64,7 +64,7 @@ http_interactions:
       message: Not Found
     headers:
       date:
-      - Tue, 15 Jun 2021 09:07:19 GMT
+      - Wed, 16 Jun 2021 08:55:18 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -81,8 +81,8 @@ http_interactions:
       - max-age=63072000; includeSubDomains; preload
     body:
       encoding: ASCII-8BIT
-      string: '{"errors":[{"id":"053b9f538d12ceaab7e55e0d8d4fa1f3","status":404,"code":104,"title":"Not
+      string: '{"errors":[{"id":"3e4e40aed59d34e1e7bb596debec75e7","status":404,"code":104,"title":"Not
         Found","source":null,"detail":"Entity of type [Asset] with id=400000 does
         not exist.","meta":null}]}'
-  recorded_at: Tue, 15 Jun 2021 09:07:18 GMT
+  recorded_at: Wed, 16 Jun 2021 08:55:17 GMT
 recorded_with: VCR 6.0.0

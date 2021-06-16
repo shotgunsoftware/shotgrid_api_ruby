@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:24 GMT
+      - Wed, 16 Jun 2021 08:56:24 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"2ce90819e09c71f960b97cfd203d8c17"
+      - W/"a8a618c618c129b74aecd2682dbfc2b8"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 6c83463d1ad290993f6c5e13f9af1dd2
+      - a7160de5fc59dfa77cffbdff8dc34b57
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:08:24 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:24 GMT
 - request:
     method: post
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/_search
@@ -64,7 +64,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:25 GMT
+      - Wed, 16 Jun 2021 08:56:25 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -84,11 +84,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 59012e9ebe230000f85c610eb64ab2ae
+      - 254d3171b2b5fd4ddc4208060d0d5c74
     body:
       encoding: ASCII-8BIT
       string: '{"data":[{"type":"Asset","attributes":{"description":"Desc 1"},"relationships":{},"id":1412,"links":{"self":"/api/v1/entity/assets/1412"}},{"type":"Asset","attributes":{"description":"TEST
         2"},"relationships":{},"id":1413,"links":{"self":"/api/v1/entity/assets/1413"}},{"type":"Asset","attributes":{"description":"TEST
         3"},"relationships":{},"id":1414,"links":{"self":"/api/v1/entity/assets/1414"}}],"links":{"self":"/api/v1/entity/Asset/_search","next":"/api/v1/entity/Asset/_search?page%5Bnumber%5D=2&page%5Bsize%5D=500"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:25 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:25 GMT
 recorded_with: VCR 6.0.0

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:07:56 GMT
+      - Wed, 16 Jun 2021 08:55:56 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"41124c7990e525969e1d297686eb0331"
+      - W/"c6a6684b0002933f5cdbe08a897f1c19"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 5ce989ec982d95c49e30f004e4928682
+      - 9395bf914e1c5cb21ef0852e5be7a5f0
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:07:56 GMT
+  recorded_at: Wed, 16 Jun 2021 08:55:56 GMT
 - request:
     method: get
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset?fields=%2A&filter%5Bnot_existing_field%5D=NOPE
@@ -62,7 +62,7 @@ http_interactions:
       message: Bad Request
     headers:
       date:
-      - Tue, 15 Jun 2021 09:07:57 GMT
+      - Wed, 16 Jun 2021 08:55:57 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -79,9 +79,9 @@ http_interactions:
       - max-age=63072000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: '{"errors":[{"id":"ba76f1c979e433300e977096d4363213","status":400,"code":103,"title":"API
+      string: '{"errors":[{"id":"20c4fb862df36b574b2c8ce984cd920f","status":400,"code":103,"title":"API
         read() Asset.not_existing_field doesn''t exist.","source":{"Asset.not_existing_field":"
         does not exist. Value: {\"path\"=\u003E\"not_existing_field\", \"relation\"=\u003E\"is\",
         \"values\"=\u003E[\"NOPE\"]}"},"detail":null,"meta":null}]}'
-  recorded_at: Tue, 15 Jun 2021 09:07:57 GMT
+  recorded_at: Wed, 16 Jun 2021 08:55:57 GMT
 recorded_with: VCR 6.0.0

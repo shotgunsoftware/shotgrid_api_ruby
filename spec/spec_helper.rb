@@ -33,12 +33,12 @@ VCR.configure do |config|
         &.gsub(/\*/, '%2A') || 'vcr_shotgun_script_key'
   end
   config.filter_sensitive_data('=<USERNAME>') do
-    (ENV['VCR_SHOTGUN_USERNAME'] && "=#{ENV['VCR_SHOTGUN_USERNAME']}") ||
+    (ENV['VCR_SHOTGRID_USERNAME'] && "=#{ENV['VCR_SHOTGRID_USERNAME']}") ||
       '=vcr_shotgrid_username'
   end
   config.filter_sensitive_data('<PASSWORD>') do
-    ENV['VCR_SHOTGUN_PASSWORD'] &&
-      ENV['VCR_SHOTGUN_PASSWORD']&.gsub(/!/, '%21') || 'vcr_shotgrid_password'
+    ENV['VCR_SHOTGRID_PASSWORD'] &&
+      ENV['VCR_SHOTGRID_PASSWORD']&.gsub(/!/, '%21') || 'vcr_shotgrid_password'
   end
   config.before_record do |i|
     i.response.body.sub!(

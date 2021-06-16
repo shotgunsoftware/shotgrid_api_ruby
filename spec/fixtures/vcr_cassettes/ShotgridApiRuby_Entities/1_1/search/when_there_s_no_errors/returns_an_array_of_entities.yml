@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:21 GMT
+      - Wed, 16 Jun 2021 08:56:21 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"11d412c3d94b93a7e264ecebe5dcc1e7"
+      - W/"349a2051c5c6b21169a54297687282f2"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 2bde4f051b3aaa7ba42d7b04c3f13f16
+      - 80b7c34732952ceab3acb1616f93b8f1
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:08:21 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:21 GMT
 - request:
     method: post
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/_search
@@ -64,7 +64,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:22 GMT
+      - Wed, 16 Jun 2021 08:56:22 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -84,7 +84,7 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 3378dd7d12425ee94b72eee1bccb3352
+      - a8fb6194632252ba8bc7fb3a65a30b7a
     body:
       encoding: ASCII-8BIT
       string: '{"data":[{"type":"Asset","attributes":{"image":null,"description":"Desc
@@ -100,5 +100,5 @@ http_interactions:
         3","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"wtg","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/assets"}},"tasks":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1414/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/addressings_cc"}},"sequences":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/sequences"}},"created_by":{"data":{"id":88,"name":"Denis
         Pasin","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1414/relationships/created_by","related":"/api/v1/entity/human_users/88"}},"updated_by":{"data":{"id":88,"name":"Denis
         Pasin","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1414/relationships/updated_by","related":"/api/v1/entity/human_users/88"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/levels"}},"project":{"data":{"id":122,"name":"TEST","type":"Project"},"links":{"self":"/api/v1/entity/assets/1414/relationships/project","related":"/api/v1/entity/projects/122"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/tags"}},"image_source_entity":{"data":null,"links":{"self":"/api/v1/entity/assets/1414/relationships/image_source_entity"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/linked_projects"}}},"id":1414,"links":{"self":"/api/v1/entity/assets/1414"}}],"links":{"self":"/api/v1/entity/Asset/_search","next":"/api/v1/entity/Asset/_search?page%5Bnumber%5D=2&page%5Bsize%5D=500"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:22 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:22 GMT
 recorded_with: VCR 6.0.0

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:02 GMT
+      - Wed, 16 Jun 2021 08:56:02 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"33ed2c0828f70c7aff9951f0ada62e27"
+      - W/"558873b8eb15b85e2186a7064ef8f591"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - e3d4c2c3b217a6fac01205ec82e255e9
+      - 8ed8f4fbcd4d9a3c5685ff8ff2299212
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:08:02 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:01 GMT
 - request:
     method: get
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset?fields=description
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:03 GMT
+      - Wed, 16 Jun 2021 08:56:02 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -82,7 +82,7 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - a88ebb1fbd9403acefb73f5809d6a719
+      - c6c9cb08edae3bc21d33609ea0383718
     body:
       encoding: ASCII-8BIT
       string: '{"data":[{"type":"Asset","attributes":{"description":"Now, thought
@@ -298,5 +298,5 @@ http_interactions:
         1"},"relationships":{},"id":1412,"links":{"self":"/api/v1/entity/assets/1412"}},{"type":"Asset","attributes":{"description":"TEST
         2"},"relationships":{},"id":1413,"links":{"self":"/api/v1/entity/assets/1413"}},{"type":"Asset","attributes":{"description":"TEST
         3"},"relationships":{},"id":1414,"links":{"self":"/api/v1/entity/assets/1414"}}],"links":{"self":"/api/v1/entity/Asset?fields=description","next":"/api/v1/entity/Asset?fields=description&page%5Bnumber%5D=2&page%5Bsize%5D=500"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:03 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:02 GMT
 recorded_with: VCR 6.0.0

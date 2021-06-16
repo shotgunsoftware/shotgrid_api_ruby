@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:06:57 GMT
+      - Wed, 16 Jun 2021 08:54:56 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"844c4d8a65b8c09d86e51a772994db5a"
+      - W/"842ebe2170573a7cbab1f1fd2dfa58e5"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 8bd076217593cd39ce27a2c767187d57
+      - 9c474da35dc0f54fca94922b4f474dcb
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:06:57 GMT
+  recorded_at: Wed, 16 Jun 2021 08:54:56 GMT
 - request:
     method: post
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/_summarize
@@ -64,7 +64,7 @@ http_interactions:
       message: Bad Request
     headers:
       date:
-      - Tue, 15 Jun 2021 09:06:58 GMT
+      - Wed, 16 Jun 2021 08:54:57 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -81,9 +81,9 @@ http_interactions:
       - max-age=63072000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: '{"errors":[{"id":"be3bdc22e5d3c48ec91cae7403a07006","status":400,"code":103,"title":"Request
+      string: '{"errors":[{"id":"5ff017195f4b556aee0456b7234ffc10","status":400,"code":103,"title":"Request
         Parameters invalid.","source":{"summary_fields":{"0":{"type":["type must be
         one of: record_count, count, sum, maximum, minimum, average, earliest, latest,
         percentage, status_percentage, status_list, checked, unchecked"]}}},"detail":null,"meta":null}]}'
-  recorded_at: Tue, 15 Jun 2021 09:06:58 GMT
+  recorded_at: Wed, 16 Jun 2021 08:54:56 GMT
 recorded_with: VCR 6.0.0

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:08 GMT
+      - Wed, 16 Jun 2021 08:56:08 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"cd058dc03bd81fcf49d08e43247297f9"
+      - W/"32e4d0ae7c36a4abb3eba37822c4a678"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 4a9781c988ed755a33cb65fced7b51ba
+      - 646441c8ab9f68169dbf96dd03f25f51
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:08:08 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:08 GMT
 - request:
     method: get
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=1&page%5Bsize%5D=1
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:09 GMT
+      - Wed, 16 Jun 2021 08:56:09 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -72,7 +72,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"d85afd89c2edfe744fa08191cf02d3ab"
+      - W/"ef6fc2dec3bb087f4b78a4a074c247e8"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -82,15 +82,15 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 2297e7c8fdc6d10d8694e982a94dac6c
+      - 9ddd53a7a7fe2ec54cbeac7232497d23
     body:
       encoding: ASCII-8BIT
-      string: '{"data":[{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/dbbe32a76cc467b8460fc327e6f230075b293b1a/af5bcc25e9dd8c33817cc1e77911320979429640/Alice_t.jpg?response-content-disposition=filename%3D%22Alice_t.jpg%22&x-amz-meta-user-id=93&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JIQPZMZ2HW%2F20210615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210615T090809Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEHIaDKXirpoaVXkxznDhwyKvAdXsmpQFYLnSu%2FeOUicKrs2K%2BV0a5bd9CyfXwxjygZf803Evj%2FnP8UExi6ltpcfMl9UVFCeRZ8axTScIRPs2usB2KbGRHtEXUaHQhmUR426XGa3MP1q4rpu8uaknu26ceiyWcQ84QU17Y7acWm9kVQJPUxNPt%2B3Ptwx0ZEZMpIHjeiaUJnGATu4%2F%2F2t9Z5%2FTrY54KPbTf3M1NKXgyIwebK%2B1bOYp%2BHyA%2FV5R1igLvRAo%2F9ShhgYyLUP1pPxMRpD4iK9sWl6iFhOTWW2yDxs4lxn8qfTVic5KzWj3VXTS9KehyzXsVg%3D%3D&X-Amz-Signature=0c37832c45247c7501a2424a177f9145de682f0fe3f464fbc09d5d1e0935c160","description":"Now,
+      string: '{"data":[{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/dbbe32a76cc467b8460fc327e6f230075b293b1a/af5bcc25e9dd8c33817cc1e77911320979429640/Alice_t.jpg?response-content-disposition=filename%3D%22Alice_t.jpg%22&x-amz-meta-user-id=93&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JIYPL67G7N%2F20210616%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210616T085609Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEIr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDKWqxhI2uQZl3FiJQSKvAV4epNTs4hg%2FfGGykwYIqSpujtuxNtlJwPR9uMjg8CpQYvfX8IcVte0QU9Bt%2Ffvd5tfrLqrSzerAcjLaCOGXhw2bWK0DXMtae7kxWT4MxsNuV%2BUjcZvCJwH2F7OPcuNpZ9q2o%2BFeK%2B%2BekpOv6YUcJXv41evnTY6xI%2FERRD3blhTYM34WUadqUbAYjlwDO2PaDxEYvjvQ%2BljQVDraUeJfO1b2ioP94kSQ3PlUmN0ZE5oooPOmhgYyLaO%2BZB6ENjH8sC0Sy5RTnHx3c%2FyHkfHDbDfcSTnDRy1k6rBtIDpC09pYdGDUQQ%3D%3D&X-Amz-Signature=045914bed79ca4c141e0665a961a622e8e50dc09600c3af695d6e67ddcb705d2","description":"Now,
         thought Alice, Well, I hardly know No more, thank ye Im better now but Im
         grown up now, she added in a hurry. No, look","step_0":null,"cached_display_name":"Alice","updated_at":"2015-12-01T19:20:16Z","filmstrip_image":null,"image_blur_hash":null,"created_at":"2015-12-01T14:07:51Z","sg_keep":false,"sg_asset_type":"Character","code":"Alice","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"fin","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[{"id":863,"name":"bunny_010_0020","type":"Shot"},{"id":883,"name":"bunny_020_0020","type":"Shot"},{"id":889,"name":"bunny_020_0080","type":"Shot"},{"id":896,"name":"bunny_020_0150","type":"Shot"},{"id":904,"name":"bunny_030_0030","type":"Shot"},{"id":916,"name":"bunny_030_0150","type":"Shot"},{"id":917,"name":"bunny_030_0160","type":"Shot"},{"id":926,"name":"bunny_040_0050","type":"Shot"},{"id":927,"name":"bunny_040_0060","type":"Shot"},{"id":930,"name":"bunny_040_0090","type":"Shot"},{"id":951,"name":"bunny_050_0100","type":"Shot"},{"id":953,"name":"bunny_050_0120","type":"Shot"},{"id":954,"name":"bunny_050_0130","type":"Shot"},{"id":960,"name":"bunny_050_0190","type":"Shot"},{"id":972,"name":"bunny_060_0110","type":"Shot"},{"id":979,"name":"bunny_060_0180","type":"Shot"},{"id":989,"name":"bunny_070_0080","type":"Shot"},{"id":995,"name":"bunny_070_0140","type":"Shot"},{"id":1000,"name":"bunny_070_0190","type":"Shot"},{"id":1002,"name":"bunny_080_0010","type":"Shot"},{"id":1007,"name":"bunny_080_0060","type":"Shot"},{"id":1011,"name":"bunny_080_0100","type":"Shot"},{"id":1022,"name":"bunny_090_0010","type":"Shot"},{"id":1023,"name":"bunny_090_0020","type":"Shot"},{"id":1035,"name":"bunny_090_0140","type":"Shot"},{"id":1036,"name":"bunny_090_0150","type":"Shot"},{"id":1040,"name":"bunny_090_0190","type":"Shot"},{"id":1047,"name":"bunny_100_0060","type":"Shot"},{"id":1071,"name":"bunny_110_0100","type":"Shot"},{"id":1078,"name":"bunny_110_0170","type":"Shot"},{"id":1082,"name":"bunny_120_0010","type":"Shot"},{"id":1091,"name":"bunny_120_0100","type":"Shot"},{"id":1092,"name":"bunny_120_0110","type":"Shot"},{"id":1099,"name":"bunny_120_0180","type":"Shot"},{"id":1106,"name":"bunny_130_0050","type":"Shot"},{"id":1109,"name":"bunny_130_0080","type":"Shot"},{"id":1113,"name":"bunny_130_0120","type":"Shot"},{"id":1120,"name":"bunny_130_0190","type":"Shot"},{"id":1121,"name":"bunny_130_0200","type":"Shot"},{"id":1125,"name":"bunny_140_0040","type":"Shot"},{"id":1133,"name":"bunny_140_0120","type":"Shot"},{"id":1145,"name":"bunny_150_0040","type":"Shot"},{"id":1150,"name":"bunny_150_0090","type":"Shot"},{"id":1151,"name":"bunny_150_0100","type":"Shot"},{"id":1157,"name":"bunny_150_0160","type":"Shot"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/assets"}},"tasks":{"data":[{"id":3468,"name":"Art","type":"Task"},{"id":3469,"name":"Model","type":"Task"},{"id":3470,"name":"Rig","type":"Task"},{"id":3471,"name":"Texture","type":"Task"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/addressings_cc"}},"sequences":{"data":[{"id":23,"name":"bunny_010","type":"Sequence"},{"id":24,"name":"bunny_020","type":"Sequence"},{"id":25,"name":"bunny_030","type":"Sequence"},{"id":26,"name":"bunny_040","type":"Sequence"},{"id":27,"name":"bunny_050","type":"Sequence"},{"id":28,"name":"bunny_060","type":"Sequence"},{"id":29,"name":"bunny_070","type":"Sequence"},{"id":30,"name":"bunny_080","type":"Sequence"},{"id":31,"name":"bunny_090","type":"Sequence"},{"id":32,"name":"bunny_100","type":"Sequence"},{"id":33,"name":"bunny_110","type":"Sequence"},{"id":34,"name":"bunny_120","type":"Sequence"},{"id":35,"name":"bunny_130","type":"Sequence"},{"id":36,"name":"bunny_140","type":"Sequence"},{"id":37,"name":"bunny_150","type":"Sequence"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/sequences"}},"created_by":{"data":{"id":24,"name":"Shotgun
         Support","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/created_by","related":"/api/v1/entity/human_users/24"}},"updated_by":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/updated_by"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/levels"}},"project":{"data":{"id":70,"name":"Demo:
         Animation","type":"Project"},"links":{"self":"/api/v1/entity/assets/1226/relationships/project","related":"/api/v1/entity/projects/70"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/tags"}},"image_source_entity":{"data":{"type":"Asset","id":1226,"name":"Alice"},"links":{"self":"/api/v1/entity/assets/1226/relationships/image_source_entity","related":"/api/v1/entity/assets/1226"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/linked_projects"}}},"id":1226,"links":{"self":"/api/v1/entity/assets/1226"}}],"links":{"self":"/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=1&page%5Bsize%5D=1","next":"/api/v1/entity/Asset?fields=%2A&page%5Bnumber%5D=2&page%5Bsize%5D=1"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:09 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:09 GMT
 - request:
     method: get
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset?fields=%2A&filter%5Bcode%5D=Alice
@@ -109,7 +109,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:10 GMT
+      - Wed, 16 Jun 2021 08:56:10 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -119,7 +119,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"08577080ebd1e43c0c6e5f4affcd37dc"
+      - W/"f8f51142024257d0ec0e43ab5a6ad4a9"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -129,13 +129,13 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - f1059d8463679c4a6ce0cc9314155f40
+      - 64d8f8dc8fa392c3ac221018bc9104e6
     body:
       encoding: ASCII-8BIT
-      string: '{"data":[{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/dbbe32a76cc467b8460fc327e6f230075b293b1a/af5bcc25e9dd8c33817cc1e77911320979429640/Alice_t.jpg?response-content-disposition=filename%3D%22Alice_t.jpg%22&x-amz-meta-user-id=93&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JIQPZMZ2HW%2F20210615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210615T090810Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEHIaDKXirpoaVXkxznDhwyKvAdXsmpQFYLnSu%2FeOUicKrs2K%2BV0a5bd9CyfXwxjygZf803Evj%2FnP8UExi6ltpcfMl9UVFCeRZ8axTScIRPs2usB2KbGRHtEXUaHQhmUR426XGa3MP1q4rpu8uaknu26ceiyWcQ84QU17Y7acWm9kVQJPUxNPt%2B3Ptwx0ZEZMpIHjeiaUJnGATu4%2F%2F2t9Z5%2FTrY54KPbTf3M1NKXgyIwebK%2B1bOYp%2BHyA%2FV5R1igLvRAo%2F9ShhgYyLUP1pPxMRpD4iK9sWl6iFhOTWW2yDxs4lxn8qfTVic5KzWj3VXTS9KehyzXsVg%3D%3D&X-Amz-Signature=f9dbfe3671f54fbaa6b971a0edb4822b3b02dc1b11856ab0a45cbc8e1c2b22be","description":"Now,
+      string: '{"data":[{"type":"Asset","attributes":{"image":"https://sg-media-usor-01.s3-accelerate.amazonaws.com/dbbe32a76cc467b8460fc327e6f230075b293b1a/af5bcc25e9dd8c33817cc1e77911320979429640/Alice_t.jpg?response-content-disposition=filename%3D%22Alice_t.jpg%22&x-amz-meta-user-id=93&x-amz-meta-user-type=ApiUser&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYJG6Z4JI35WZBZVQ%2F20210616%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210616T085610Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FwoGZXIvYXdzEIr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDLfV%2FhSYYfrUirxISiKvAbET8ox4R3voYbUZhCIe5fgd%2B7zqo%2FbpeyB9%2Fce88FVg4rtzkaqklmdH0mlUuoZ9RKB53jqlioc0l3jX7PEo7ueiADUxgMv48uNw6HaIhn%2BJ06J0ejmqEqO2%2BPQVR7ZSqF8YBl8iPgekSPmtT0gcdG5725UT9%2FCc0rW%2Bn3LeTUQASFdX6v%2FRsKIAxGhpU%2BYDbUJYKA9eF5GpTpYKJIQBKjSGvAfqBzcYpQQP8il6qLEoufKmhgYyLZE2Cu%2FNzgqS2A9zHsej5RkAKlcag4eMsIGtDV6NLWxrXETiyIich7NZjsur%2BQ%3D%3D&X-Amz-Signature=cd43bf2caf15f4aa98a9de18c8f4923221129e24418a07177b59bfa71a243707","description":"Now,
         thought Alice, Well, I hardly know No more, thank ye Im better now but Im
         grown up now, she added in a hurry. No, look","step_0":null,"cached_display_name":"Alice","updated_at":"2015-12-01T19:20:16Z","filmstrip_image":null,"image_blur_hash":null,"created_at":"2015-12-01T14:07:51Z","sg_keep":false,"sg_asset_type":"Character","code":"Alice","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"fin","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[{"id":863,"name":"bunny_010_0020","type":"Shot"},{"id":883,"name":"bunny_020_0020","type":"Shot"},{"id":889,"name":"bunny_020_0080","type":"Shot"},{"id":896,"name":"bunny_020_0150","type":"Shot"},{"id":904,"name":"bunny_030_0030","type":"Shot"},{"id":916,"name":"bunny_030_0150","type":"Shot"},{"id":917,"name":"bunny_030_0160","type":"Shot"},{"id":926,"name":"bunny_040_0050","type":"Shot"},{"id":927,"name":"bunny_040_0060","type":"Shot"},{"id":930,"name":"bunny_040_0090","type":"Shot"},{"id":951,"name":"bunny_050_0100","type":"Shot"},{"id":953,"name":"bunny_050_0120","type":"Shot"},{"id":954,"name":"bunny_050_0130","type":"Shot"},{"id":960,"name":"bunny_050_0190","type":"Shot"},{"id":972,"name":"bunny_060_0110","type":"Shot"},{"id":979,"name":"bunny_060_0180","type":"Shot"},{"id":989,"name":"bunny_070_0080","type":"Shot"},{"id":995,"name":"bunny_070_0140","type":"Shot"},{"id":1000,"name":"bunny_070_0190","type":"Shot"},{"id":1002,"name":"bunny_080_0010","type":"Shot"},{"id":1007,"name":"bunny_080_0060","type":"Shot"},{"id":1011,"name":"bunny_080_0100","type":"Shot"},{"id":1022,"name":"bunny_090_0010","type":"Shot"},{"id":1023,"name":"bunny_090_0020","type":"Shot"},{"id":1035,"name":"bunny_090_0140","type":"Shot"},{"id":1036,"name":"bunny_090_0150","type":"Shot"},{"id":1040,"name":"bunny_090_0190","type":"Shot"},{"id":1047,"name":"bunny_100_0060","type":"Shot"},{"id":1071,"name":"bunny_110_0100","type":"Shot"},{"id":1078,"name":"bunny_110_0170","type":"Shot"},{"id":1082,"name":"bunny_120_0010","type":"Shot"},{"id":1091,"name":"bunny_120_0100","type":"Shot"},{"id":1092,"name":"bunny_120_0110","type":"Shot"},{"id":1099,"name":"bunny_120_0180","type":"Shot"},{"id":1106,"name":"bunny_130_0050","type":"Shot"},{"id":1109,"name":"bunny_130_0080","type":"Shot"},{"id":1113,"name":"bunny_130_0120","type":"Shot"},{"id":1120,"name":"bunny_130_0190","type":"Shot"},{"id":1121,"name":"bunny_130_0200","type":"Shot"},{"id":1125,"name":"bunny_140_0040","type":"Shot"},{"id":1133,"name":"bunny_140_0120","type":"Shot"},{"id":1145,"name":"bunny_150_0040","type":"Shot"},{"id":1150,"name":"bunny_150_0090","type":"Shot"},{"id":1151,"name":"bunny_150_0100","type":"Shot"},{"id":1157,"name":"bunny_150_0160","type":"Shot"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/assets"}},"tasks":{"data":[{"id":3468,"name":"Art","type":"Task"},{"id":3469,"name":"Model","type":"Task"},{"id":3470,"name":"Rig","type":"Task"},{"id":3471,"name":"Texture","type":"Task"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/addressings_cc"}},"sequences":{"data":[{"id":23,"name":"bunny_010","type":"Sequence"},{"id":24,"name":"bunny_020","type":"Sequence"},{"id":25,"name":"bunny_030","type":"Sequence"},{"id":26,"name":"bunny_040","type":"Sequence"},{"id":27,"name":"bunny_050","type":"Sequence"},{"id":28,"name":"bunny_060","type":"Sequence"},{"id":29,"name":"bunny_070","type":"Sequence"},{"id":30,"name":"bunny_080","type":"Sequence"},{"id":31,"name":"bunny_090","type":"Sequence"},{"id":32,"name":"bunny_100","type":"Sequence"},{"id":33,"name":"bunny_110","type":"Sequence"},{"id":34,"name":"bunny_120","type":"Sequence"},{"id":35,"name":"bunny_130","type":"Sequence"},{"id":36,"name":"bunny_140","type":"Sequence"},{"id":37,"name":"bunny_150","type":"Sequence"}],"links":{"self":"/api/v1/entity/assets/1226/relationships/sequences"}},"created_by":{"data":{"id":24,"name":"Shotgun
         Support","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1226/relationships/created_by","related":"/api/v1/entity/human_users/24"}},"updated_by":{"data":null,"links":{"self":"/api/v1/entity/assets/1226/relationships/updated_by"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/levels"}},"project":{"data":{"id":70,"name":"Demo:
         Animation","type":"Project"},"links":{"self":"/api/v1/entity/assets/1226/relationships/project","related":"/api/v1/entity/projects/70"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/tags"}},"image_source_entity":{"data":{"type":"Asset","id":1226,"name":"Alice"},"links":{"self":"/api/v1/entity/assets/1226/relationships/image_source_entity","related":"/api/v1/entity/assets/1226"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1226/relationships/linked_projects"}}},"id":1226,"links":{"self":"/api/v1/entity/assets/1226"}}],"links":{"self":"/api/v1/entity/Asset?fields=%2A&filter%5Bcode%5D=Alice","next":"/api/v1/entity/Asset?fields=%2A&filter%5Bcode%5D=Alice&page%5Bnumber%5D=2&page%5Bsize%5D=500"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:10 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:10 GMT
 recorded_with: VCR 6.0.0

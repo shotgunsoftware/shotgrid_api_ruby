@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:06:51 GMT
+      - Wed, 16 Jun 2021 08:54:49 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"824a034f87016dcf916c5577427f1e82"
+      - W/"176b4b1f15b105aadd98f673f912ea7c"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 830b8b99c14d0b0dd15bf8b159ab3aea
+      - 0f04505330d5c316e5c989f9b2540f7f
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:06:50 GMT
+  recorded_at: Wed, 16 Jun 2021 08:54:49 GMT
 - request:
     method: get
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/schema/Asset/fields
@@ -62,7 +62,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:06:51 GMT
+      - Wed, 16 Jun 2021 08:54:50 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -82,7 +82,7 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - b9e2b8b2a9d746f64041b461499260a7
+      - cbe511a75919bd989c97554c5b0e5a95
     body:
       encoding: ASCII-8BIT
       string: '{"data":{"image":{"name":{"value":"Thumbnail","editable":true},"description":{"value":"","editable":true},"custom_metadata":{"value":"","editable":true},"entity_type":{"value":"Asset","editable":false},"data_type":{"value":"image","editable":false},"editable":{"value":true,"editable":false},"mandatory":{"value":false,"editable":false},"unique":{"value":false,"editable":false},"properties":{"default_value":{"value":null,"editable":false},"summary_default":{"value":"none","editable":true},"image_sorts":{"value":null,"editable":false},"image_use_query":{"value":true,"editable":false},"render_method":{"value":"use_image_query","editable":false},"allowed_render_methods":{"value":["use_uploaded_image","use_image_query"],"editable":false}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}},"shots":{"name":{"value":"Shots","editable":true},"description":{"value":"","editable":true},"custom_metadata":{"value":"","editable":true},"entity_type":{"value":"Asset","editable":false},"data_type":{"value":"multi_entity","editable":false},"editable":{"value":true,"editable":false},"mandatory":{"value":false,"editable":false},"unique":{"value":false,"editable":false},"properties":{"default_value":{"value":null,"editable":false},"summary_default":{"value":"none","editable":true},"valid_types":{"value":["Shot"],"editable":true}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}},"description":{"name":{"value":"Description","editable":true},"description":{"value":"A
@@ -113,5 +113,5 @@ http_interactions:
         Entity","type":"Entity","valid":"parent_entity_token"}]},{"logical_operator":"or","conditions":[{"path":"sg_status_list","relation":"is","values":["opn"]},{"path":"sg_status_list","relation":"is","values":["ip"]},{"path":"sg_status_list","relation":"is","values":["rdy"]}]}]}},"editable":false}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}},"sg_status_list":{"name":{"value":"Status","editable":true},"description":{"value":"","editable":true},"custom_metadata":{"value":"","editable":true},"entity_type":{"value":"Asset","editable":false},"data_type":{"value":"status_list","editable":false},"editable":{"value":true,"editable":false},"mandatory":{"value":false,"editable":false},"unique":{"value":false,"editable":false},"properties":{"default_value":{"value":"wtg","editable":true},"summary_default":{"value":"status_list","editable":true},"valid_values":{"value":["wtg","ip","fin"],"editable":true},"display_values":{"value":{"ip":"In
         Progress","wtg":"Waiting to Start","fin":"Final"},"editable":false},"hidden_values":{"value":[],"editable":false}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}},"step_32":{"name":{"value":"Animation","editable":true},"description":{"value":"","editable":true},"custom_metadata":{"value":"","editable":true},"entity_type":{"value":"Asset","editable":false},"data_type":{"value":"pivot_column","editable":false},"editable":{"value":false,"editable":false},"mandatory":{"value":false,"editable":false},"unique":{"value":false,"editable":false},"properties":{"default_value":{"value":null,"editable":false},"summary_default":{"value":"none","editable":false}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}},"step_130":{"name":{"value":"Clay","editable":true},"description":{"value":"","editable":true},"custom_metadata":{"value":"","editable":true},"entity_type":{"value":"Asset","editable":false},"data_type":{"value":"pivot_column","editable":false},"editable":{"value":false,"editable":false},"mandatory":{"value":false,"editable":false},"unique":{"value":false,"editable":false},"properties":{"default_value":{"value":null,"editable":false},"summary_default":{"value":"none","editable":false}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}},"step_131":{"name":{"value":"Visualization","editable":true},"description":{"value":"","editable":true},"custom_metadata":{"value":"","editable":true},"entity_type":{"value":"Asset","editable":false},"data_type":{"value":"pivot_column","editable":false},"editable":{"value":false,"editable":false},"mandatory":{"value":false,"editable":false},"unique":{"value":false,"editable":false},"properties":{"default_value":{"value":null,"editable":false},"summary_default":{"value":"none","editable":false}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}},"step_132":{"name":{"value":"Class-A","editable":true},"description":{"value":"","editable":true},"custom_metadata":{"value":"","editable":true},"entity_type":{"value":"Asset","editable":false},"data_type":{"value":"pivot_column","editable":false},"editable":{"value":false,"editable":false},"mandatory":{"value":false,"editable":false},"unique":{"value":false,"editable":false},"properties":{"default_value":{"value":null,"editable":false},"summary_default":{"value":"none","editable":false}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}},"linked_projects":{"name":{"value":"Linked
         Projects","editable":true},"description":{"value":"","editable":true},"custom_metadata":{"value":"","editable":true},"entity_type":{"value":"Asset","editable":false},"data_type":{"value":"multi_entity","editable":false},"editable":{"value":true,"editable":false},"mandatory":{"value":false,"editable":false},"unique":{"value":false,"editable":false},"properties":{"default_value":{"value":null,"editable":false},"summary_default":{"value":"none","editable":true},"valid_types":{"value":["Project"],"editable":false}},"visible":{"value":true,"editable":false},"ui_value_displayable":{"value":true,"editable":false}}},"links":{"self":"/api/v1/schema/Asset/fields"}}'
-  recorded_at: Tue, 15 Jun 2021 09:06:51 GMT
+  recorded_at: Wed, 16 Jun 2021 08:54:50 GMT
 recorded_with: VCR 6.0.0

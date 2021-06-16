@@ -23,11 +23,11 @@ RSpec.define_context 'with vcr values', ns: 'vcr' do
   end
 
   let(:shotgun_username) do
-    ENV['VCR_SHOTGUN_USERNAME'] || 'vcr_shotgun_username'
+    ENV['VCR_SHOTGRID_USERNAME'] || 'vcr_shotgrid_username'
   end
 
   let(:shotgun_password) do
-    ENV['VCR_SHOTGUN_PASSWORD'] || 'vcr_shotgun_password'
+    ENV['VCR_SHOTGRID_PASSWORD'] || 'vcr_shotgrid_password'
   end
 
   let(:shotgrid_client) do

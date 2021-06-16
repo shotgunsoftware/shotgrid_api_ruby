@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:06:59 GMT
+      - Wed, 16 Jun 2021 08:54:57 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"5f5c4e297a31edd1283f6c5b509c232f"
+      - W/"29ccca1e6624dd4af58a749d14cf4e0c"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 0240c18010fb7dfe9684606ad3306c16
+      - 471ab9b39781f33361fd2b0c85cb6258
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:06:59 GMT
+  recorded_at: Wed, 16 Jun 2021 08:54:57 GMT
 - request:
     method: post
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset
@@ -64,7 +64,7 @@ http_interactions:
       message: Bad Request
     headers:
       date:
-      - Tue, 15 Jun 2021 09:07:00 GMT
+      - Wed, 16 Jun 2021 08:54:58 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -81,7 +81,7 @@ http_interactions:
       - max-age=63072000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: '{"errors":[{"id":"235c31f90d7ffcf56f5e2ebde55932a3","status":400,"code":103,"title":"API
+      string: '{"errors":[{"id":"788165b1f8f117ba9ccbdee711d26052","status":400,"code":103,"title":"API
         create() Asset.not_existing_field doesn''t exist.","source":{},"detail":null,"meta":null}]}'
-  recorded_at: Tue, 15 Jun 2021 09:06:59 GMT
+  recorded_at: Wed, 16 Jun 2021 08:54:58 GMT
 recorded_with: VCR 6.0.0

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:36 GMT
+      - Wed, 16 Jun 2021 08:56:36 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -29,7 +29,7 @@ http_interactions:
       cache-control:
       - private, max-age=0, must-revalidate
       etag:
-      - W/"006bd27ff3645b903fdda824d0337d58"
+      - W/"c1afd1a31024d524f7e7c366fac0bb19"
       server:
       - nginx + Phusion Passenger(R)
       status:
@@ -39,11 +39,11 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 982af1988b177b9254ab4c67731a20d0
+      - 12c6cfdfb2794bdd38d5232e0ed29569
     body:
       encoding: ASCII-8BIT
       string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
-  recorded_at: Tue, 15 Jun 2021 09:08:36 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:36 GMT
 - request:
     method: post
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/_search
@@ -64,7 +64,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:37 GMT
+      - Wed, 16 Jun 2021 08:56:37 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -84,7 +84,7 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 69620f937ad9526bf9f16ea485aabb30
+      - '08ab466a324ecad00783292c8443c06d'
     body:
       encoding: ASCII-8BIT
       string: '{"data":[{"type":"Asset","attributes":{"image":null,"description":"TEST
@@ -92,7 +92,7 @@ http_interactions:
         2","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"wtg","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/assets"}},"tasks":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1413/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/addressings_cc"}},"sequences":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/sequences"}},"created_by":{"data":{"id":88,"name":"Denis
         Pasin","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1413/relationships/created_by","related":"/api/v1/entity/human_users/88"}},"updated_by":{"data":{"id":88,"name":"Denis
         Pasin","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1413/relationships/updated_by","related":"/api/v1/entity/human_users/88"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/levels"}},"project":{"data":{"id":122,"name":"TEST","type":"Project"},"links":{"self":"/api/v1/entity/assets/1413/relationships/project","related":"/api/v1/entity/projects/122"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/tags"}},"image_source_entity":{"data":null,"links":{"self":"/api/v1/entity/assets/1413/relationships/image_source_entity"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1413/relationships/linked_projects"}}},"id":1413,"links":{"self":"/api/v1/entity/assets/1413"}}],"links":{"self":"/api/v1/entity/Asset/_search","next":"/api/v1/entity/Asset/_search?page%5Bnumber%5D=3&page%5Bsize%5D=1","prev":"/api/v1/entity/Asset/_search?page%5Bnumber%5D=1&page%5Bsize%5D=1"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:37 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:37 GMT
 - request:
     method: post
     uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/_search
@@ -113,7 +113,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 15 Jun 2021 09:08:38 GMT
+      - Wed, 16 Jun 2021 08:56:38 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -133,7 +133,7 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-request-id:
-      - 1a0c571a08428c818cd77663147676fe
+      - 8e3bafcf5685510db30289f779eb6aed
     body:
       encoding: ASCII-8BIT
       string: '{"data":[{"type":"Asset","attributes":{"image":null,"description":"Desc
@@ -149,5 +149,5 @@ http_interactions:
         3","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"wtg","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/assets"}},"tasks":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1414/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/addressings_cc"}},"sequences":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/sequences"}},"created_by":{"data":{"id":88,"name":"Denis
         Pasin","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1414/relationships/created_by","related":"/api/v1/entity/human_users/88"}},"updated_by":{"data":{"id":88,"name":"Denis
         Pasin","type":"HumanUser"},"links":{"self":"/api/v1/entity/assets/1414/relationships/updated_by","related":"/api/v1/entity/human_users/88"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/levels"}},"project":{"data":{"id":122,"name":"TEST","type":"Project"},"links":{"self":"/api/v1/entity/assets/1414/relationships/project","related":"/api/v1/entity/projects/122"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/tags"}},"image_source_entity":{"data":null,"links":{"self":"/api/v1/entity/assets/1414/relationships/image_source_entity"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1414/relationships/linked_projects"}}},"id":1414,"links":{"self":"/api/v1/entity/assets/1414"}}],"links":{"self":"/api/v1/entity/Asset/_search","next":"/api/v1/entity/Asset/_search?page%5Bnumber%5D=2&page%5Bsize%5D=500"}}'
-  recorded_at: Tue, 15 Jun 2021 09:08:38 GMT
+  recorded_at: Wed, 16 Jun 2021 08:56:38 GMT
 recorded_with: VCR 6.0.0
