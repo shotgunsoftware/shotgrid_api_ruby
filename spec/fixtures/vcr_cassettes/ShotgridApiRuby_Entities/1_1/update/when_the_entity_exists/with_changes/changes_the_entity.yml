@@ -1,0 +1,276 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/auth/access_token?client_id=<SCRIPT_NAME>&client_secret=<SCRIPT_KEY>&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 16 Jun 2021 08:55:22 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"5ce8bee4b6cf7843d9924618d4e4a9af"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - b323a20c7fe6136998986513b0357909
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"Bearer","access_token":"<ACCESS_TOKEN>","expires_in":600,"refresh_token":"<REFRESH_TOKEN>"}'
+  recorded_at: Wed, 16 Jun 2021 08:55:22 GMT
+- request:
+    method: post
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset
+    body:
+      encoding: UTF-8
+      string: '{"project":{"type":"Project","id":122},"description":"old"}'
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Wed, 16 Jun 2021 08:55:23 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '2388'
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, max-age=0
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 201 Created
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 93367914db3327e0b31328beb1d2aee5
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"Asset","attributes":{"description":"old","cached_display_name":"New
+        Asset 1478","updated_at":"2021-06-16 08:55:23 UTC","created_at":"2021-06-16
+        08:55:23 UTC","code":"New Asset 1478","open_notes_count":0,"sg_status_list":"wtg"},"relationships":{"shots":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/assets"}},"tasks":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/mocap_takes"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/addressings_cc"}},"sequences":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sequences"}},"created_by":{"data":{"id":93,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1478/relationships/created_by","related":"/api/v1/entity/api_users/93"}},"updated_by":{"data":{"id":93,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1478/relationships/updated_by","related":"/api/v1/entity/api_users/93"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/levels"}},"project":{"data":{"id":122,"name":"TEST","type":"Project"},"links":{"self":"/api/v1/entity/assets/1478/relationships/project","related":"/api/v1/entity/projects/122"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/tags"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/linked_projects"}}},"id":1478,"links":{"self":"/api/v1/entity/assets/1478"}}}'
+  recorded_at: Wed, 16 Jun 2021 08:55:23 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/1478?fields=%2A
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 16 Jun 2021 08:55:24 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"65ef2c3cdd2a428f0a3f3597cc0b8216"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 7fee4e879a6bb17a32cbb72bae562003
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"type":"Asset","attributes":{"image":null,"description":"old","step_0":null,"cached_display_name":"New
+        Asset 1478","updated_at":"2021-06-16T08:55:23Z","filmstrip_image":null,"image_blur_hash":null,"created_at":"2021-06-16T08:55:23Z","sg_keep":false,"sg_asset_type":null,"code":"New
+        Asset 1478","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"wtg","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/assets"}},"tasks":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1478/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/addressings_cc"}},"sequences":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sequences"}},"created_by":{"data":{"id":93,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1478/relationships/created_by","related":"/api/v1/entity/api_users/93"}},"updated_by":{"data":{"id":93,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1478/relationships/updated_by","related":"/api/v1/entity/api_users/93"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/levels"}},"project":{"data":{"id":122,"name":"TEST","type":"Project"},"links":{"self":"/api/v1/entity/assets/1478/relationships/project","related":"/api/v1/entity/projects/122"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/tags"}},"image_source_entity":{"data":null,"links":{"self":"/api/v1/entity/assets/1478/relationships/image_source_entity"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/linked_projects"}}},"id":1478,"links":{"self":"/api/v1/entity/assets/1478"}},"links":{"self":"/api/v1/entity/Asset/1478?fields=%2A"}}'
+  recorded_at: Wed, 16 Jun 2021 08:55:24 GMT
+- request:
+    method: put
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/1478
+    body:
+      encoding: UTF-8
+      string: '{"description":"new"}'
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 16 Jun 2021 08:55:25 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"0a63620306c92681aa98d60e03d2d927"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 28cacf089a78ebc889c9a263eb61d5e9
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"type":"Asset","attributes":{"image":null,"description":"new","step_0":null,"cached_display_name":"New
+        Asset 1478","updated_at":"2021-06-16T08:55:25Z","filmstrip_image":null,"image_blur_hash":null,"created_at":"2021-06-16T08:55:23Z","sg_keep":false,"sg_asset_type":null,"code":"New
+        Asset 1478","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"wtg","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/assets"}},"tasks":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1478/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/addressings_cc"}},"sequences":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sequences"}},"created_by":{"data":{"id":93,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1478/relationships/created_by","related":"/api/v1/entity/api_users/93"}},"updated_by":{"data":{"id":93,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1478/relationships/updated_by","related":"/api/v1/entity/api_users/93"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/levels"}},"project":{"data":{"id":122,"name":"TEST","type":"Project"},"links":{"self":"/api/v1/entity/assets/1478/relationships/project","related":"/api/v1/entity/projects/122"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/tags"}},"image_source_entity":{"data":null,"links":{"self":"/api/v1/entity/assets/1478/relationships/image_source_entity"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/linked_projects"}}},"id":1478,"links":{"self":"/api/v1/entity/assets/1478"}},"links":{},"status":"successful"}'
+  recorded_at: Wed, 16 Jun 2021 08:55:25 GMT
+- request:
+    method: get
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/1478?fields=%2A
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 16 Jun 2021 08:55:26 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      cache-control:
+      - private, max-age=0, must-revalidate
+      etag:
+      - W/"6c3b2d7c9a8e833ec5686d8d9d389b5a"
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 26834865e4a00cdfdf078a9bd9025725
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"type":"Asset","attributes":{"image":null,"description":"new","step_0":null,"cached_display_name":"New
+        Asset 1478","updated_at":"2021-06-16T08:55:25Z","filmstrip_image":null,"image_blur_hash":null,"created_at":"2021-06-16T08:55:23Z","sg_keep":false,"sg_asset_type":null,"code":"New
+        Asset 1478","sg_outsource":false,"sg_creative_brief":null,"step_13":null,"step_129":null,"step_16":null,"step_137":null,"step_15":null,"step_14":null,"open_notes_count":0,"sg_status_list":"wtg","step_32":null,"step_130":null,"step_131":null,"step_132":null},"relationships":{"shots":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/shots"}},"parents":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/parents"}},"assets":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/assets"}},"tasks":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/tasks"}},"mocap_takes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/mocap_takes"}},"task_template":{"data":null,"links":{"self":"/api/v1/entity/assets/1478/relationships/task_template"}},"addressings_cc":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/addressings_cc"}},"sequences":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sequences"}},"created_by":{"data":{"id":93,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1478/relationships/created_by","related":"/api/v1/entity/api_users/93"}},"updated_by":{"data":{"id":93,"name":"<SCRIPT_NAME>
+        1.0","type":"ApiUser"},"links":{"self":"/api/v1/entity/assets/1478/relationships/updated_by","related":"/api/v1/entity/api_users/93"}},"sg_versions":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_versions"}},"sg_published_files":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_published_files"}},"episodes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/episodes"}},"levels":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/levels"}},"project":{"data":{"id":122,"name":"TEST","type":"Project"},"links":{"self":"/api/v1/entity/assets/1478/relationships/project","related":"/api/v1/entity/projects/122"}},"tags":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/tags"}},"image_source_entity":{"data":null,"links":{"self":"/api/v1/entity/assets/1478/relationships/image_source_entity"}},"sg_vendor_groups":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/sg_vendor_groups"}},"notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/notes"}},"open_notes":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/open_notes"}},"linked_projects":{"data":[],"links":{"self":"/api/v1/entity/assets/1478/relationships/linked_projects"}}},"id":1478,"links":{"self":"/api/v1/entity/assets/1478"}},"links":{"self":"/api/v1/entity/Asset/1478?fields=%2A"}}'
+  recorded_at: Wed, 16 Jun 2021 08:55:26 GMT
+- request:
+    method: delete
+    uri: https://pasind3-prod-id.shotgrid.autodesk.com/api/v1/entity/Asset/1478
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization: "<ACCESS_TOKEN>"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      date:
+      - Wed, 16 Jun 2021 08:55:27 GMT
+      connection:
+      - keep-alive
+      cache-control:
+      - no-cache, max-age=0
+      server:
+      - nginx + Phusion Passenger(R)
+      status:
+      - 204 No Content
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-frame-options:
+      - SAMEORIGIN
+      x-request-id:
+      - 9cf366a718b301028262e4051c3fd0fa
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 16 Jun 2021 08:55:27 GMT
+recorded_with: VCR 6.0.0

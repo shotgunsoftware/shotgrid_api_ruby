@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# Specify your gem's dependencies in shotgun_api_ruby.gemspec
+# Specify your gem's dependencies in shotgrid_api_ruby.gemspec
 gemspec

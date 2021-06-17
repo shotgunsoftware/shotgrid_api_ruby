@@ -2,22 +2,38 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'shotgun_api_ruby'
+require 'shotgrid_api_ruby'
 
 require 'dotenv/load'
 
+if ENV['SHOTGUN_SITE_NAME'] && ENV['SCRIPT_NAME'] && ENV['SCRIPT_KEY']
+  $cl =
+    ShotgridApiRuby.new(
+      shotgun_site: ENV['SHOTGUN_SITE_NAME'],
+      auth: {
+        client_id: ENV['SCRIPT_NAME'],
+        client_secret: ENV['SCRIPT_KEY'],
+      },
+    )
+end
 if ENV['SITE_NAME'] && ENV['SCRIPT_NAME'] && ENV['SCRIPT_KEY']
   $cl =
-    ShotgunApiRuby.new(
-      shotgun_site: ENV['SITE_NAME'],
-      auth: { client_id: ENV['SCRIPT_NAME'], client_secret: ENV['SCRIPT_KEY'] },
+    ShotgridApiRuby.new(
+      shotgrid_site: ENV['SITE_NAME'],
+      auth: {
+        client_id: ENV['SCRIPT_NAME'],
+        client_secret: ENV['SCRIPT_KEY'],
+      },
     )
 end
 if ENV['SITE_URL'] && ENV['SCRIPT_NAME'] && ENV['SCRIPT_KEY']
   $cl =
-    ShotgunApiRuby.new(
+    ShotgridApiRuby.new(
       site_url: ENV['SITE_URL'],
-      auth: { client_id: ENV['SCRIPT_NAME'], client_secret: ENV['SCRIPT_KEY'] },
+      auth: {
+        client_id: ENV['SCRIPT_NAME'],
+        client_secret: ENV['SCRIPT_KEY'],
+      },
     )
 end
 
