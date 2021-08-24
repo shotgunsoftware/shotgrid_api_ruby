@@ -33,14 +33,16 @@ module ShotgridApiRuby
         OpenStruct.new(
           resp_body['data'].transform_values do |value|
             OpenStruct.new(
-              value.transform_values { |attribute| attribute['value'] }.merge(
-                properties:
-                  OpenStruct.new(
-                    value['properties'].transform_values do |prop|
-                      prop['value']
-                    end,
-                  ),
-              ),
+              value
+                .transform_values { |attribute| attribute['value'] }
+                .merge(
+                  properties:
+                    OpenStruct.new(
+                      value['properties'].transform_values do |prop|
+                        prop['value']
+                      end,
+                    ),
+                ),
             )
           end,
         )

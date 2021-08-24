@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2021-08-24
+### Changed
+- Updated tooling
+
 ## [0.1.2] - 2021-06-16
 ### Changed
 - Renamed to Shotgrid

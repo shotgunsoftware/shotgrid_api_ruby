@@ -107,8 +107,10 @@ describe ShotgridApiRuby::Entities, :vcr do
 
           it 'changes the entity' do
             expect { update }.to change {
-              shotgrid_client.assets.find(id).description
-            }.from('old').to('new')
+                shotgrid_client.assets.find(id).description
+              }
+              .from('old')
+              .to('new')
           end
 
           it 'returns the changed entity' do
@@ -150,8 +152,10 @@ describe ShotgridApiRuby::Entities, :vcr do
 
         it 'revive the entity' do
           expect { revive }.to change {
-            shotgrid_client.assets.first(filter: { id: id })&.description
-          }.from(nil).to('old')
+              shotgrid_client.assets.first(filter: { id: id })&.description
+            }
+            .from(nil)
+            .to('old')
         end
       end
     end

@@ -5,6 +5,9 @@
   "repository": "git@github.com:shotgunsoftware/shotgrid_api_ruby.git",
   "author": "Denis <Zaratan> Pasin <zaratan@hey.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "prettier -w '**/*.rb'"
+  },
   "devDependencies": {
     "@prettier/plugin-ruby": "^1.3.0",
     "prettier": "^2.2.1"

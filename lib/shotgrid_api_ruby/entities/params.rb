@@ -11,9 +11,11 @@ module ShotgridApiRuby
 
         self[:sort] =
           if sort.is_a?(Hash)
-            sort.map do |field, direction|
-              "#{direction.to_s.start_with?('desc') ? '-' : ''}#{field}"
-            end.join(',')
+            sort
+              .map do |field, direction|
+                "#{direction.to_s.start_with?('desc') ? '-' : ''}#{field}"
+              end
+              .join(',')
           else
             [sort].flatten.join(',')
           end
@@ -122,9 +124,10 @@ module ShotgridApiRuby
               filter_val.is_a?(Symbol)
           ) ||
             (
-              filter_val.is_a?(Array) && filter_val.all? do |val|
-                val.is_a?(String) || val.is_a?(Symbol) || val.is_a?(Integer)
-              end
+              filter_val.is_a?(Array) &&
+                filter_val.all? do |val|
+                  val.is_a?(String) || val.is_a?(Symbol) || val.is_a?(Integer)
+                end
             )
         end
       end
