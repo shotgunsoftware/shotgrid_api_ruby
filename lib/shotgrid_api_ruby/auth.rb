@@ -107,7 +107,12 @@ module ShotgridApiRuby
         end
       resp_body = JSON.parse(resp.body)
 
-      raise "Can't login: #{resp_body['errors']}" if resp.status >= 300
+      if resp.status >= 300
+        raise ShotgridCallError.new(
+                response: resp,
+                message: "Can't login: #{resp_body['errors']}",
+              )
+      end
 
       @access_token = resp_body['access_token']
       @token_expiry = Time.now + resp_body['expires_in']

@@ -14,7 +14,10 @@ module ShotgridApiRuby
         resp = @connection.get('')
 
         if resp.status >= 300
-          raise "Error while read schema for #{type}: #{resp.body}"
+          raise ShotgridCallError.new(
+                  response: resp,
+                  message: "Error while read schema for #{type}: #{resp.body}",
+                )
         end
 
         resp_body = JSON.parse(resp.body)
@@ -27,7 +30,11 @@ module ShotgridApiRuby
         resp_body = JSON.parse(resp.body)
 
         if resp.status >= 300
-          raise "Error while read schema fields for #{type}: #{resp.body}"
+          raise ShotgridCallError.new(
+                  response: resp,
+                  message:
+                    "Error while read schema fields for #{type}: #{resp.body}",
+                )
         end
 
         OpenStruct.new(
