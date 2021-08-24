@@ -8,7 +8,10 @@ describe ShotgridApiRuby::Entities, :vcr do
       context "when there's faulty request" do
         let(:attributes) { { not_existing_field: 1234 } }
         it 'raises an error' do
-          expect { create }.to raise_error(StandardError, /Asset.*1234/)
+          expect { create }.to raise_error(
+            ShotgridApiRuby::ShotgridCallError,
+            /Asset.*1234/,
+          )
         end
       end
 
@@ -47,7 +50,10 @@ describe ShotgridApiRuby::Entities, :vcr do
       context 'when the entity does not exists' do
         let(:id) { 400_000 }
         it 'raises an error' do
-          expect { delete }.to raise_error(StandardError, /Asset##{id}/)
+          expect { delete }.to raise_error(
+            ShotgridApiRuby::ShotgridCallError,
+            /Asset##{id}/,
+          )
         end
       end
 
@@ -76,7 +82,10 @@ describe ShotgridApiRuby::Entities, :vcr do
         let(:id) { 400_000 }
         let(:changes) { { description: 'NOPE' } }
         it 'raises an error' do
-          expect { update }.to raise_error(StandardError, /Asset##{id}/)
+          expect { update }.to raise_error(
+            ShotgridApiRuby::ShotgridCallError,
+            /Asset##{id}/,
+          )
         end
       end
 
@@ -107,8 +116,10 @@ describe ShotgridApiRuby::Entities, :vcr do
 
           it 'changes the entity' do
             expect { update }.to change {
-              shotgrid_client.assets.find(id).description
-            }.from('old').to('new')
+                shotgrid_client.assets.find(id).description
+              }
+              .from('old')
+              .to('new')
           end
 
           it 'returns the changed entity' do
@@ -127,7 +138,10 @@ describe ShotgridApiRuby::Entities, :vcr do
       context "when the entity doesn't exist" do
         let(:id) { 400_000 }
         it 'raises an error' do
-          expect { revive }.to raise_error(StandardError, /Asset##{id}/)
+          expect { revive }.to raise_error(
+            ShotgridApiRuby::ShotgridCallError,
+            /Asset##{id}/,
+          )
         end
       end
 
@@ -150,8 +164,10 @@ describe ShotgridApiRuby::Entities, :vcr do
 
         it 'revive the entity' do
           expect { revive }.to change {
-            shotgrid_client.assets.first(filter: { id: id })&.description
-          }.from(nil).to('old')
+              shotgrid_client.assets.first(filter: { id: id })&.description
+            }
+            .from(nil)
+            .to('old')
         end
       end
     end
@@ -168,7 +184,10 @@ describe ShotgridApiRuby::Entities, :vcr do
         let(:id) { 400_000 }
 
         it 'raises an error' do
-          expect { find }.to raise_error(StandardError, /Asset/)
+          expect { find }.to raise_error(
+            ShotgridApiRuby::ShotgridCallError,
+            /Asset/,
+          )
         end
       end
 
@@ -279,7 +298,10 @@ describe ShotgridApiRuby::Entities, :vcr do
         let(:filter) { { not_existing_field: 'NOPE' } }
 
         it 'raises an error' do
-          expect { all }.to raise_error(StandardError, /Asset/)
+          expect { all }.to raise_error(
+            ShotgridApiRuby::ShotgridCallError,
+            /Asset/,
+          )
         end
       end
 
@@ -416,7 +438,10 @@ describe ShotgridApiRuby::Entities, :vcr do
         let(:filter) { { project: { id: 122 }, not_existing_field: 'NOPE' } }
 
         it 'raises an error' do
-          expect { search }.to raise_error(StandardError, /Asset/)
+          expect { search }.to raise_error(
+            ShotgridApiRuby::ShotgridCallError,
+            /Asset/,
+          )
         end
       end
 

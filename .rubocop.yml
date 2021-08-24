@@ -4,7 +4,7 @@ inherit_from:
 inherit_gem:
   prettier: rubocop.yml
 
-require: 
+require:
   - rubocop-performance
 
 AllCops:
@@ -12,6 +12,7 @@ AllCops:
   DisplayStyleGuide: true
   DisplayCopNames: true
   SuggestExtensions: false
+  TargetRubyVersion: 2.6
   Exclude:
     - 'bin/*'
     - 'vendor/**/*'
@@ -24,7 +25,7 @@ Metrics/BlockLength:
     - 'config/environments/*.rb'
     - 'lib/tasks/*.rake'
     - 'shotgun_api_ruby.gemspec'
-      
+
 ### Prettier
 Style:
   Enabled: false

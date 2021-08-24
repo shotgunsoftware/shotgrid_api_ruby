@@ -14,7 +14,11 @@ module ShotgridApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while getting server preferences: #{resp_body['errors']}"
+        raise ShotgridCallError.new(
+                response: resp,
+                message:
+                  "Error while getting server preferences: #{resp_body['errors']}",
+              )
       end
 
       data = resp_body['data']

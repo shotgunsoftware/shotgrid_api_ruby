@@ -71,6 +71,23 @@ client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {session_token: 'sessio
 client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {refresh_token: 'refresh_token'})
 ```
 
+### ShotgridCallError
+
+Every ShotGrid call resulting in an error will throw a ShotgridCallError. This error class derive from StandardError and will implement 2 extra methods:
+- `#response` => Will returns the original HTTP response (a Faraday::Response).
+- `#status` => This method is a shortcut to get the status from the response.
+
+exemple
+```ruby
+begin
+  # A ShotGrid call resulting in a error
+rescue StandardError => e
+  p e.message, e.backtrace # Will behave as a normal StandardError
+  p e.response.body # Original unparsed body from ShotGrid response
+  p e.status # Status code from ShotGrid answer
+end
+```
+
 ### Server Infos
 
 Get general server infos:

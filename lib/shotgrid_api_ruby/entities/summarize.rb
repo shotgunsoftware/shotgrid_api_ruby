@@ -51,7 +51,11 @@ module ShotgridApiRuby
         resp_body = JSON.parse(resp.body)
 
         if resp.status >= 300
-          raise "Error while getting summarize for #{type}: #{resp_body['errors']}"
+          raise ShotgridCallError.new(
+                  response: resp,
+                  message:
+                    "Error while getting summarize for #{type}: #{resp_body['errors']}",
+                )
         end
 
         Summary.new(

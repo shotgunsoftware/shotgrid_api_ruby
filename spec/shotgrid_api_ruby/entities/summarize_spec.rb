@@ -50,7 +50,10 @@ describe ShotgridApiRuby::Entities::Summarize, :vcr do
         let(:summary_fields) { { not_existing_field: :not_possible } }
 
         it 'raise an error' do
-          expect { summarize }.to raise_error(StandardError, /Asset/)
+          expect { summarize }.to raise_error(
+            ShotgridApiRuby::ShotgridCallError,
+            /Asset/,
+          )
         end
       end
 

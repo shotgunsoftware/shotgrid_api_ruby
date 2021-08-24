@@ -40,7 +40,10 @@ module ShotgridApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while getting #{type}: #{resp_body['errors']}"
+        raise ShotgridCallError.new(
+                message: "Error while getting #{type}: #{resp_body['errors']}",
+                response: resp,
+              )
       end
 
       entity = resp_body['data']
@@ -62,9 +65,13 @@ module ShotgridApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while creating #{type} with #{attributes}: #{
-                resp_body['errors']
-              }"
+        raise ShotgridCallError.new(
+                response: resp,
+                message:
+                  "Error while creating #{type} with #{attributes}: #{
+                    resp_body['errors']
+                  }",
+              )
       end
 
       entity = resp_body['data']
@@ -88,9 +95,13 @@ module ShotgridApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while updating #{type}##{id} with #{changes}: #{
-                resp_body['errors']
-              }"
+        raise ShotgridCallError.new(
+                response: resp,
+                message:
+                  "Error while updating #{type}##{id} with #{changes}: #{
+                    resp_body['errors']
+                  }",
+              )
       end
 
       entity = resp_body['data']
@@ -111,7 +122,11 @@ module ShotgridApiRuby
 
       if resp.status >= 300
         resp_body = JSON.parse(resp.body)
-        raise "Error while deleting #{type}##{id}: #{resp_body['errors']}"
+        raise ShotgridCallError.new(
+                response: resp,
+                message:
+                  "Error while deleting #{type}##{id}: #{resp_body['errors']}",
+              )
       end
 
       true
@@ -122,7 +137,11 @@ module ShotgridApiRuby
 
       if resp.status >= 300
         resp_body = JSON.parse(resp.body)
-        raise "Error while reviving #{type}##{id}: #{resp_body['errors']}"
+        raise ShotgridCallError.new(
+                response: resp,
+                message:
+                  "Error while reviving #{type}##{id}: #{resp_body['errors']}",
+              )
       end
 
       true
@@ -165,7 +184,10 @@ module ShotgridApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while getting #{type}: #{resp_body['errors']}"
+        raise ShotgridCallError.new(
+                response: resp,
+                message: "Error while getting #{type}: #{resp_body['errors']}",
+              )
       end
 
       resp_body['data'].map do |entity|
@@ -228,7 +250,10 @@ module ShotgridApiRuby
       resp_body = JSON.parse(resp.body)
 
       if resp.status >= 300
-        raise "Error while getting #{type}: #{resp_body['errors']}"
+        raise ShotgridCallError.new(
+                response: resp,
+                message: "Error while getting #{type}: #{resp_body['errors']}",
+              )
       end
 
       resp_body['data'].map do |entity|
