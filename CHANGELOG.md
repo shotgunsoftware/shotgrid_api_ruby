@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3.2] - 2021-08-24
+### Added
+- Code Of Conduct
+
 ## [0.1.3.1] - 2021-08-24
 ### Changed
 - Correctly advertising the minimum ruby version to 2.6
