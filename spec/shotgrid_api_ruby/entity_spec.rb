@@ -1,3 +1,4 @@
+# typed: false
 describe ShotgridApiRuby::Entity, :vcr do
   in_context 'with vcr values' do
     subject(:entity) { shotgrid_client.assets.first }

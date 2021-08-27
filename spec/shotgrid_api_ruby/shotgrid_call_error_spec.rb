@@ -1,3 +1,4 @@
+# typed: false
 describe ShotgridApiRuby::ShotgridCallError do
   let(:message) { Faker::Movies::PrincessBride.quote }
   let(:response) do

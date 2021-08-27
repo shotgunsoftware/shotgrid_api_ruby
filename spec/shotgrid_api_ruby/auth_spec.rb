@@ -1,3 +1,4 @@
+# typed: false
 describe ShotgridApiRuby::Auth, :vcr do
   describe ShotgridApiRuby::Auth::Validator do
     it 'accepts client_id and client_secret' do

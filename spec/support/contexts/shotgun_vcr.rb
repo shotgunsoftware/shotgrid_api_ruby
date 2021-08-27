@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 RSpec.define_context 'with vcr values', ns: 'vcr' do

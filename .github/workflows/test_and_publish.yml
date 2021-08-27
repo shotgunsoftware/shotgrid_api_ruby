@@ -23,6 +23,8 @@ jobs:
         run: bundle exec rubocop
       - name: Run tests
         run: bundle exec rspec
+      - name: Run type checking (Sorbet)
+        run: bundle exec srb tc
   prettier:
     runs-on: ubuntu-latest
     steps:

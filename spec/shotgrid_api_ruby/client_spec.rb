@@ -1,3 +1,4 @@
+# typed: false
 describe ShotgridApiRuby::Client do
   in_context 'with vcr values' do
     it 'exposes preferences' do

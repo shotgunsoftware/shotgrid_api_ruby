@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><h1 id="shotgridapiruby">ShotgridApiRuby</h1>
+
+<p><a href="https://badge.fury.io/rb/shotgrid_api_ruby"><img src="https://badge.fury.io/rb/shotgrid_api_ruby.svg" alt="Gem Version" /></a>
+<img src="https://github.com/shotgunsoftware/shotgrid_api_ruby/workflows/Test%20and%20Release/badge.svg" alt="Test and Release badge" /></p>
+
+<p>A gem to integrate with shotgrid REST API easily.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Add this line to your application’s Gemfile:</p>
+
+<p><code>ruby
+gem 'shotgrid_api_ruby'
+</code></p>
+
+<p>And then execute:</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre class="code ruby"><code class="ruby">$ gem install shotgrid_api_ruby
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="client-instantiation">Client instantiation</h3>
+
+<p>For creating a new client you need to provide two values.</p>
+
+<ul>
+  <li>One to identify the shotgrid site:
+    <ul>
+      <li>Can be <code>shotgun_site</code>: which is the <code>xxx</code> part in <code>https://xxx.shotgunstudio.com</code></li>
+      <li>Can be <code>shotgrid_site</code>: which is the <code>xxx</code> part in <code>https://xxx.shotgrid.autodesk.com</code></li>
+      <li>Can be <code>site_url</code>: which is the full url to your site</li>
+    </ul>
+  </li>
+  <li>One to <code>auth</code> you see <em>Authentication</em> lower in this guide.</li>
+</ul>
+
+<p>Example:</p>
+
+<p><code>ruby
+client = ShotgridApiRuby.new(shotgrid_site: 'i-love-shotgrid', auth: {client_id: 'my_nice_script', client_secret: 'CantTouchThis'})
+</code></p>
+
+<h3 id="authentication">Authentication</h3>
+
+<p>Any kind of authentication specified <a href="https://developer.shotgunsoftware.com/rest-api/#authentication">here</a> is implemented</p>
+
+<h4 id="client-credentials">Client Credentials</h4>
+
+<p><code>ruby
+client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {client_id: 'script_name', client_secret: 'script_secret'})
+</code></p>
+
+<h4 id="password-credentials">Password Credentials</h4>
+
+<p><code>ruby
+client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {username: 'login', password: 'password'})
+</code></p>
+
+<h4 id="session-token">Session Token</h4>
+
+<p><strong>We highly advise not using this for a long term script as this won’t be a stable value over time</strong></p>
+
+<p><code>ruby
+client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {session_token: 'session_token'})
+</code></p>
+
+<h4 id="refresh-token">Refresh Token</h4>
+
+<p><strong>We highly advise not using this for a long term script as this won’t be a stable value over time</strong></p>
+
+<p><code>ruby
+client = ShotgridApiRuby.new(shotgrid_site: 'xxx', auth: {refresh_token: 'refresh_token'})
+</code></p>
+
+<h3 id="shotgridcallerror">ShotgridCallError</h3>
+
+<p>Every ShotGrid call resulting in an error will throw a ShotgridCallError. This error class derive from StandardError and will implement 2 extra methods:
+- <code>#response</code> =&gt; Will returns the original HTTP response (a Faraday::Response).
+- <code>#status</code> =&gt; This method is a shortcut to get the status from the response.</p>
+
+<p>exemple
+<code>ruby
+begin
+  # A ShotGrid call resulting in a error
+rescue StandardError =&gt; e
+  p e.message, e.backtrace # Will behave as a normal StandardError
+  p e.response.body # Original unparsed body from ShotGrid response
+  p e.status # Status code from ShotGrid answer
+end
+</code></p>
+
+<h3 id="server-infos">Server Infos</h3>
+
+<p>Get general server infos:</p>
+
+<p>```ruby
+client.server_info.get</p>
+
+<h1 id="openstruct">#&lt;OpenStruct</h1>
+<pre class="code ruby"><code class="ruby">  shotgun_version=&quot;v8.6.0.0-dev (build 12864de)&quot;,
+  api_version=&quot;v1&quot;,
+  shotgun_version_number=&quot;8.6.0.0-dev&quot;,
+  shotgun_build_number=&quot;12864de&quot;,
+  portfolio_version=&quot;UNKNOWN&quot;,
+  unified_login_flow_enabled=true,
+  user_authentication_method=&quot;default&quot;&gt; ```
+</code></pre>
+
+<h3 id="preferences">Preferences</h3>
+
+<p>Get some preferences infos:</p>
+
+<p>```ruby
+prefs = client.preferences.get
+prefs.to_h.keys</p>
+
+<h1 id="formatdatefields">[:format_date_fields,</h1>
+<p># :date_component_order,
+# :format_time_hour_fields,
+# :format_currency_fields_display_dollar_sign,
+# :format_currency_fields_decimal_options,
+# :format_currency_fields_negative_options,
+# :format_number_fields,
+# :format_float_fields,
+# :format_float_fields_rounding,
+# :format_footage_fields,
+# :support_local_storage,
+# :view_master_settings,
+# :duration_units,
+# :hours_per_day,
+# :last_day_work_week]
+```</p>
+
+<h3 id="entities">Entities</h3>
+
+<p>Querying entities is done by accessing the named method</p>
+
+<p><code>ruby
+client.assets # =&gt; ShotgridApiRuby::Entities …
+</code></p>
+
+<p>As entities can be user defined the client will try to answer to any unknown type with an entity call so any of those calls will returns the same thing:</p>
+
+<p><code>ruby
+client.assets
+client.asset
+client.entities("Asset")
+client.entities(:Assets)
+</code></p>
+
+<p>Any not yet implemented call can be accessed through the connection: <code>client.assets.connection</code></p>
+
+<h4 id="entity">Entity</h4>
+
+<p>Returned entity will try to behave as nicely as possible.</p>
+
+<p>An entity will always answer to:</p>
+
+<ul>
+  <li>.type : the type of the entity</li>
+  <li>.id : the id of the entity</li>
+  <li>.relationships : a hash of relationships</li>
+  <li>.links : a hash of links to other entities</li>
+  <li>.attributes : An object answering to any available attributes</li>
+</ul>
+
+<p>It will also answer to any method that is present in the attributes:</p>
+
+<p><code>ruby
+assets = client.assets.all(fields: 'code')
+assets.first.type # =&gt; "Asset"
+assets.first.id # =&gt; 726
+assets.first.attributes.code # =&gt; "Buck"
+assets.first.code # =&gt; "Buck"
+</code></p>
+
+<h3 id="search">Search</h3>
+
+<h4 id="all">all</h4>
+
+<p>The all call will return all possible entities.</p>
+
+<p><code>ruby
+client.assets.all
+</code></p>
+
+<h4 id="search-1">search</h4>
+
+<p>Does the same thing as <code>all</code></p>
+
+<h4 id="first">first</h4>
+
+<p>Will return only the first entity found (same thing as setting the page_size to 1 and then getting the first result)</p>
+
+<p><code>
+client.assets.first
+</code></p>
+
+<h4 id="arguments">arguments</h4>
+
+<h5 id="fields">fields</h5>
+
+<p>This attribute describe the wanted fields in the returned entity</p>
+
+<p>Can be a string describing wanted fields: <code>'code'</code> or <code>'code,description'</code>
+Or an array for better readability: <code>[:code, 'description']</code></p>
+
+<p>Example:</p>
+
+<p><code>ruby
+client.assets.all(fields: [:code, :description])
+</code></p>
+
+<h5 id="sort">sort</h5>
+
+<p>Describe how you want your entities to be sorted.</p>
+
+<p>Can be either:</p>
+
+<ul>
+  <li>A string: <code>'code'</code> or <code>'code,-description'</code> (the <code>-</code> asking for a descending order)</li>
+  <li>An array for better readability: <code>[:code, '-description']</code></li>
+  <li>A hash for ease of use: <code>{code: 'asc', description: :desc}</code></li>
+</ul>
+
+<p>Example:</p>
+
+<p><code>ruby
+client.assets.all(fields: [:code, :description], sort: {code: :asc, description: :desc})
+</code></p>
+
+<h5 id="logicaloperator">logical_operator</h5>
+
+<p>Default: “and”</p>
+
+<p>This will be only used on complex queries. This is how we treat multiple first level conditions.</p>
+
+<p>Accepted values: ‘and’, ‘or’</p>
+
+<h5 id="filter">filter</h5>
+
+<p>For simple filters, the filter field is waiting for a hash.</p>
+
+<p>Each value is:</p>
+
+<ul>
+  <li>A string: then a <code>is</code> filter will be used</li>
+  <li>An array: then a <code>in</code> filter will be used</li>
+</ul>
+
+<p>Example:</p>
+
+<p><code>ruby
+client.assets.all(fields: [:code, :description], filter: {code: ['Buck', :Darcy], description: 'I LOVE SG'})
+</code></p>
+
+<p>For complex filters, see the documentation <a href="https://developer.shotgunsoftware.com/rest-api/#searching">here</a>.</p>
+
+<p>If the filters are complex there’s many cases:</p>
+
+<ul>
+  <li>If they are a hash containing logical_operator and conditions =&gt; we will use them</li>
+  <li>If the filter is <strong>not</strong> a hash =&gt; we will use it without translation</li>
+  <li>If the filter is a hash not containing “conditions”. We will try to translate this to SG compatible query.</li>
+</ul>
+
+<p>Example:
+<code>ruby
+client.assets.all(
+  filter: {
+    project: { id: 2 },
+    sg_status_list: ["act", "hld", "omt"]
+  }, 
+)
+# Will be translated to:
+{
+  "filters"=&gt;{
+    "conditions"=&gt; [
+      ["project.Project.id", "is", 2], 
+      ["sg_status_list", "in", ["act", "hld", "omt"]]
+     ], 
+     "logical_operator"=&gt;"and"
+   }
+}
+</code></p>
+
+<p>The complexity of calling a different route and passing different headers/body/params will be taken care of automatically.</p>
+
+<h5 id="page">page</h5>
+
+<p>You can ask for any page size or page number.</p>
+
+<ul>
+  <li><code>page</code>: set the page number.</li>
+  <li><code>page_size</code>: set the size of each page.</li>
+</ul>
+
+<p>Any of the two can be omited. Their type should be a number but it’ll work with a string</p>
+
+<p>Example:</p>
+
+<p><code>ruby
+client.assets.all(fields: [:code], page: 3, page_size: 10)
+client.assets.all(fields: [:code], page: '3')
+client.assets.all(fields: [:code], page_size: 10)
+</code></p>
+
+<h5 id="options">options</h5>
+
+<p>Special options can be added:</p>
+
+<ul>
+  <li>retired: a flag telling if the returned entities should be retired or not</li>
+  <li>include_archived_projects: a flag telling if the archived projets should be included int the search</li>
+</ul>
+
+<p>Example:</p>
+
+<p><code>ruby
+client.assets.all(fields: [:code], retired: true)
+client.assets.all(fields: [:code], include_archived_projects: true)
+</code></p>
+
+<h3 id="finding-one-element">Finding one element</h3>
+
+<p><code>find</code> function on <code>entities</code> allow you to get one element in particular.</p>
+
+<p>It accepts (all arguments are optional):</p>
+
+<ul>
+  <li>fields: string, symbol or array of fields</li>
+  <li>retired: boolean specifying if the record is retired</li>
+  <li>include_archived_projects: boolean specifying if the entity is part of an archived project</li>
+</ul>
+
+<p>Example:</p>
+
+<p><code>ruby
+client.assets.find(724, fields: [:code, 'description'], retired: false)
+</code></p>
+
+<h3 id="create">Create</h3>
+
+<p>Will create the entity referenced by the id with the following fields. 
+If successful, it will return the newly created entity.</p>
+
+<p><code>ruby
+client.assets.create(code: 'New Asset', project: {type: 'Project', id: 63})
+</code></p>
+
+<h3 id="update">Update</h3>
+
+<p>Will update the entity referenced by the id with the following fields. 
+If successful, it will return the modified entity.</p>
+
+<p><code>ruby
+client.assets.update(1226, code: 'Updated Asset', sg_status_list: 'fin')
+</code></p>
+
+<h3 id="delete">Delete</h3>
+
+<p>Will destroys the entity referenced by the id. Will return true if successful.</p>
+
+<p><code>ruby
+client.assets.delete(1226)
+</code></p>
+
+<h3 id="revive">Revive</h3>
+
+<p>Will try to revive the entity referenced by the id. Will return true if successful.</p>
+
+<p><code>ruby
+client.assets.revive(1226)
+</code></p>
+
+<h3 id="summarize">Summarize</h3>
+
+<p>Will summarize data for an entity type.</p>
+
+<p>Example:
+```ruby
+# Simplest example
+client.assets.summarize(summary_fields: :count)</p>
+
+<h1 id="full-complex-example">Full complex example</h1>
+<p>client.assets.summarize(
+  filter: { project: { id: 122 }, sg_status_list: :act },
+  logical_operator: ‘or’,
+  include_archived_projects: true,
+  grouping: {
+    code: :desc, type: ‘exact’
+  },
+  summary_fields: { id: :count }
+)</p>
+
+<h1 id="raw-shotgrid-queries">Raw shotgrid queries</h1>
+<p>client.assets.summarize(
+  grouping: [
+    {
+      “field”: “sg_asset_type”,
+      “type”: “exact”,
+      “direction”: “asc”
+    }
+  ],
+  summary_fields: [
+    {
+      “field”: “id”,
+      “type”: “count”
+    }
+  ],
+)
+```</p>
+
+<p>It accepts the same <code>filter</code> and <code>logical_operator</code> as a <code>search</code> will.</p>
+
+<h4 id="summary-fields">Summary fields</h4>
+
+<p>Those can have two forms:</p>
+
+<h5 id="the-normal-api-form">The normal API form</h5>
+
+<p>You need to supply the summary_fields as an array and it will be passed directly to the SG REST API</p>
+
+<h4 id="the-convenient-form">The convenient form</h4>
+
+<p>Using an array isn’t very convenient most of the time. You can use a hash instead and it will be translated into a “SG summary_fields array”.</p>
+
+<p>Each key of the hash is the field name and the corresponding value is the type a summary you want (can be a string or a symbol)</p>
+
+<h4 id="grouping">Grouping</h4>
+
+<p>Those can have two forms:</p>
+
+<h5 id="the-normal-api-form-1">The normal API form</h5>
+
+<p>You need to supply the grouping as an array and it will be passed directly to the SG REST API</p>
+
+<h4 id="the-convenient-form-1">The convenient form</h4>
+
+<p>Using an array isn’t very convenient most of the time. You can use a hash instead and it will be translated into a “SG grouping array”.</p>
+
+<p>Each key of the hash is the field name and the corresponding value can either be :
+* A String/Symbol and then will be used a a direction. The type will be ‘exact’
+* A Hash with optional ‘type’ and ‘direction’ keys. If a key is not specified it will be ‘exact’ and ‘asc’ respectively.</p>
+
+<h3 id="count">Count</h3>
+
+<p>This is a helper for more a readable count summary. This can be passed <code>filter</code> and <code>logical_operator</code>.</p>
+
+<p>Example:</p>
+
+<p>```ruby
+client.assets.count</p>
+
+<h1 id="this-will-be-equivalent-as-doing">This will be equivalent as doing:</h1>
+<p>client.assets.summarize(summary_fields: [:record_count, field: :id])
+```</p>
+
+<h3 id="schema">Schema</h3>
+
+<p>Those calls allow to inspect the schema for a shotgrid site.</p>
+
+<h4 id="entity-1">Entity</h4>
+
+<p><code>ruby
+client.assets.schema
+</code></p>
+
+<h4 id="entity-fields">Entity fields</h4>
+
+<p>Fetch the different fields available on an entity type and their definition.</p>
+
+<p><code>ruby
+fields = client.assets.fields
+fields.code.name # =&gt; "Asset Name"
+fields.code.properties.summary_default # =&gt; "none"
+</code></p>
+
+<h3 id="non-implemented-calls">Non implemented calls</h3>
+
+<p>All calls which are not yet implemented can be done through the <code>connection</code> method. This method will still take care of the authentication for you.</p>
+
+<p><code>ruby
+client = ShotgridApiRuby.new(…)
+client.connection.get('/entity/assets') # =&gt; #&lt;Faraday::Response:xxx @on_complete_callbacks=[], @env=#&lt;Faraday::Env @method=:get @body="{\"data\":[{\"type\":\"Asset\",\"attributes\":{},\"relationships\":{},\"id\":726 …
+</code></p>
+
+<h2 id="development">Development</h2>
+
+<p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>rake spec</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
+
+<p>To install this gem onto your local machine, run <code>bundle exec rake install</code>. To release a new version, update the version number in <code>version.rb</code>, and then run <code>bundle exec rake release</code>, which will create a git tag for the version, push git commits and tags, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>.</p>
+
+<p>Every commit/push is checked by overcommit.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at https://github.com/shotgunsoftware/shotgrid_api_ruby.</p>
+
+<h2 id="license">License</h2>
+
+<p>The gem is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Fri Aug 27 15:52:46 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.2).
+</div>
+
+    </div>
+  </body>
+</html>

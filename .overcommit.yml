@@ -9,6 +9,12 @@ PreCommit:
   Prettier:
     enabled: true
     required_executable: './bin/prettirun'
+  Sorbet:
+    enabled: true
+    required_executable: './bin/sorbet_check'
+  Documentation:
+    enabled: true
+    required_executable: './bin/generate_and_add_documentation'
 PrePush:
   RSpec:
     enabled: true
@@ -19,3 +25,6 @@ PrePush:
   Rubocop:
     enabled: true
     required_executable: './bin/ruborun'
+  Sorbet:
+    enabled: true
+    required_executable: './bin/sorbet_check'
