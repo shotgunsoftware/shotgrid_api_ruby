@@ -12,6 +12,6 @@
 .env
 Gemfile.lock
 Gemfile.lock
-doc
+docs
 spoom_report.html
 spoom_data
