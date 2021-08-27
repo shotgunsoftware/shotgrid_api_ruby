@@ -69,12 +69,12 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName">Struct</span>
+      <span class="inheritName">T::Struct</span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">Struct</li>
+            <li class="next">T::Struct</li>
           
             <li class="next">ShotgridApiRuby::Entities::Summarize::Summary</li>
           
@@ -111,7 +111,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#groups-instance_method" title="#groups (instance method)">#<strong>groups</strong>  &#x21d2; Object </a>
+      <a href="#groups-instance_method" title="#groups (instance method)">#<strong>groups</strong>  &#x21d2; Array&lt;T.untyped&gt;<sup>?</sup> </a>
     
 
     
@@ -119,6 +119,8 @@
   
   
   
+    
+      <span class="note title readonly">readonly</span>
     
     
   
@@ -129,7 +131,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute groups.</p>
+<p>Returns the value of attribute `groups`.</p>
 </div></span>
   
 </li>
@@ -138,7 +140,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#summaries-instance_method" title="#summaries (instance method)">#<strong>summaries</strong>  &#x21d2; Object </a>
+      <a href="#summaries-instance_method" title="#summaries (instance method)">#<strong>summaries</strong>  &#x21d2; Hash{T.untyped =&gt; T.untyped}<sup>?</sup> </a>
     
 
     
@@ -146,6 +148,8 @@
   
   
   
+    
+      <span class="note title readonly">readonly</span>
     
     
   
@@ -156,7 +160,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute summaries.</p>
+<p>Returns the value of attribute `summaries`.</p>
 </div></span>
   
 </li>
@@ -167,17 +171,49 @@
 
 
 
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(summaries: nil, groups: nil)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
 
   
-  <div id="instance_attr_details" class="attr_details">
-    <h2>Instance Attribute Details</h2>
-    
-      
-      <span id="groups=-instance_method"></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="groups-instance_method">
+    <span class="summary_desc"><div class='inline'></div></span>
   
-    #<strong>groups</strong>  &#x21d2; <tt>Object</tt> 
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(summaries: nil, groups: nil)  &#x21d2; <tt>void</tt> 
   
 
   
@@ -186,7 +222,80 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute groups</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>summaries</span>
+      
+      
+        <span class='type'>(<tt>Hash{T.untyped =&gt; T.untyped}</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>groups</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;T.untyped&gt;</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File ''</span>
+
+<span class='id identifier rubyid_const'>const</span> <span class='symbol'>:summaries</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_const'>const</span> <span class='symbol'>:groups</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='rbracket'>]</span><span class='rparen'>)</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="groups-instance_method">
+  
+    #<strong>groups</strong>  &#x21d2; <tt>Array&lt;T.untyped&gt;</tt><sup>?</sup>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute `groups`.</p>
 
 
   </div>
@@ -199,14 +308,9 @@
     <li>
       
       
-        <span class='type'>(<tt>Object</tt>)</span>
+        <span class='type'>(<tt>Array&lt;T.untyped&gt;</tt>, <tt>nil</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>the current value of groups</p>
-</div>
       
     </li>
   
@@ -218,27 +322,23 @@
       <pre class="lines">
 
 
-5
-6
-7</pre>
+</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/summarize.rb', line 5</span>
+      <pre class="code"><span class="info file"># File ''</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_groups'>groups</span>
-  <span class='ivar'>@groups</span>
-<span class='kw'>end</span></pre>
+<span class='id identifier rubyid_const'>const</span> <span class='symbol'>:groups</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='rbracket'>]</span><span class='rparen'>)</span></pre>
     </td>
   </tr>
 </table>
 </div>
     
       
-      <span id="summaries=-instance_method"></span>
+      <span id=""></span>
       <div class="method_details ">
   <h3 class="signature " id="summaries-instance_method">
   
-    #<strong>summaries</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>summaries</strong>  &#x21d2; <tt>Hash{T.untyped =&gt; T.untyped}</tt><sup>?</sup>  <span class="extras">(readonly)</span>
   
 
   
@@ -247,7 +347,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute summaries</p>
+<p>Returns the value of attribute `summaries`.</p>
 
 
   </div>
@@ -260,14 +360,9 @@
     <li>
       
       
-        <span class='type'>(<tt>Object</tt>)</span>
+        <span class='type'>(<tt>Hash{T.untyped =&gt; T.untyped}</tt>, <tt>nil</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>the current value of summaries</p>
-</div>
       
     </li>
   
@@ -279,16 +374,12 @@
       <pre class="lines">
 
 
-5
-6
-7</pre>
+</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/summarize.rb', line 5</span>
+      <pre class="code"><span class="info file"># File ''</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_summaries'>summaries</span>
-  <span class='ivar'>@summaries</span>
-<span class='kw'>end</span></pre>
+<span class='id identifier rubyid_const'>const</span> <span class='symbol'>:summaries</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='rbracket'>]</span><span class='rparen'>)</span></pre>
     </td>
   </tr>
 </table>
@@ -300,7 +391,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Aug 27 21:29:24 2021 by
+  Generated on Sat Aug 28 03:52:33 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.2).
 </div>
