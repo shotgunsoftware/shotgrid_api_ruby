@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activesupport'
   spec.add_dependency 'faraday', '~> 1'
+  spec.add_dependency 'sorbet-runtime'
   spec.add_dependency 'zeitwerk', '~> 2.2'
 
   spec.add_development_dependency 'bundler'
@@ -51,9 +52,14 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'rubocop-faker'
   spec.add_development_dependency 'rubocop-performance'
+  spec.add_development_dependency 'rubocop-sorbet'
   spec.add_development_dependency 'simplecov', '> 0.16'
   spec.add_development_dependency 'solargraph'
+  spec.add_development_dependency 'sorbet'
+  spec.add_development_dependency 'spoom'
+  spec.add_development_dependency 'tapioca'
   spec.add_development_dependency 'timecop'
   spec.add_development_dependency 'vcr'
   spec.add_development_dependency 'yard'
+  spec.add_development_dependency 'yard-sorbet'
 end

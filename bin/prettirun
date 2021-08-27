@@ -1,1 +1,1 @@
-yarn prettier -c './**/*.rb'
+yarn prettier -c './**/*.rb' Guardfile Rakefile *.gemspec Gemfile
