@@ -1,17 +1,39 @@
-# typed: true
+# typed: strict
 # frozen_string_literal: true
 
 module ShotgridApiRuby
   class Entities
+    extend T::Sig
+
+    sig do
+      params(connection: Faraday::Connection, type: T.any(String, Symbol)).void
+    end
     def initialize(connection, type)
-      @connection = connection.dup
-      @type = type
-      @base_url_prefix = @connection.url_prefix
+      @connection = T.let(connection.dup, Faraday::Connection)
+      @type = T.let(type.to_s, String)
+      @base_url_prefix = T.let(@connection.url_prefix, URI)
       @connection.url_prefix = "#{@connection.url_prefix}/entity/#{type}"
+      @schema_client = T.let(nil, T.nilable(Schema))
+      @summary_client = T.let(nil, T.nilable(Summarize))
     end
 
-    attr_reader :connection, :type
+    sig { returns(Faraday::Connection) }
+    attr_reader :connection
 
+    sig { returns(String) }
+    attr_reader :type
+
+    sig do
+      params(
+          fields: Params::FIELDS_TYPE,
+          sort: Params::SORT_TYPE,
+          filter: Params::FILTERS_FIELD_TYPE,
+          retired: T.nilable(T::Boolean),
+          include_archived_projects: T.nilable(T::Boolean),
+          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+        )
+        .returns(T.nilable(Entity))
+    end
     def first(
       fields: nil,
       sort: nil,
@@ -31,6 +53,15 @@ module ShotgridApiRuby
       ).first
     end
 
+    sig do
+      params(
+          id: Integer,
+          fields: Params::FIELDS_TYPE,
+          retired: T.nilable(T::Boolean),
+          include_archived_projects: T.nilable(T::Boolean),
+        )
+        .returns(ShotgridApiRuby::Entity)
+    end
     def find(id, fields: nil, retired: nil, include_archived_projects: nil)
       params = Params.new
 
@@ -57,6 +88,10 @@ module ShotgridApiRuby
       )
     end
 
+    sig do
+      params(attributes: T::Hash[T.any(String, Symbol), T.untyped])
+        .returns(ShotgridApiRuby::Entity)
+    end
     def create(attributes)
       resp =
         @connection.post('', attributes.to_json) do |req|
@@ -85,6 +120,10 @@ module ShotgridApiRuby
       )
     end
 
+    sig do
+      params(id: Integer, changes: T::Hash[T.any(String, Symbol), T.untyped])
+        .returns(ShotgridApiRuby::Entity)
+    end
     def update(id, changes)
       return find(id) if changes.empty?
 
@@ -115,6 +154,7 @@ module ShotgridApiRuby
       )
     end
 
+    sig { params(id: Integer).returns(TrueClass) }
     def delete(id)
       resp =
         @connection.delete(id.to_s) do |req|
@@ -133,6 +173,7 @@ module ShotgridApiRuby
       true
     end
 
+    sig { params(id: Integer).returns(TrueClass) }
     def revive(id)
       resp = @connection.post("#{id}?revive=true")
 
@@ -148,6 +189,19 @@ module ShotgridApiRuby
       true
     end
 
+    sig do
+      params(
+          fields: Params::FIELDS_TYPE,
+          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+          sort: Params::SORT_TYPE,
+          filter: Params::FILTERS_FIELD_TYPE,
+          page: Params::PAGE_TYPE,
+          page_size: Params::PAGE_SIZE_TYPE,
+          retired: T.nilable(T::Boolean),
+          include_archived_projects: T.nilable(T::Boolean),
+        )
+        .returns(T::Array[Entity])
+    end
     def all(
       fields: nil,
       logical_operator: 'and',
@@ -202,6 +256,19 @@ module ShotgridApiRuby
       end
     end
 
+    sig do
+      params(
+          fields: Params::FIELDS_TYPE,
+          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+          sort: Params::SORT_TYPE,
+          filter: Params::FILTERS_FIELD_TYPE,
+          page: Params::PAGE_TYPE,
+          page_size: Params::PAGE_SIZE_TYPE,
+          retired: T.nilable(T::Boolean),
+          include_archived_projects: T.nilable(T::Boolean),
+        )
+        .returns(T::Array[Entity])
+    end
     def search(
       fields: nil,
       logical_operator: 'and',
@@ -268,26 +335,47 @@ module ShotgridApiRuby
       end
     end
 
+    sig { returns(Schema) }
     def schema_client
       @schema_client ||= Schema.new(connection, type, @base_url_prefix)
     end
 
+    sig { returns(OpenStruct) }
     def schema
       schema_client.read
     end
 
+    sig { returns(OpenStruct) }
     def fields
       schema_client.fields
     end
 
+    sig { returns(Summarize) }
     def summary_client
       @summary_client ||= Summarize.new(connection, type, @base_url_prefix)
     end
 
+    sig do
+      params(
+          filter: Params::FILTERS_FIELD_TYPE,
+          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+        )
+        .returns(T.untyped)
+    end
     def count(filter: nil, logical_operator: 'and')
       summary_client.count(filter: filter, logical_operator: logical_operator)
     end
 
+    sig do
+      params(
+          filter: Params::FILTERS_FIELD_TYPE,
+          grouping: Params::GROUPING_FIELD_TYPE,
+          summary_fields: Params::SUMMARY_FILEDS_TYPE,
+          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+          include_archived_projects: T.nilable(T::Boolean),
+        )
+        .returns(Summarize::Summary)
+    end
     def summarize(
       filter: nil,
       grouping: nil,

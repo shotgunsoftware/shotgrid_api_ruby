@@ -248,29 +248,38 @@ describe ShotgridApiRuby::Entities, :vcr do
 
     describe 'first' do
       let(:shotgrid_assets) { shotgrid_client.assets }
+      let(:fake_entity) do
+        ShotgridApiRuby::Entity.new(
+          type: 'type',
+          attributes: OpenStruct.new,
+          links: {},
+          relationships: {},
+          id: 42,
+        )
+      end
 
       it 'forward to all' do
         expect(shotgrid_assets).to receive(:all)
           .with(
-            fields: :fields,
+            fields: [:fields],
             sort: :sort,
-            filter: :filter,
-            retired: :retired,
-            include_archived_projects: :include_archived_projects,
+            filter: [:filter],
+            retired: true,
+            include_archived_projects: false,
             logical_operator: :logical_operator,
             page_size: 1,
           )
-          .and_return([:first])
+          .and_return([fake_entity])
         expect(
           shotgrid_assets.first(
-            fields: :fields,
+            fields: [:fields],
             sort: :sort,
-            filter: :filter,
-            retired: :retired,
-            include_archived_projects: :include_archived_projects,
+            filter: [:filter],
+            retired: true,
+            include_archived_projects: false,
             logical_operator: :logical_operator,
           ),
-        ).to eq(:first)
+        ).to eq(fake_entity)
       end
     end
 
