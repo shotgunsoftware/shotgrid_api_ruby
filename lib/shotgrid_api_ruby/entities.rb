@@ -49,11 +49,11 @@ module ShotgridApiRuby
 
       entity = resp_body['data']
       Entity.new(
-        entity['type'],
-        OpenStruct.new(entity['attributes']),
-        entity['relationships'],
-        entity['id'],
-        entity['links'],
+        type: entity['type'],
+        attributes: OpenStruct.new(entity['attributes']),
+        relationships: entity['relationships'],
+        id: entity['id'],
+        links: entity['links'],
       )
     end
 
@@ -77,11 +77,11 @@ module ShotgridApiRuby
 
       entity = resp_body['data']
       Entity.new(
-        entity['type'],
-        OpenStruct.new(entity['attributes']),
-        entity['relationships'],
-        entity['id'],
-        entity['links'],
+        type: entity['type'],
+        attributes: OpenStruct.new(entity['attributes']),
+        relationships: entity['relationships'],
+        id: entity['id'],
+        links: entity['links'],
       )
     end
 
@@ -107,11 +107,11 @@ module ShotgridApiRuby
 
       entity = resp_body['data']
       Entity.new(
-        entity['type'],
-        OpenStruct.new(entity['attributes']),
-        entity['relationships'],
-        entity['id'],
-        entity['links'],
+        type: entity['type'],
+        attributes: OpenStruct.new(entity['attributes']),
+        relationships: entity['relationships'],
+        id: entity['id'],
+        links: entity['links'],
       )
     end
 
@@ -193,11 +193,11 @@ module ShotgridApiRuby
 
       resp_body['data'].map do |entity|
         Entity.new(
-          entity['type'],
-          OpenStruct.new(entity['attributes']),
-          entity['relationships'],
-          entity['id'],
-          entity['links'],
+          type: entity['type'],
+          attributes: OpenStruct.new(entity['attributes']),
+          relationships: entity['relationships'],
+          id: entity['id'],
+          links: entity['links'],
         )
       end
     end
@@ -259,11 +259,11 @@ module ShotgridApiRuby
 
       resp_body['data'].map do |entity|
         Entity.new(
-          entity['type'],
-          OpenStruct.new(entity['attributes']),
-          entity['relationships'],
-          entity['id'],
-          entity['links'],
+          type: entity['type'],
+          attributes: OpenStruct.new(entity['attributes']),
+          relationships: entity['relationships'],
+          id: entity['id'],
+          links: entity['links'],
         )
       end
     end
