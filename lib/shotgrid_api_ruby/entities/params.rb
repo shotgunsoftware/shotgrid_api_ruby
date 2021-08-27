@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 # frozen_string_literal: true
 
 module ShotgridApiRuby
@@ -148,38 +148,36 @@ module ShotgridApiRuby
         # We don't know how to translate anything but hashes
         return filters if !filters.is_a?(Hash)
 
-        filters
-          .each
-          .with_object([]) do |item, result|
-            field, value = item
-            case value
-            when String, Symbol, Integer, Float
-              result << [field.to_s, 'is', value]
-            when Hash
-              value.each do |subfield, subvalue|
-                sanitized_subfield =
-                  if !subfield.to_s.include?('.')
-                    "#{field.capitalize}.#{subfield}"
-                  else
-                    subfield
-                  end
-                case subvalue
-                when String, Symbol, Integer, Float
-                  result << ["#{field}.#{sanitized_subfield}", 'is', subvalue]
-                when Array
-                  result << ["#{field}.#{sanitized_subfield}", 'in', subvalue]
+        filters.each_with_object([]) do |item, result|
+          field, value = item
+          case value
+          when String, Symbol, Integer, Float
+            result << [field.to_s, 'is', value]
+          when Hash
+            value.each do |subfield, subvalue|
+              sanitized_subfield =
+                if !subfield.to_s.include?('.')
+                  "#{field.capitalize}.#{subfield}"
                 else
-                  raise TooComplexFiltersError,
-                        'This case is too complex to auto-translate. Please use shotgrid query syntax.'
+                  subfield
                 end
+              case subvalue
+              when String, Symbol, Integer, Float
+                result << ["#{field}.#{sanitized_subfield}", 'is', subvalue]
+              when Array
+                result << ["#{field}.#{sanitized_subfield}", 'in', subvalue]
+              else
+                raise TooComplexFiltersError,
+                      'This case is too complex to auto-translate. Please use shotgrid query syntax.'
               end
-            when Array
-              result << [field.to_s, 'in', value]
-            else
-              raise TooComplexFiltersError,
-                    'This case is too complex to auto-translate. Please use shotgrid query syntax.'
             end
+          when Array
+            result << [field.to_s, 'in', value]
+          else
+            raise TooComplexFiltersError,
+                  'This case is too complex to auto-translate. Please use shotgrid query syntax.'
           end
+        end
       end
     end
   end

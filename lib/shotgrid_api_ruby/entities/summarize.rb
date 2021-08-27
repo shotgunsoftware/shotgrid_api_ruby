@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 module ShotgridApiRuby
   class Entities
     class Summarize
