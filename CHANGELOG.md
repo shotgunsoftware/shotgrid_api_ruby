@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3.3] - 2021-08-28
+### Added
+- Issue default format
+
 ## [0.1.3.2] - 2021-08-24
 ### Added
 - Code Of Conduct
@@ -63,9 +67,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Entities: delete
 - Entities: revive
 
-[Unreleased]: https://github.com/shotgunsoftware/shotgrid_api_ruby/compare/v0.1.3.1...HEAD
-[0.1.3.1]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.2
-[0.1.3]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.2
+[Unreleased]: https://github.com/shotgunsoftware/shotgrid_api_ruby/compare/v0.1.3.3...HEAD
+[0.1.3.3]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.3.3
+[0.1.3.2]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.3.2
+[0.1.3.1]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.3.1
+[0.1.3]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.3
 [0.1.2]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.2
 [0.1.1]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.1
 [0.1.0]: https://github.com/shotgunsoftware/shotgrid_api_ruby/releases/tag/v0.1.0
