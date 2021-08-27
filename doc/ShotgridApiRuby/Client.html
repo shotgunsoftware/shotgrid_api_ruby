@@ -85,6 +85,11 @@
 
   
   
+  <dl>
+      <dt>Extended by:</dt>
+      <dd>T::Sig</dd>
+  </dl>
+  
   
   
   
@@ -122,7 +127,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#connection-instance_method" title="#connection (instance method)">#<strong>connection</strong>  &#x21d2; Object </a>
+      <a href="#connection-instance_method" title="#connection (instance method)">#<strong>connection</strong>  &#x21d2; Faraday::Connection </a>
     
 
     
@@ -164,7 +169,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#entities-instance_method" title="#entities (instance method)">#<strong>entities</strong>(type)  &#x21d2; Object </a>
+      <a href="#entities-instance_method" title="#entities (instance method)">#<strong>entities</strong>(type)  &#x21d2; Entities </a>
     
 
     
@@ -188,7 +193,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(auth:, site_url: nil, shotgun_site: nil, shotgrid_site: nil)  &#x21d2; Client </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(auth:, site_url: nil, shotgun_site: nil, shotgrid_site: nil)  &#x21d2; void </a>
     
 
     
@@ -204,9 +209,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>A new instance of Client.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -214,7 +217,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#method_missing-instance_method" title="#method_missing (instance method)">#<strong>method_missing</strong>(name, *args, &amp;block)  &#x21d2; Object </a>
+      <a href="#method_missing-instance_method" title="#method_missing (instance method)">#<strong>method_missing</strong>(name, *args, &amp;block)  &#x21d2; Entities </a>
     
 
     
@@ -236,7 +239,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#preferences-instance_method" title="#preferences (instance method)">#<strong>preferences</strong>  &#x21d2; Object </a>
+      <a href="#preferences-instance_method" title="#preferences (instance method)">#<strong>preferences</strong>  &#x21d2; Preferences </a>
     
 
     
@@ -260,7 +263,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#respond_to_missing%3F-instance_method" title="#respond_to_missing? (instance method)">#<strong>respond_to_missing?</strong>(_name, _include_private = false)  &#x21d2; Boolean </a>
+      <a href="#respond_to_missing%3F-instance_method" title="#respond_to_missing? (instance method)">#<strong>respond_to_missing?</strong>(_name, _include_private = false)  &#x21d2; true </a>
     
 
     
@@ -282,7 +285,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#server_info-instance_method" title="#server_info (instance method)">#<strong>server_info</strong>  &#x21d2; Object </a>
+      <a href="#server_info-instance_method" title="#server_info (instance method)">#<strong>server_info</strong>  &#x21d2; ServerInfo </a>
     
 
     
@@ -306,13 +309,14 @@
     </ul>
   
 
-<div id="constructor_details" class="method_details_list">
+
+  <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(auth:, site_url: nil, shotgun_site: nil, shotgrid_site: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="ShotgridApiRuby::Client (class)">Client</a></span></tt> 
+    #<strong>initialize</strong>(auth:, site_url: nil, shotgun_site: nil, shotgrid_site: nil)  &#x21d2; <tt>void</tt> 
   
 
   
@@ -321,13 +325,65 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a new instance of Client.</p>
-
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>auth</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Types.html#AuthType-constant" title="ShotgridApiRuby::Types::AuthType (constant)">Types::AuthType</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>site_url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>shotgun_site</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>shotgrid_site</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -335,13 +391,6 @@
       <pre class="lines">
 
 
-12
-13
-14
-15
-16
-17
-18
 19
 20
 21
@@ -351,14 +400,45 @@
 25
 26
 27
-28</pre>
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>auth:</span><span class='comma'>,</span> <span class='label'>site_url:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>shotgun_site:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>shotgrid_site:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>No site given</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_site_url'>site_url</span> <span class='op'>||</span> <span class='id identifier rubyid_shotgun_site'>shotgun_site</span> <span class='op'>||</span> <span class='id identifier rubyid_shotgrid_site'>shotgrid_site</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>auth param not valid</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_auth'>auth</span> <span class='op'>&amp;&amp;</span> <span class='const'><span class='object_link'><a href="Auth.html" title="ShotgridApiRuby::Auth (class)">Auth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Auth/Validator.html" title="ShotgridApiRuby::Auth::Validator (module)">Validator</a></span></span><span class='period'>.</span><span class='id identifier rubyid_valid?'><span class='object_link'><a href="Auth/Validator.html#valid%3F-class_method" title="ShotgridApiRuby::Auth::Validator.valid? (method)">valid?</a></span></span><span class='lparen'>(</span><span class='op'>**</span><span class='id identifier rubyid_auth'>auth</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='const'><span class='object_link'><a href="Auth.html" title="ShotgridApiRuby::Auth (class)">Auth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Auth/Validator.html" title="ShotgridApiRuby::Auth::Validator (module)">Validator</a></span></span><span class='period'>.</span><span class='id identifier rubyid_valid?'><span class='object_link'><a href="Auth/Validator.html#valid%3F-class_method" title="ShotgridApiRuby::Auth::Validator.valid? (method)">valid?</a></span></span><span class='lparen'>(</span>
+       <span class='label'>client_id:</span> <span class='id identifier rubyid_auth'>auth</span><span class='lbracket'>[</span><span class='symbol'>:client_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+       <span class='label'>client_secret:</span> <span class='id identifier rubyid_auth'>auth</span><span class='lbracket'>[</span><span class='symbol'>:client_secret</span><span class='rbracket'>]</span><span class='comma'>,</span>
+       <span class='label'>username:</span> <span class='id identifier rubyid_auth'>auth</span><span class='lbracket'>[</span><span class='symbol'>:username</span><span class='rbracket'>]</span><span class='comma'>,</span>
+       <span class='label'>password:</span> <span class='id identifier rubyid_auth'>auth</span><span class='lbracket'>[</span><span class='symbol'>:password</span><span class='rbracket'>]</span><span class='comma'>,</span>
+       <span class='label'>session_token:</span> <span class='id identifier rubyid_auth'>auth</span><span class='lbracket'>[</span><span class='symbol'>:session_token</span><span class='rbracket'>]</span><span class='comma'>,</span>
+       <span class='label'>refresh_token:</span> <span class='id identifier rubyid_auth'>auth</span><span class='lbracket'>[</span><span class='symbol'>:refresh_token</span><span class='rbracket'>]</span><span class='comma'>,</span>
+     <span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>auth param not valid</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
 
   <span class='id identifier rubyid_site_url'>site_url</span> <span class='op'>||=</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_shotgun_site'>shotgun_site</span>
@@ -368,10 +448,16 @@
     <span class='kw'>end</span>
 
   <span class='ivar'>@connection</span> <span class='op'>=</span>
-    <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>url:</span> <span class='id identifier rubyid_site_url'>site_url</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_faraday'>faraday</span><span class='op'>|</span>
-      <span class='id identifier rubyid_faraday'>faraday</span><span class='period'>.</span><span class='id identifier rubyid_use'>use</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../ShotgridApiRuby.html" title="ShotgridApiRuby (module)">ShotgridApiRuby</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Auth.html" title="ShotgridApiRuby::Auth (class)">Auth</a></span></span><span class='comma'>,</span> <span class='label'>auth:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='label'>site_url:</span> <span class='id identifier rubyid_site_url'>site_url</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_faraday'>faraday</span><span class='period'>.</span><span class='id identifier rubyid_adapter'>adapter</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_default_adapter'>default_adapter</span>
-    <span class='kw'>end</span>
+    <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_let'>let</span><span class='lparen'>(</span>
+      <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>url:</span> <span class='id identifier rubyid_site_url'>site_url</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_faraday'>faraday</span><span class='op'>|</span>
+        <span class='id identifier rubyid_faraday'>faraday</span><span class='period'>.</span><span class='id identifier rubyid_use'>use</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../ShotgridApiRuby.html" title="ShotgridApiRuby (module)">ShotgridApiRuby</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Auth.html" title="ShotgridApiRuby::Auth (class)">Auth</a></span></span><span class='comma'>,</span> <span class='label'>auth:</span> <span class='id identifier rubyid_auth'>auth</span><span class='comma'>,</span> <span class='label'>site_url:</span> <span class='id identifier rubyid_site_url'>site_url</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_faraday'>faraday</span><span class='period'>.</span><span class='id identifier rubyid_adapter'>adapter</span> <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_default_adapter'>default_adapter</span>
+      <span class='kw'>end</span><span class='comma'>,</span>
+      <span class='const'>Faraday</span><span class='op'>::</span><span class='const'>Connection</span><span class='comma'>,</span>
+    <span class='rparen'>)</span>
+  <span class='ivar'>@preferences</span> <span class='op'>=</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_let'>let</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Preferences.html" title="ShotgridApiRuby::Preferences (class)">Preferences</a></span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='ivar'>@server_info</span> <span class='op'>=</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_let'>let</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="ServerInfo.html" title="ShotgridApiRuby::ServerInfo (class)">ServerInfo</a></span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='ivar'>@entity_caller</span> <span class='op'>=</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_let'>let</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Entities.html" title="ShotgridApiRuby::Entities (class)">Entities</a></span></span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -389,40 +475,99 @@
     <div class="method_details first">
   <h3 class="signature first" id="method_missing-instance_method">
   
-    #<strong>method_missing</strong>(name, *args, &amp;block)  &#x21d2; <tt>Object</tt> 
+    #<strong>method_missing</strong>(name, *args, &amp;block)  &#x21d2; <tt><span class='object_link'><a href="Entities.html" title="ShotgridApiRuby::Entities (class)">Entities</a></span></tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>Symbol</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;T.untyped&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>block</span>
+      
+      
+        <span class='type'>(<tt>Proc</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Entities.html" title="ShotgridApiRuby::Entities (class)">Entities</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67</pre>
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -458,7 +603,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="connection-instance_method">
   
-    #<strong>connection</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+    #<strong>connection</strong>  &#x21d2; <tt>Faraday::Connection</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -474,6 +619,19 @@
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Faraday::Connection</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -481,12 +639,12 @@
       <pre class="lines">
 
 
-10
-11
-12</pre>
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
   <span class='ivar'>@connection</span>
@@ -506,7 +664,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="entities-instance_method">
   
-    #<strong>entities</strong>(type)  &#x21d2; <tt>Object</tt> 
+    #<strong>entities</strong>(type)  &#x21d2; <tt><span class='object_link'><a href="Entities.html" title="ShotgridApiRuby::Entities (class)">Entities</a></span></tt> 
   
 
   
@@ -521,7 +679,35 @@
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>type</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Entities.html" title="ShotgridApiRuby::Entities (class)">Entities</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -529,12 +715,12 @@
       <pre class="lines">
 
 
-41
-42
-43</pre>
+70
+71
+72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 70</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_entities'>entities</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_public_send'>public_send</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
@@ -547,7 +733,7 @@
       <div class="method_details ">
   <h3 class="signature " id="preferences-instance_method">
   
-    #<strong>preferences</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>preferences</strong>  &#x21d2; <tt><span class='object_link'><a href="Preferences.html" title="ShotgridApiRuby::Preferences (class)">Preferences</a></span></tt> 
   
 
   
@@ -563,52 +749,13 @@
 </div>
 <div class="tags">
   
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-31
-32
-33</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 31</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_preferences'>preferences</span>
-  <span class='ivar'>@preferences</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Preferences.html" title="ShotgridApiRuby::Preferences (class)">Preferences</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../ShotgridApiRuby.html#new-class_method" title="ShotgridApiRuby.new (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_connection'>connection</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="respond_to_missing?-instance_method">
-  
-    #<strong>respond_to_missing?</strong>(_name, _include_private = false)  &#x21d2; <tt>Boolean</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'>(<tt>Boolean</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Preferences.html" title="ShotgridApiRuby::Preferences (class)">Preferences</a></span></tt>)</span>
       
       
       
@@ -622,12 +769,92 @@
       <pre class="lines">
 
 
-45
-46
-47</pre>
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_preferences'>preferences</span>
+  <span class='ivar'>@preferences</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Preferences.html" title="ShotgridApiRuby::Preferences (class)">Preferences</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../ShotgridApiRuby.html#new-class_method" title="ShotgridApiRuby.new (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_connection'>connection</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_to_missing?-instance_method">
+  
+    #<strong>respond_to_missing?</strong>(_name, _include_private = false)  &#x21d2; <tt>true</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>_name</span>
+      
+      
+        <span class='type'>(<tt>T.untyped</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>_include_private</span>
+      
+      
+        <span class='type'>(<tt>T.untyped</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_respond_to_missing?'>respond_to_missing?</span><span class='lparen'>(</span><span class='id identifier rubyid__name'>_name</span><span class='comma'>,</span> <span class='id identifier rubyid__include_private'>_include_private</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>true</span>
@@ -640,7 +867,7 @@
       <div class="method_details ">
   <h3 class="signature " id="server_info-instance_method">
   
-    #<strong>server_info</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>server_info</strong>  &#x21d2; <tt><span class='object_link'><a href="ServerInfo.html" title="ShotgridApiRuby::ServerInfo (class)">ServerInfo</a></span></tt> 
   
 
   
@@ -656,6 +883,19 @@
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ServerInfo.html" title="ShotgridApiRuby::ServerInfo (class)">ServerInfo</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -663,12 +903,12 @@
       <pre class="lines">
 
 
-36
-37
-38</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_server_info'>server_info</span>
   <span class='ivar'>@server_info</span> <span class='op'>||</span> <span class='const'><span class='object_link'><a href="ServerInfo.html" title="ShotgridApiRuby::ServerInfo (class)">ServerInfo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../ShotgridApiRuby.html#new-class_method" title="ShotgridApiRuby.new (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_connection'>connection</span><span class='rparen'>)</span>
@@ -683,7 +923,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Aug 27 17:44:03 2021 by
+  Generated on Fri Aug 27 18:03:21 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.2).
 </div>
