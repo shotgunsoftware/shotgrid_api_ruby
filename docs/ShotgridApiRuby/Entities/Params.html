@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: ShotgridApiRuby::Entities::Params
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ShotgridApiRuby::Entities::Params";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../ShotgridApiRuby.html" title="ShotgridApiRuby (module)">ShotgridApiRuby</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Entities.html" title="ShotgridApiRuby::Entities (class)">Entities</a></span></span>
+     &raquo; 
+    <span class="title">Params</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: ShotgridApiRuby::Entities::Params
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ShotgridApiRuby::Entities::Params</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  <dl>
+      <dt>Extended by:</dt>
+      <dd>Forwardable, T::Sig</dd>
+  </dl>
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/shotgrid_api_ruby/entities/params.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Params/TooComplexFiltersError.html" title="ShotgridApiRuby::Entities::Params::TooComplexFiltersError (class)">TooComplexFiltersError</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="SORT_TYPE-constant" class="">SORT_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_type_alias'>type_alias</span> <span class='kw'>do</span>
+  <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span>
+    <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='const'>String</span><span class='comma'>,</span>
+      <span class='const'>Symbol</span><span class='comma'>,</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre></dd>
+      
+        <dt id="PAGE_TYPE-constant" class="">PAGE_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_type_alias'>type_alias</span> <span class='lbrace'>{</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Integer</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="PAGE_SIZE_TYPE-constant" class="">PAGE_SIZE_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_type_alias'>type_alias</span> <span class='lbrace'>{</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Integer</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="FIELDS_TYPE-constant" class="">FIELDS_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_type_alias'>type_alias</span> <span class='kw'>do</span>
+  <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre></dd>
+      
+        <dt id="LOGICAL_OPERATOR_TYPE-constant" class="">LOGICAL_OPERATOR_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_type_alias'>type_alias</span> <span class='lbrace'>{</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span> <span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="FILTERS_FIELD_TYPE-constant" class="">FILTERS_FIELD_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_type_alias'>type_alias</span> <span class='kw'>do</span>
+  <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span>
+    <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span>
+        <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span>
+        <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+          <span class='const'>String</span><span class='comma'>,</span>
+          <span class='const'>Symbol</span><span class='comma'>,</span>
+          <span class='const'>Integer</span><span class='comma'>,</span>
+          <span class='const'>Float</span><span class='comma'>,</span>
+          <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>Integer</span><span class='comma'>,</span> <span class='const'>Float</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+          <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span>
+            <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span>
+            <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+              <span class='const'>String</span><span class='comma'>,</span>
+              <span class='const'>Symbol</span><span class='comma'>,</span>
+              <span class='const'>Integer</span><span class='comma'>,</span>
+              <span class='const'>Float</span><span class='comma'>,</span>
+              <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>Integer</span><span class='comma'>,</span> <span class='const'>Float</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+              <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='comma'>,</span>
+            <span class='rparen'>)</span>
+          <span class='rbracket'>]</span><span class='comma'>,</span>
+          <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='comma'>,</span>
+        <span class='rparen'>)</span>
+      <span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span>
+        <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span>
+        <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+          <span class='const'>String</span><span class='comma'>,</span>
+          <span class='const'>Symbol</span><span class='comma'>,</span>
+          <span class='const'>Integer</span><span class='comma'>,</span>
+          <span class='const'>Float</span><span class='comma'>,</span>
+          <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>Integer</span><span class='comma'>,</span> <span class='const'>Float</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='rparen'>)</span>
+      <span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre></dd>
+      
+        <dt id="GROUPING_FIELD_TYPE-constant" class="">GROUPING_FIELD_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_type_alias'>type_alias</span> <span class='kw'>do</span>
+  <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span>
+    <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span>
+        <span class='const'>String</span><span class='comma'>,</span>
+        <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+          <span class='const'>String</span><span class='comma'>,</span>
+          <span class='const'>Symbol</span><span class='comma'>,</span>
+          <span class='lbrace'>{</span> <span class='label'>type:</span> <span class='const'>String</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+          <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='const'>String</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+          <span class='lbrace'>{</span> <span class='label'>direction:</span> <span class='const'>String</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+          <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>direction</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='const'>String</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+          <span class='lbrace'>{</span> <span class='label'>type:</span> <span class='const'>String</span><span class='comma'>,</span> <span class='label'>direction:</span> <span class='const'>String</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+          <span class='lbrace'>{</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='const'>String</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>direction</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='const'>String</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+          <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='const'>String</span><span class='comma'>,</span> <span class='symbol'>:direction</span> <span class='op'>=&gt;</span> <span class='const'>String</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+          <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='const'>String</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>direction</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='const'>String</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='rparen'>)</span>
+      <span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre></dd>
+      
+        <dt id="SUMMARY_FILEDS_TYPE-constant" class="">SUMMARY_FILEDS_TYPE =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_type_alias'>type_alias</span> <span class='kw'>do</span>
+  <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_nilable'>nilable</span><span class='lparen'>(</span>
+    <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span>
+        <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span>
+          <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+        <span class='rbracket'>]</span>
+      <span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#filters_are_simple%3F-class_method" title="filters_are_simple? (class method)">.<strong>filters_are_simple?</strong>(filters)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_fields-instance_method" title="#add_fields (instance method)">#<strong>add_fields</strong>(fields)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_filter-instance_method" title="#add_filter (instance method)">#<strong>add_filter</strong>(filters, logical_operator = &#39;and&#39;)  &#x21d2; Hash{String =&gt; String}, ... </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_grouping-instance_method" title="#add_grouping (instance method)">#<strong>add_grouping</strong>(grouping)  &#x21d2; T.untyped </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_options-instance_method" title="#add_options (instance method)">#<strong>add_options</strong>(return_only, include_archived_projects)  &#x21d2; Hash<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_page-instance_method" title="#add_page (instance method)">#<strong>add_page</strong>(page, page_size)  &#x21d2; Hash{T.untyped =&gt; T.untyped}<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_sort-instance_method" title="#add_sort (instance method)">#<strong>add_sort</strong>(sort)  &#x21d2; String<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_summary_fields-instance_method" title="#add_summary_fields (instance method)">#<strong>add_summary_fields</strong>(summary_fields)  &#x21d2; Array&lt;Hash{T.untyped =&gt; T.untyped}&gt;<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='ivar'>@parsed_params</span> <span class='op'>=</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_let'>let</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="filters_are_simple?-class_method">
+  
+    .<strong>filters_are_simple?</strong>(filters)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filters</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#FILTERS_FIELD_TYPE-constant" title="ShotgridApiRuby::Entities::Params::FILTERS_FIELD_TYPE (constant)">FILTERS_FIELD_TYPE</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 302</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_filters_are_simple?'>filters_are_simple?</span><span class='lparen'>(</span><span class='id identifier rubyid_filters'>filters</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_filters'>filters</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='id identifier rubyid_filters'>filters</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Array</span>
+
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='id identifier rubyid_filters'>filters</span><span class='lbracket'>[</span><span class='symbol'>:conditions</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_filters'>filters</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>conditions</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_filters'>filters</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_all?'>all?</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_filter_val'>filter_val</span><span class='op'>|</span>
+    <span class='lparen'>(</span>
+      <span class='id identifier rubyid_filter_val'>filter_val</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_filter_val'>filter_val</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='op'>||</span>
+        <span class='id identifier rubyid_filter_val'>filter_val</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Symbol</span><span class='rparen'>)</span>
+    <span class='rparen'>)</span> <span class='op'>||</span>
+      <span class='lparen'>(</span>
+        <span class='id identifier rubyid_filter_val'>filter_val</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>
+          <span class='id identifier rubyid_filter_val'>filter_val</span><span class='period'>.</span><span class='id identifier rubyid_all?'>all?</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_val'>val</span><span class='op'>|</span>
+            <span class='id identifier rubyid_val'>val</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_val'>val</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Symbol</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_val'>val</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
+          <span class='kw'>end</span>
+      <span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_fields-instance_method">
+  
+    #<strong>add_fields</strong>(fields)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fields</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#FIELDS_TYPE-constant" title="ShotgridApiRuby::Entities::Params::FIELDS_TYPE (constant)">FIELDS_TYPE</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_fields'>add_fields</span><span class='lparen'>(</span><span class='id identifier rubyid_fields'>fields</span><span class='rparen'>)</span>
+  <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span> <span class='op'>=</span>
+    <span class='id identifier rubyid_fields'>fields</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_fields'>fields</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id identifier rubyid_fields'>fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_filter-instance_method">
+  
+    #<strong>add_filter</strong>(filters, logical_operator = &#39;and&#39;)  &#x21d2; <tt>Hash{String =&gt; String}</tt>, ... 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filters</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#FILTERS_FIELD_TYPE-constant" title="ShotgridApiRuby::Entities::Params::FILTERS_FIELD_TYPE (constant)">FILTERS_FIELD_TYPE</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>logical_operator</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#LOGICAL_OPERATOR_TYPE-constant" title="ShotgridApiRuby::Entities::Params::LOGICAL_OPERATOR_TYPE (constant)">LOGICAL_OPERATOR_TYPE</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;and&#39;</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash{String =&gt; String}</tt>, <tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 156</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_filter'>add_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_filters'>filters</span><span class='comma'>,</span> <span class='id identifier rubyid_logical_operator'>logical_operator</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>and</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_filters'>filters</span>
+
+  <span class='comment'># cast are here because Sorbet is confused by the madness filters can be
+</span>  <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:filter</span><span class='rbracket'>]</span> <span class='op'>=</span>
+    <span class='kw'>if</span> <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_filters_are_simple?'>filters_are_simple?</span><span class='lparen'>(</span><span class='id identifier rubyid_filters'>filters</span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_translate_simple_filters_to_sg'>translate_simple_filters_to_sg</span><span class='lparen'>(</span>
+        <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_cast'>cast</span><span class='lparen'>(</span>
+          <span class='id identifier rubyid_filters'>filters</span><span class='comma'>,</span>
+          <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span>
+            <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span>
+            <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+              <span class='const'>String</span><span class='comma'>,</span>
+              <span class='const'>Symbol</span><span class='comma'>,</span>
+              <span class='const'>Integer</span><span class='comma'>,</span>
+              <span class='const'>Float</span><span class='comma'>,</span>
+              <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>Integer</span><span class='comma'>,</span> <span class='const'>Float</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+            <span class='rparen'>)</span>
+          <span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_filters'>filters</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Hash</span>
+      <span class='id identifier rubyid_filters'>filters</span> <span class='op'>=</span>
+        <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_cast'>cast</span><span class='lparen'>(</span>
+          <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_unsafe'>unsafe</span><span class='lparen'>(</span><span class='id identifier rubyid_filters'>filters</span><span class='rparen'>)</span><span class='comma'>,</span>
+          <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span>
+            <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span>
+            <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+              <span class='const'>String</span><span class='comma'>,</span>
+              <span class='const'>Symbol</span><span class='comma'>,</span>
+              <span class='const'>Integer</span><span class='comma'>,</span>
+              <span class='const'>Float</span><span class='comma'>,</span>
+              <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>Integer</span><span class='comma'>,</span> <span class='const'>Float</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+              <span class='const'>T</span><span class='op'>::</span><span class='const'>Hash</span><span class='lbracket'>[</span>
+                <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='rparen'>)</span><span class='comma'>,</span>
+                <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span>
+                  <span class='const'>String</span><span class='comma'>,</span>
+                  <span class='const'>Symbol</span><span class='comma'>,</span>
+                  <span class='const'>Integer</span><span class='comma'>,</span>
+                  <span class='const'>Float</span><span class='comma'>,</span>
+                  <span class='const'>T</span><span class='op'>::</span><span class='const'>Array</span><span class='lbracket'>[</span><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_any'>any</span><span class='lparen'>(</span><span class='const'>String</span><span class='comma'>,</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>Integer</span><span class='comma'>,</span> <span class='const'>Float</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                  <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='comma'>,</span>
+                <span class='rparen'>)</span>
+              <span class='rbracket'>]</span><span class='comma'>,</span>
+              <span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_untyped'>untyped</span><span class='comma'>,</span>
+            <span class='rparen'>)</span>
+          <span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='rparen'>)</span>
+      <span class='lbrace'>{</span>
+        <span class='label'>conditions:</span>
+          <span class='id identifier rubyid_filters'>filters</span><span class='lbracket'>[</span><span class='symbol'>:conditions</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_filters'>filters</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>conditions</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span>
+            <span class='id identifier rubyid_translate_complex_filters_to_sg'>translate_complex_filters_to_sg</span><span class='lparen'>(</span><span class='id identifier rubyid_filters'>filters</span><span class='rparen'>)</span><span class='comma'>,</span>
+        <span class='label'>logical_operator:</span>
+          <span class='id identifier rubyid_filters'>filters</span><span class='lbracket'>[</span><span class='symbol'>:logical_operator</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_filters'>filters</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>logical_operator</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span>
+            <span class='id identifier rubyid_logical_operator'>logical_operator</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
+      <span class='rbrace'>}</span>
+    <span class='kw'>else</span>
+      <span class='lbrace'>{</span> <span class='label'>conditions:</span> <span class='id identifier rubyid_filters'>filters</span><span class='comma'>,</span> <span class='label'>logical_operator:</span> <span class='id identifier rubyid_logical_operator'>logical_operator</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_grouping-instance_method">
+  
+    #<strong>add_grouping</strong>(grouping)  &#x21d2; <tt>T.untyped</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>grouping</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#GROUPING_FIELD_TYPE-constant" title="ShotgridApiRuby::Entities::Params::GROUPING_FIELD_TYPE (constant)">GROUPING_FIELD_TYPE</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>T.untyped</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 241</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_grouping'>add_grouping</span><span class='lparen'>(</span><span class='id identifier rubyid_grouping'>grouping</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_grouping'>grouping</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_grouping'>grouping</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Array</span>
+    <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:grouping</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_grouping'>grouping</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:grouping</span><span class='rbracket'>]</span> <span class='op'>=</span>
+    <span class='id identifier rubyid_grouping'>grouping</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Hash</span>
+        <span class='id identifier rubyid_result'>result</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span>
+          <span class='label'>field:</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
+          <span class='label'>type:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span><span class='op'>&amp;.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>||</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='op'>&amp;.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>exact</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+          <span class='label'>direction:</span>
+            <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:direction</span><span class='rbracket'>]</span><span class='op'>&amp;.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>||</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>direction</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='op'>&amp;.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>||</span>
+              <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>asc</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+        <span class='rbrace'>}</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_result'>result</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span>
+          <span class='label'>field:</span> <span class='id identifier rubyid_key'>key</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
+          <span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>exact</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+          <span class='label'>direction:</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span>
+        <span class='rbrace'>}</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_options-instance_method">
+  
+    #<strong>add_options</strong>(return_only, include_archived_projects)  &#x21d2; <tt>Hash</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>return_only</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>include_archived_projects</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+85
+86
+87
+88
+89
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 85</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_options'>add_options</span><span class='lparen'>(</span><span class='id identifier rubyid_return_only'>return_only</span><span class='comma'>,</span> <span class='id identifier rubyid_include_archived_projects'>include_archived_projects</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_return_only'>return_only</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_include_archived_projects'>include_archived_projects</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+  <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:options</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>return_only:</span> <span class='id identifier rubyid_return_only'>return_only</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>retired</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>active</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+    <span class='label'>include_archived_projects:</span> <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_include_archived_projects'>include_archived_projects</span><span class='comma'>,</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_page-instance_method">
+  
+    #<strong>add_page</strong>(page, page_size)  &#x21d2; <tt>Hash{T.untyped =&gt; T.untyped}</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>page</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#PAGE_TYPE-constant" title="ShotgridApiRuby::Entities::Params::PAGE_TYPE (constant)">PAGE_TYPE</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>page_size</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#PAGE_SIZE_TYPE-constant" title="ShotgridApiRuby::Entities::Params::PAGE_SIZE_TYPE (constant)">PAGE_SIZE_TYPE</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash{T.untyped =&gt; T.untyped}</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_page'>add_page</span><span class='lparen'>(</span><span class='id identifier rubyid_page'>page</span><span class='comma'>,</span> <span class='id identifier rubyid_page_size'>page_size</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_page'>page</span> <span class='op'>||</span> <span class='id identifier rubyid_page_size'>page_size</span>
+
+  <span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='kw'>if</span> <span class='id identifier rubyid_page'>page</span>
+  <span class='id identifier rubyid_page_size'>page_size</span> <span class='op'>=</span> <span class='id identifier rubyid_page_size'>page_size</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='kw'>if</span> <span class='id identifier rubyid_page_size'>page_size</span>
+
+  <span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='int'>1</span> <span class='kw'>if</span> <span class='id identifier rubyid_page'>page</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_page'>page</span> <span class='op'>&lt;</span> <span class='int'>1</span>
+  <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:page</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>size:</span> <span class='id identifier rubyid_page_size'>page_size</span> <span class='op'>||</span> <span class='int'>20</span><span class='comma'>,</span> <span class='label'>number:</span> <span class='id identifier rubyid_page'>page</span> <span class='op'>||</span> <span class='int'>1</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_sort-instance_method">
+  
+    #<strong>add_sort</strong>(sort)  &#x21d2; <tt>String</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>sort</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#SORT_TYPE-constant" title="ShotgridApiRuby::Entities::Params::SORT_TYPE (constant)">SORT_TYPE</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_sort'>add_sort</span><span class='lparen'>(</span><span class='id identifier rubyid_sort'>sort</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_sort'>sort</span>
+
+  <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:sort</span><span class='rbracket'>]</span> <span class='op'>=</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_sort'>sort</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_sort'>sort</span>
+        <span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_field'>field</span><span class='comma'>,</span> <span class='id identifier rubyid_direction'>direction</span><span class='op'>|</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_direction'>direction</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_start_with?'>start_with?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>desc</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_field'>field</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+        <span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='lbracket'>[</span><span class='id identifier rubyid_sort'>sort</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_summary_fields-instance_method">
+  
+    #<strong>add_summary_fields</strong>(summary_fields)  &#x21d2; <tt>Array&lt;Hash{T.untyped =&gt; T.untyped}&gt;</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>summary_fields</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#SUMMARY_FILEDS_TYPE-constant" title="ShotgridApiRuby::Entities::Params::SUMMARY_FILEDS_TYPE (constant)">SUMMARY_FILEDS_TYPE</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Hash{T.untyped =&gt; T.untyped}&gt;</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/entities/params.rb', line 287</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_summary_fields'>add_summary_fields</span><span class='lparen'>(</span><span class='id identifier rubyid_summary_fields'>summary_fields</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_summary_fields'>summary_fields</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_summary_fields'>summary_fields</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Array</span>
+    <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:summary_fields</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_summary_fields'>summary_fields</span>
+    <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_summary_fields'>summary_fields</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Hash</span>
+    <span class='ivar'>@parsed_params</span><span class='lbracket'>[</span><span class='symbol'>:summary_fields</span><span class='rbracket'>]</span> <span class='op'>=</span>
+      <span class='id identifier rubyid_summary_fields'>summary_fields</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='lbrace'>{</span> <span class='label'>field:</span> <span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Aug 28 04:31:10 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.2).
+</div>
+
+    </div>
+  </body>
+</html>

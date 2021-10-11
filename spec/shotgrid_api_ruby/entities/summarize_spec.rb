@@ -1,3 +1,4 @@
+# typed: false
 describe ShotgridApiRuby::Entities::Summarize, :vcr do
   in_context 'with vcr values' do
     describe 'count' do

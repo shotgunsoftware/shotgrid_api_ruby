@@ -5,7 +5,9 @@ inherit_gem:
   prettier: rubocop.yml
 
 require:
+  - rubocop-faker
   - rubocop-performance
+  - rubocop-sorbet
 
 AllCops:
   NewCops: enable

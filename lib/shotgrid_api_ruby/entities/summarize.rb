@@ -1,15 +1,37 @@
+# typed: strict
 module ShotgridApiRuby
   class Entities
     class Summarize
-      Summary = Struct.new(:summaries, :groups)
+      extend T::Sig
 
-      def initialize(connection, type, base_url_prefix)
-        @connection = connection.dup
-        @type = type
-        @connection.url_prefix = "#{base_url_prefix}/entity/#{type}/_summarize"
+      class Summary < T::Struct
+        const :summaries, T.nilable(T::Hash[T.untyped, T.untyped])
+        const :groups, T.nilable(T::Array[T.untyped])
       end
-      attr_reader :type, :connection
 
+      sig do
+        params(
+          connection: Faraday::Connection,
+          type: T.any(String, Symbol),
+          base_url_prefix: URI,
+        ).void
+      end
+      def initialize(connection, type, base_url_prefix)
+        @connection = T.let(connection.dup, Faraday::Connection)
+        @type = T.let(type, T.any(String, Symbol))
+        @connection.url_prefix =
+          T.let("#{base_url_prefix}/entity/#{type}/_summarize", String)
+      end
+
+      sig { returns(T.any(String, Symbol)) }
+      attr_reader :type
+      sig { returns(Faraday::Connection) }
+      attr_reader :connection
+
+      sig do
+        params(filter: T.nilable(T.untyped), logical_operator: T.untyped)
+          .returns(T.untyped)
+      end
       def count(filter: nil, logical_operator: 'and')
         result =
           summarize(
@@ -20,6 +42,16 @@ module ShotgridApiRuby
         result.summaries&.[]('id') || 0
       end
 
+      sig do
+        params(
+            filter: Params::FILTERS_FIELD_TYPE,
+            grouping: Params::GROUPING_FIELD_TYPE,
+            summary_fields: Params::SUMMARY_FILEDS_TYPE,
+            logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+            include_archived_projects: T.nilable(T::Boolean),
+          )
+          .returns(Summary)
+      end
       def summarize(
         filter: nil,
         grouping: nil,
@@ -59,8 +91,8 @@ module ShotgridApiRuby
         end
 
         Summary.new(
-          resp_body['data']['summaries'],
-          resp_body['data']&.[]('groups'),
+          summaries: resp_body['data']['summaries'],
+          groups: resp_body['data']&.[]('groups'),
         )
       end
     end

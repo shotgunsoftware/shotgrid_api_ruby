@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 describe ShotgridApiRuby::Entities::Params do
@@ -578,10 +579,10 @@ describe ShotgridApiRuby::Entities::Params do
       describe 'simple filters' do
         it 'sets the filters' do
           expect(params).to receive(:translate_simple_filters_to_sg).and_return(
-            :simple_translate,
+            { 'k' => 'v' },
           )
           params.add_filter({ a: 1 })
-          expect(params[:filter]).to eq(:simple_translate)
+          expect(params[:filter]).to eq({ 'k' => 'v' })
         end
       end
 

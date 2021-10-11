@@ -1,5 +1,6 @@
+# typed: strict
 # frozen_string_literal: true
 
 module ShotgridApiRuby
-  VERSION = '0.1.3.3'
+  VERSION = '0.2.0'
 end

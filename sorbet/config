@@ -1,0 +1,6 @@
+--dir
+.
+--ignore=node_modules
+--ignore=sorbet/rbi/gems/tapioca@0.4.25.rbi
+--ignore=tmp
+--ignore=vendor

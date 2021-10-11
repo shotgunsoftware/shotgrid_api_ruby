@@ -1,3 +1,4 @@
+# typed: false
 describe ShotgridApiRuby::Entities::Schema, :vcr do
   in_context 'with vcr values' do
     describe 'schema read' do

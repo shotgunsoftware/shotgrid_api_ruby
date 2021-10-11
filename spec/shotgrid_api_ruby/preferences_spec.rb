@@ -1,3 +1,4 @@
+# typed: false
 describe ShotgridApiRuby::Preferences, :vcr do
   in_context 'with vcr values' do
     subject(:preferences) { shotgrid_client.preferences }

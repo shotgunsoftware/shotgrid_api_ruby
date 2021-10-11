@@ -1,3 +1,4 @@
+# typed: false
 describe ShotgridApiRuby::ServerInfo, :vcr do
   in_context 'with vcr values' do
     subject(:server_info) { shotgrid_client.server_info }
