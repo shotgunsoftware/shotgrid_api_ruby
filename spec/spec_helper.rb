@@ -19,27 +19,33 @@ VCR.configure do |config|
     ENV['VCR_SHOTGRID_SCRIPT_NAME'] || 'vcr_shotgrid_script_name'
   end
   config.filter_sensitive_data('<SCRIPT_KEY>') do
-    ENV['VCR_SHOTGRID_SCRIPT_KEY'] &&
-      URI
-        .encode_www_form_component(ENV['VCR_SHOTGRID_SCRIPT_KEY'])
-        &.gsub(/\*/, '%2A') || 'vcr_shotgrid_script_key'
+    (
+      ENV['VCR_SHOTGRID_SCRIPT_KEY'] &&
+        URI
+          .encode_www_form_component(ENV['VCR_SHOTGRID_SCRIPT_KEY'])
+          &.gsub(/\*/, '%2A')
+    ) || 'vcr_shotgrid_script_key'
   end
   config.filter_sensitive_data('<SHOTGUN_SCRIPT_NAME>') do
     ENV['VCR_SHOTGUN_SCRIPT_NAME'] || 'vcr_shotgun_script_name'
   end
   config.filter_sensitive_data('<SHOTGUN_SCRIPT_KEY>') do
-    ENV['VCR_SHOTGUN_SCRIPT_KEY'] &&
-      URI
-        .encode_www_form_component(ENV['VCR_SHOTGUN_SCRIPT_KEY'])
-        &.gsub(/\*/, '%2A') || 'vcr_shotgun_script_key'
+    (
+      ENV['VCR_SHOTGUN_SCRIPT_KEY'] &&
+        URI
+          .encode_www_form_component(ENV['VCR_SHOTGUN_SCRIPT_KEY'])
+          &.gsub(/\*/, '%2A')
+    ) || 'vcr_shotgun_script_key'
   end
   config.filter_sensitive_data('=<USERNAME>') do
     (ENV['VCR_SHOTGRID_USERNAME'] && "=#{ENV['VCR_SHOTGRID_USERNAME']}") ||
       '=vcr_shotgrid_username'
   end
   config.filter_sensitive_data('<PASSWORD>') do
-    ENV['VCR_SHOTGRID_PASSWORD'] &&
-      ENV['VCR_SHOTGRID_PASSWORD']&.gsub(/!/, '%21') || 'vcr_shotgrid_password'
+    (
+      ENV['VCR_SHOTGRID_PASSWORD'] &&
+        ENV['VCR_SHOTGRID_PASSWORD']&.gsub(/!/, '%21')
+    ) || 'vcr_shotgrid_password'
   end
   config.before_record do |i|
     i.response.body.sub!(
