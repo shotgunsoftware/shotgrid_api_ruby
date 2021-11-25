@@ -10,8 +10,6 @@
 # rspec failure tracking
 .rspec_status
 .env
-Gemfile.lock
-Gemfile.lock
 docs
 spoom_report.html
 spoom_data
