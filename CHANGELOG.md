@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0.3] - 2022-01-04
+### Changed
+- Moving to bundler 2
+
 ## [0.2.0.1] - 2021-10-12
 ### Changed
 - Fixing Rubocop
