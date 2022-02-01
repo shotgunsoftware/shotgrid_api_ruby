@@ -48,7 +48,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov', '> 0.16'
   spec.add_development_dependency 'timecop'
   spec.add_development_dependency 'vcr'
-spec.metadata = {
-  'rubygems_mfa_required' => 'true'
-}
+  spec.metadata = { 'rubygems_mfa_required' => 'true' }
 end
