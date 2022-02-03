@@ -29,7 +29,7 @@ module ShotgridApiRuby
       attr_reader :connection
 
       sig do
-        params(filter: T.nilable(T.untyped), logical_operator: T.untyped)
+        params(filter: T.untyped, logical_operator: T.untyped)
           .returns(T.untyped)
       end
       def count(filter: nil, logical_operator: 'and')
