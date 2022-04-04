@@ -25,12 +25,12 @@ module ShotgridApiRuby
 
     sig do
       params(
-          fields: Params::FIELDS_TYPE,
-          sort: Params::SORT_TYPE,
-          filter: Params::FILTERS_FIELD_TYPE,
+          fields: Params::FieldsType,
+          sort: Params::SortType,
+          filter: Params::FiltersFiledType,
           retired: T.nilable(T::Boolean),
           include_archived_projects: T.nilable(T::Boolean),
-          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+          logical_operator: Params::LogicalOperatorType,
         )
         .returns(T.nilable(Entity))
     end
@@ -56,7 +56,7 @@ module ShotgridApiRuby
     sig do
       params(
           id: Integer,
-          fields: Params::FIELDS_TYPE,
+          fields: Params::FieldsType,
           retired: T.nilable(T::Boolean),
           include_archived_projects: T.nilable(T::Boolean),
         )
@@ -191,12 +191,12 @@ module ShotgridApiRuby
 
     sig do
       params(
-          fields: Params::FIELDS_TYPE,
-          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
-          sort: Params::SORT_TYPE,
-          filter: Params::FILTERS_FIELD_TYPE,
-          page: Params::PAGE_TYPE,
-          page_size: Params::PAGE_SIZE_TYPE,
+          fields: Params::FieldsType,
+          logical_operator: Params::LogicalOperatorType,
+          sort: Params::SortType,
+          filter: Params::FiltersFiledType,
+          page: Params::PageType,
+          page_size: Params::PageSizeType,
           retired: T.nilable(T::Boolean),
           include_archived_projects: T.nilable(T::Boolean),
         )
@@ -258,12 +258,12 @@ module ShotgridApiRuby
 
     sig do
       params(
-          fields: Params::FIELDS_TYPE,
-          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
-          sort: Params::SORT_TYPE,
-          filter: Params::FILTERS_FIELD_TYPE,
-          page: Params::PAGE_TYPE,
-          page_size: Params::PAGE_SIZE_TYPE,
+          fields: Params::FieldsType,
+          logical_operator: Params::LogicalOperatorType,
+          sort: Params::SortType,
+          filter: Params::FiltersFiledType,
+          page: Params::PageType,
+          page_size: Params::PageSizeType,
           retired: T.nilable(T::Boolean),
           include_archived_projects: T.nilable(T::Boolean),
         )
@@ -357,8 +357,8 @@ module ShotgridApiRuby
 
     sig do
       params(
-          filter: Params::FILTERS_FIELD_TYPE,
-          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+          filter: Params::FiltersFiledType,
+          logical_operator: Params::LogicalOperatorType,
         )
         .returns(T.untyped)
     end
@@ -368,10 +368,10 @@ module ShotgridApiRuby
 
     sig do
       params(
-          filter: Params::FILTERS_FIELD_TYPE,
-          grouping: Params::GROUPING_FIELD_TYPE,
-          summary_fields: Params::SUMMARY_FILEDS_TYPE,
-          logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+          filter: Params::FiltersFiledType,
+          grouping: Params::GroupingFieldType,
+          summary_fields: Params::SummaryFiledsType,
+          logical_operator: Params::LogicalOperatorType,
           include_archived_projects: T.nilable(T::Boolean),
         )
         .returns(Summarize::Summary)

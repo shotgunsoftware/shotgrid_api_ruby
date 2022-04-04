@@ -44,10 +44,10 @@ module ShotgridApiRuby
 
       sig do
         params(
-            filter: Params::FILTERS_FIELD_TYPE,
-            grouping: Params::GROUPING_FIELD_TYPE,
-            summary_fields: Params::SUMMARY_FILEDS_TYPE,
-            logical_operator: Params::LOGICAL_OPERATOR_TYPE,
+            filter: Params::FiltersFiledType,
+            grouping: Params::GroupingFieldType,
+            summary_fields: Params::SummaryFiledsType,
+            logical_operator: Params::LogicalOperatorType,
             include_archived_projects: T.nilable(T::Boolean),
           )
           .returns(Summary)
