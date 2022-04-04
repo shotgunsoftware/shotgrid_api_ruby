@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    shotgrid_api_ruby (0.2.0.4)
+    shotgrid_api_ruby (0.2.0.5)
       activesupport (~> 7)
       faraday (~> 1)
       sorbet-runtime
