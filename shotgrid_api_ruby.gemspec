@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name = 'shotgrid_api_ruby'
   spec.version = ShotgridApiRuby::VERSION
   spec.authors = ['Denis <Zaratan> Pasin']
-  spec.email = ['denis.pasin@autodesk.com']
+  spec.email = ['guillaume.brossard@autodesk.com']
 
   spec.summary = 'Gem to interact easily with Shotgrid REST api.'
   spec.description =
