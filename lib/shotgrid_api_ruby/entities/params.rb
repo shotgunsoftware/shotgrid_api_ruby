@@ -17,7 +17,7 @@ module ShotgridApiRuby
 
       def_delegators :@parsed_params, :[], :[]=, :delete, :to_h, :each
 
-      SORT_TYPE =
+      SortType =
         T.type_alias do
           T.nilable(
             T.any(
@@ -28,7 +28,7 @@ module ShotgridApiRuby
             ),
           )
         end
-      sig { params(sort: SORT_TYPE).returns(T.nilable(String)) }
+      sig { params(sort: SortType).returns(T.nilable(String)) }
       def add_sort(sort)
         return unless sort
 
@@ -44,11 +44,11 @@ module ShotgridApiRuby
           end
       end
 
-      PAGE_TYPE = T.type_alias { T.nilable(T.any(String, Integer)) }
-      PAGE_SIZE_TYPE = T.type_alias { T.nilable(T.any(String, Integer)) }
+      PageType = T.type_alias { T.nilable(T.any(String, Integer)) }
+      PageSizeType = T.type_alias { T.nilable(T.any(String, Integer)) }
 
       sig do
-        params(page: PAGE_TYPE, page_size: PAGE_SIZE_TYPE)
+        params(page: PageType, page_size: PageSizeType)
           .returns(T.nilable(T::Hash[T.untyped, T.untyped]))
       end
       def add_page(page, page_size)
@@ -61,11 +61,11 @@ module ShotgridApiRuby
         @parsed_params[:page] = { size: page_size || 20, number: page || 1 }
       end
 
-      FIELDS_TYPE =
+      FieldsType =
         T.type_alias do
           T.nilable(T.any(String, Symbol, T::Array[T.any(String, Symbol)]))
         end
-      sig { params(fields: FIELDS_TYPE).returns(String) }
+      sig { params(fields: FieldsType).returns(String) }
       def add_fields(fields)
         @parsed_params[:fields] =
           fields && !fields.empty? ? [fields].flatten.join(',') : '*'
@@ -91,8 +91,8 @@ module ShotgridApiRuby
         }
       end
 
-      LOGICAL_OPERATOR_TYPE = T.type_alias { T.any(String, Symbol) }
-      FILTERS_FIELD_TYPE =
+      LogicalOperatorType = T.type_alias { T.any(String, Symbol) }
+      FiltersFiledType =
         T.type_alias do
           T.nilable(
             T.any(
@@ -133,10 +133,7 @@ module ShotgridApiRuby
           )
         end
       sig do
-        params(
-            filters: FILTERS_FIELD_TYPE,
-            logical_operator: LOGICAL_OPERATOR_TYPE,
-          )
+        params(filters: FiltersFiledType, logical_operator: LogicalOperatorType)
           .returns(
             T.nilable(
               T.any(
@@ -214,7 +211,7 @@ module ShotgridApiRuby
           end
       end
 
-      GROUPING_FIELD_TYPE =
+      GroupingFieldType =
         T.type_alias do
           T.nilable(
             T.any(
@@ -237,7 +234,7 @@ module ShotgridApiRuby
             ),
           )
         end
-      sig { params(grouping: GROUPING_FIELD_TYPE).returns(T.untyped) }
+      sig { params(grouping: GroupingFieldType).returns(T.untyped) }
       def add_grouping(grouping)
         return unless grouping
 
@@ -266,7 +263,7 @@ module ShotgridApiRuby
           end
       end
 
-      SUMMARY_FILEDS_TYPE =
+      SummaryFiledsType =
         T.type_alias do
           T.nilable(
             T.any(
@@ -281,7 +278,7 @@ module ShotgridApiRuby
           )
         end
       sig do
-        params(summary_fields: SUMMARY_FILEDS_TYPE)
+        params(summary_fields: SummaryFiledsType)
           .returns(T.nilable(T::Array[T::Hash[T.untyped, T.untyped]]))
       end
       def add_summary_fields(summary_fields)
@@ -298,7 +295,7 @@ module ShotgridApiRuby
         end
       end
 
-      sig { params(filters: FILTERS_FIELD_TYPE).returns(T::Boolean) }
+      sig { params(filters: FiltersFiledType).returns(T::Boolean) }
       def self.filters_are_simple?(filters)
         return false unless filters
         return false if filters.is_a? Array

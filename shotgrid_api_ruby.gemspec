@@ -8,14 +8,14 @@ Gem::Specification.new do |spec|
   spec.name = 'shotgrid_api_ruby'
   spec.version = ShotgridApiRuby::VERSION
   spec.authors = ['Denis <Zaratan> Pasin']
-  spec.email = ['denis.pasin@autodesk.com']
+  spec.email = ['guillaume.brossard@autodesk.com']
 
   spec.summary = 'Gem to interact easily with Shotgrid REST api.'
   spec.description =
     "Gem to facilitate the interaction with Shotgrid's REST API."
   spec.homepage = 'https://github.com/shotgunsoftware/shotgrid_api_ruby'
   spec.license = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.6.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] =
@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
     end
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activesupport', '< 7' # ActiveSupport 7+ do not support Ruby 2.6
+  spec.add_dependency 'activesupport', '~> 7'
   spec.add_dependency 'faraday', '~> 1'
   spec.add_dependency 'sorbet-runtime'
   spec.add_dependency 'zeitwerk', '~> 2.2'
