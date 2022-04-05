@@ -47,7 +47,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       - name: Prepare credentials
         env:
