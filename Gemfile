@@ -20,5 +20,17 @@ group :development do
   gem 'yard-sorbet', require: false
 end
 
+group :development, :test do
+  gem 'dotenv'
+  gem 'faker'
+  gem 'pry-byebug'
+  gem 'rake'
+  gem 'rspec', '~> 3.0'
+  gem 'rspec_in_context', '> 1'
+  gem 'simplecov'
+  gem 'timecop'
+  gem 'vcr'
+end
+
 # Specify your gem's dependencies in shotgrid_api_ruby.gemspec
 gemspec
