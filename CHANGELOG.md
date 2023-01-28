@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0.6] - 2023-01-29
+
+### Added
+
+- Adding Ruby 3.2 to the test matrix
+
 ## [0.2.0.5] - 2022-04-04
 
 ### Removed
