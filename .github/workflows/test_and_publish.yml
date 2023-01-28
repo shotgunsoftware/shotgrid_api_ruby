@@ -37,7 +37,7 @@ jobs:
       - name: Install yarn dep
         run: yarn install
       - name: Check prettier
-        run: yarn prettier -c '**/*.rb'
+        run: yarn prettier -c './!(vendor|sorbet|node_modules)/**/*.rb' Guardfile Rakefile *.gemspec Gemfile
   release:
     needs: [tests, prettier]
     runs-on: ubuntu-latest
