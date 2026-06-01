@@ -7,23 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.2.0.8] - 2026-05-10
-
-### Added
-
-- Explicit dependency on `ostruct` (no longer in default gems on Ruby 4.0+)
-
-### Changed
-
-- Bumped minimum Ruby to 3.3 and updated the CI matrix to non-EOL versions (3.3, 3.4, 4.0)
-- Upgraded Sorbet/Tapioca stack (sorbet-static now ships arm64-darwin-25 binaries)
-- Bumped RuboCop and migrated `require:` extensions to the new `plugins:` syntax; `TargetRubyVersion` raised to 3.3
-- Refreshed gem RBIs against the updated dependencies
-
-### Fixed
-
-- Gemspec metadata: `homepage_uri`, `source_code_uri` and `changelog_uri` were silently overwritten by a subsequent `spec.metadata = {…}` assignment; consolidated into a single hash literal so all entries are published
-
 ## [0.2.0.6] - 2023-01-29
 
 ### Added

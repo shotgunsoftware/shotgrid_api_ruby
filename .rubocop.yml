@@ -4,7 +4,7 @@ inherit_from:
 inherit_gem:
   prettier: rubocop.yml
 
-plugins:
+require:
   - rubocop-faker
   - rubocop-performance
   - rubocop-sorbet
@@ -14,7 +14,7 @@ AllCops:
   DisplayStyleGuide: true
   DisplayCopNames: true
   SuggestExtensions: false
-  TargetRubyVersion: 3.3
+  TargetRubyVersion: 2.6
   Exclude:
     - 'bin/*'
     - 'vendor/**/*'
@@ -34,14 +34,3 @@ Style:
 
 Gemspec/RequiredRubyVersion:
   Enabled: false
-
-# `delete` and `revive` mirror Shotgrid's REST verbs; they are imperative
-# actions that happen to return `true` on success, not predicates.
-Naming/PredicateMethod:
-  Exclude:
-    - 'lib/shotgrid_api_ruby/entities.rb'
-
-# Sorbet `sig` cannot reference an anonymous `&` block parameter, so the
-# explicit `&block` form is required wherever a method has a Sorbet signature.
-Naming/BlockForwarding:
-  EnforcedStyle: explicit

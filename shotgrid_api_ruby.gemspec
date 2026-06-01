@@ -15,15 +15,13 @@ Gem::Specification.new do |spec|
     "Gem to facilitate the interaction with Shotgrid's REST API."
   spec.homepage = 'https://github.com/shotgunsoftware/shotgrid_api_ruby'
   spec.license = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 3.3.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
 
-  spec.metadata = {
-    'homepage_uri' => spec.homepage,
-    'source_code_uri' => 'https://github.com/shotgunsoftware/shotgrid_api_ruby',
-    'changelog_uri' =>
-      'https://github.com/shotgunsoftware/shotgrid_api_ruby/blob/main/CHANGELOG.md',
-    'rubygems_mfa_required' => 'true',
-  }
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] =
+    'https://github.com/shotgunsoftware/shotgrid_api_ruby'
+  spec.metadata['changelog_uri'] =
+    'https://github.com/shotgunsoftware/shotgrid_api_ruby/blob/main/CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -37,7 +35,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activesupport', '~> 7'
   spec.add_dependency 'faraday', '~> 1'
-  spec.add_dependency 'ostruct'
   spec.add_dependency 'sorbet-runtime'
   spec.add_dependency 'zeitwerk', '~> 2.2'
+
+  spec.add_development_dependency 'bundler'
+  spec.metadata = { 'rubygems_mfa_required' => 'true' }
 end
