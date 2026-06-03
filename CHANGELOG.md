@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0.9] - 2026-05-11
+
+### Changed
+
+- Replaced `activesupport` runtime dependency with `dry-inflector` (~> 1.0): only `String#camelize`/`singularize` were used, no need for the full ActiveSupport tree
+
+### Added
+
+- `ruby-lsp` as the canonical Ruby language server for development
+
+### Removed
+
+- `activesupport` runtime dependency (along with its tree: `concurrent-ruby`, `i18n` transitive, `tzinfo`, `drb`, `minitest`, …)
+- `solargraph` dev dependency (and its tree: `backport`, `kramdown`, `reverse_markdown`, `nokogiri`, …) — superseded by `ruby-lsp`
+
 ## [0.2.0.8] - 2026-05-10
 
 ### Added

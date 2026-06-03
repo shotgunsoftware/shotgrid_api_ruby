@@ -12,7 +12,7 @@ group :development do
   gem 'rubocop-faker', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-sorbet', require: false
-  gem 'solargraph', require: false
+  gem 'ruby-lsp', require: false
   gem 'sorbet', require: false
   gem 'tapioca', require: false
   gem 'unparser', require: false

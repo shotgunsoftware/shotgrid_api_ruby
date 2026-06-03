@@ -118,6 +118,22 @@
   
 
 </div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="INFLECTOR-constant" class="">INFLECTOR =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>T</span><span class='period'>.</span><span class='id identifier rubyid_let'>let</span><span class='lparen'>(</span><span class='const'>Dry</span><span class='op'>::</span><span class='const'>Inflector</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='const'>Dry</span><span class='op'>::</span><span class='const'>Inflector</span><span class='rparen'>)</span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -384,8 +400,6 @@
       <pre class="lines">
 
 
-19
-20
 21
 22
 23
@@ -415,10 +429,12 @@
 47
 48
 49
-50</pre>
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>auth:</span><span class='comma'>,</span> <span class='label'>site_url:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>shotgun_site:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>shotgrid_site:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>No site given</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_site_url'>site_url</span> <span class='op'>||</span> <span class='id identifier rubyid_shotgun_site'>shotgun_site</span> <span class='op'>||</span> <span class='id identifier rubyid_shotgrid_site'>shotgrid_site</span>
@@ -539,8 +555,6 @@
       <pre class="lines">
 
 
-89
-90
 91
 92
 93
@@ -557,10 +571,12 @@
 104
 105
 106
-107</pre>
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -630,12 +646,12 @@
       <pre class="lines">
 
 
-54
-55
-56</pre>
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
   <span class='ivar'>@connection</span>
@@ -704,12 +720,12 @@
       <pre class="lines">
 
 
-70
-71
-72</pre>
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_entities'>entities</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_public_send'>public_send</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
@@ -756,12 +772,12 @@
       <pre class="lines">
 
 
-58
-59
-60</pre>
+60
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_preferences'>preferences</span>
   <span class='ivar'>@preferences</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Preferences.html" title="ShotgridApiRuby::Preferences (class)">Preferences</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../ShotgridApiRuby.html#new-class_method" title="ShotgridApiRuby.new (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_connection'>connection</span><span class='rparen'>)</span>
@@ -836,12 +852,12 @@
       <pre class="lines">
 
 
-77
-78
-79</pre>
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 77</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_respond_to_missing?'>respond_to_missing?</span><span class='lparen'>(</span><span class='id identifier rubyid__name'>_name</span><span class='comma'>,</span> <span class='id identifier rubyid__include_private'>_include_private</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>true</span>
@@ -888,12 +904,12 @@
       <pre class="lines">
 
 
-64
-65
-66</pre>
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/shotgrid_api_ruby/client.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_server_info'>server_info</span>
   <span class='ivar'>@server_info</span> <span class='op'>||</span> <span class='const'><span class='object_link'><a href="ServerInfo.html" title="ShotgridApiRuby::ServerInfo (class)">ServerInfo</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../ShotgridApiRuby.html#new-class_method" title="ShotgridApiRuby.new (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_connection'>connection</span><span class='rparen'>)</span>
@@ -908,7 +924,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun May 10 11:22:59 2026 by
+  Generated on Mon May 11 08:38:27 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.43 (ruby-3.3.11).
 </div>

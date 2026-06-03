@@ -8,6 +8,8 @@ module ShotgridApiRuby
   class Client
     extend T::Sig
 
+    INFLECTOR = T.let(Dry::Inflector.new, Dry::Inflector)
+
     sig do
       params(
         auth: Types::AuthType,
@@ -110,7 +112,7 @@ module ShotgridApiRuby
 
     sig { params(name: T.any(String, Symbol)).returns(String) }
     def formated_name(name)
-      name.to_s.camelize.singularize
+      INFLECTOR.singularize(INFLECTOR.camelize(name.to_s))
     end
 
     sig { params(type: T.any(String, Symbol)).returns(Entities) }
